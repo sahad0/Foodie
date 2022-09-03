@@ -1,0 +1,13 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "assets/fonts/Cinzel.ttf",
+      "sha1": "b07474164eb7073691db09c33b85ab3e558582aa"
+    },
+    {
+      "path": "assets/fonts/Sil.ttf",
+      "sha1": "e4ca1e41c4aed08bdf52f6380d0d87f70928f8e3"
+    }
+  ]
+}
