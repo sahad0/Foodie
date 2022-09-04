@@ -5,7 +5,7 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 import { Divider } from 'react-native-paper';
 
 
-const ResHeader = ({ restaurantValue, setLoaded, loaded }) => {
+const ResHeader = ({ restaurantValue, }) => {
 
 
     return (
