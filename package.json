@@ -10,11 +10,14 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@react-navigation/native": "^6.0.12",
+    "@react-navigation/stack": "^6.2.3",
     "axios": "^0.27.2",
     "react": "18.0.0",
     "react-native": "0.69.5",
     "react-native-fadeview-wrapper": "^1.0.6",
     "react-native-fast-image": "^8.6.0",
+    "react-native-gesture-handler": "^2.6.0",
     "react-native-paper": "^4.12.4",
     "react-native-vector-icons": "^9.2.0"
   },
@@ -32,6 +35,8 @@
     "preset": "react-native"
   },
   "rnpm": {
-    "assets": ["./assets/fonts"]
-}
+    "assets": [
+      "./assets/fonts"
+    ]
+  }
 }

@@ -10,6 +10,7 @@ class Cards extends React.Component {
 
     render() {
 
+
         return (
 
             <View style={{ marginBottom: "5%" }}>
@@ -28,7 +29,7 @@ class Cards extends React.Component {
                 <View style={{ backgroundColor: "white", paddingBottom: "5%" }}>
                     <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between" }}>
                         <Text style={{ fontFamily: "Cinzel", fontSize: 18, backgroundColor: "white", marginTop: "1%", color: "black" }}>{this.props.name}</Text>
-                        <Text style={{ fontFamily: "Cinzel", marginTop: "1%", right: "20%" }}>45-50 min.</Text>
+                        <Text style={{ fontFamily: "Cinzel", marginTop: "1%", right: "20%", color: "gray" }}>45-50 min.</Text>
                     </View>
                     <View style={{ display: "flex", flexDirection: "row", }}>
                         <Ionicons style={{ marginTop: "1.7%" }} color="gray" name='location-sharp' size={10} />
@@ -37,7 +38,7 @@ class Cards extends React.Component {
 
 
                     <View>
-                        <TouchableOpacity style={{ display: "flex", flexDirection: "row", backgroundColor: "green", marginLeft: "2%", width: this.props.rating.toString().length > 1 ? "11%" : "8%", borderRadius: 3, marginTop: "3%", }}>
+                        <TouchableOpacity style={{ display: "flex", flexDirection: "row", backgroundColor: "green", marginLeft: "2%", width: this.props.rating.toString().length > 1 ? "13%" : "8%", borderRadius: 3, marginTop: "3%", }}>
                             <Ionicons name='star' color="white" size={16} style={{ paddingHorizontal: 3, paddingTop: 1 }} />
                             <Text style={{ fontWeight: "700", fontFamily: "Cinzel", fontSize: 15, color: "white", }}>
                                 {this.props.rating}
@@ -49,7 +50,7 @@ class Cards extends React.Component {
                                 <Text style={{ color: "green" }}>{this.props.review_count}</Text>
                                 <Text style={{ color: "green" }}> Reviews</Text>
                             </View>
-                            <Text>{this.props.is_closed ? "Open" : "Closed"}</Text>
+                            <Text style={{ color: "black" }}>{this.props.is_closed ? "Open" : "Closed"}</Text>
                         </View>
                     </View>
 

@@ -28,7 +28,8 @@ export default function RestaurantCards({ restaurantData, setShowcatagories, set
 
                 onEndReached={() => { setOffset(offset + 10) }} style={{ zIndex: 3 }}
                 onEndReachedThreshold={50}
-                onScroll={(event) => setShowcatagories(event.nativeEvent.contentOffset.y)} data={restaurantData}
+                onScroll={(event) => setShowcatagories(event.nativeEvent.contentOffset.y)}
+                data={restaurantData}
                 renderItem={(k) => (
                     <Cards
                         image_url={k.item.image_url}

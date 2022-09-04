@@ -5,7 +5,7 @@ import Restaurant from './screens/Restaurant';
 
 export default function App() {
   return (
-    <Restaurant />
+    <Home />
   )
 }
 

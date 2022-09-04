@@ -17,7 +17,7 @@ const ResHeader = ({ restaurantValue, }) => {
             <View style={{ backgroundColor: "white", padding: "3%", paddingTop: "6%", position: "absolute", width: "100%", bottom: 0, height: "45%" }} >
                 <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between" }}>
                     <Text style={{ fontFamily: "Cinzel", fontSize: 18, color: "black" }}>{restaurantValue.name} </Text>
-                    <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: "4%" }}>
+                    <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: "4%", alignItems: "center" }}>
                         <Ionicons style={{ color: "black" }} name='star'></Ionicons>
                         <Text style={{ color: "black" }}>{restaurantValue.rating}</Text>
                     </View>
