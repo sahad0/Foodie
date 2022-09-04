@@ -7,7 +7,7 @@ import HeadBar from "../Components/HeadBar";
 import SearchBar from "../Components/SearchBar";
 import React from "react";
 
-export default function Home() {
+export default function Home({ navigation }) {
 
 
     const [showSearch, setShowSearch] = useState(false);
@@ -86,7 +86,7 @@ export default function Home() {
             </View>
 
             <View>
-                <Catagories restaurantData={restaurantData} setOffset={setOffset} offset={offset} />
+                <Catagories restaurantData={restaurantData} setOffset={setOffset} offset={offset} navigation={navigation} />
             </View>
             <View style={{ position: "absolute", bottom: "0%", backgroundColor: "white", width: "100%", height: "10%" }}>
                 <BottomBar />

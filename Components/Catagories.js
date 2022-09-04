@@ -4,7 +4,7 @@ import RestaurantCards from './RestaurantCards'
 import { FadeView } from 'react-native-fadeview-wrapper';
 
 
-export default function Catagories({ restaurantData, setOffset, offset }) {
+export default function Catagories({ restaurantData, setOffset, offset, navigation }) {
 
 
     const [showCatagories, setShowcatagories] = useState(0);
@@ -71,7 +71,7 @@ export default function Catagories({ restaurantData, setOffset, offset }) {
                 </FadeView>
 
                 <View style={{ zIndex: -1, marginBottom: '40%' }}>
-                    <RestaurantCards setShowcatagories={setShowcatagories} restaurantData={restaurantData} setOffset={setOffset} offset={offset} />
+                    <RestaurantCards setShowcatagories={setShowcatagories} restaurantData={restaurantData} setOffset={setOffset} offset={offset} navigation={navigation} />
                 </View>
 
 

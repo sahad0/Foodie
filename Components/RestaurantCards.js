@@ -7,7 +7,7 @@ import Cards from './Cards';
 
 
 
-export default function RestaurantCards({ restaurantData, setShowcatagories, setOffset, offset }) {
+export default function RestaurantCards({ restaurantData, setShowcatagories, setOffset, offset, navigation }) {
 
 
 
@@ -38,6 +38,9 @@ export default function RestaurantCards({ restaurantData, setShowcatagories, set
                         rating={k.item.rating}
                         review_count={k.item.review_count}
                         is_closed={k.item.is_closed}
+                        transaction1={k.item.transactions[0]}
+                        phone={k.item.phone}
+                        navigation={navigation}
                     />
                 )} />
 

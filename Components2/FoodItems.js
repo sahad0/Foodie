@@ -5,17 +5,7 @@ import ResHeader from './ResHeader'
 import foods from '../tempData/foods'
 
 
-const FoodItems = () => {
-    const restaurantValue = {
-        name: "Da Andrea",
-        phone: "+12123671979",
-        price: "$$",
-        rating: 4.5,
-        review_count: 1520,
-        transactions: ["restaurant_reservation", "delivery", "pickup"],
-        image_url: "https://s3-media2.fl.yelpcdn.com/bphoto/ZbJxx7Rl8fUH7Pg4GU2p3g/o.jpg",
-        location: "NewYork",
-    }
+const FoodItems = ({ route }) => {
 
 
 
@@ -42,9 +32,9 @@ const FoodItems = () => {
     );
     const HeaderComp = () => {
         return (
-            <View>
-                <ResHeader restaurantValue={restaurantValue} />
-            </View>
+
+            <ResHeader route={route} />
+
         )
     }
 

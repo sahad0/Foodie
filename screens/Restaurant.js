@@ -5,7 +5,7 @@ import FoodItems from '../Components2/FoodItems';
 import BottomBar from "../Components/BottomBar";
 
 
-export default function Restaurant() {
+export default function Restaurant({ route }) {
 
 
 
@@ -18,9 +18,9 @@ export default function Restaurant() {
             <View>
 
 
-                <View style={{ marginTop: "5%", backgroundColor: "#eee", marginBottom: "12%" }}>
+                <View style={{ backgroundColor: "#eee", marginBottom: "12%" }}>
 
-                    <FoodItems />
+                    <FoodItems route={route} />
 
                 </View>
                 <View style={{ position: "absolute", bottom: "0%", backgroundColor: "white", width: "100%", height: "10%" }}>
