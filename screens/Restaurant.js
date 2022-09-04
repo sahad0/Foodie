@@ -22,7 +22,7 @@ export default function Restaurant() {
 
     return (
 
-        <SafeAreaView style={{ display: "flex", flex: 1 }}>
+        <SafeAreaView style={{ display: "flex", flex: 1, backgroundColor: "white" }}>
             <ScrollView showsHorizontalScrollIndicator={false}>
                 <ResHeader restaurantValue={restaurantValue} setLoaded={setLoaded} loaded={loaded} />
                 <ScrollView style={{ marginTop: "5%" }}>

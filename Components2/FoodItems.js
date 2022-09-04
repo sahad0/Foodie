@@ -4,10 +4,7 @@ import React from 'react'
 
 
 const FoodItems = () => {
-    let customFonts = {
-        'Sil': require('../assets/fonts/Sil.ttf'),
-        'Cinzel': require("../assets/fonts/Cinzel.ttf"),
-    };
+
 
     const foods = [
         {
@@ -68,18 +65,18 @@ const FoodItems = () => {
 
 
     return (
-        <View>
+        <View  >
 
-            <View style={{ width: "100%", marginLeft: "3%" }}>
+            <View style={{ width: "100%", marginLeft: "3%", }}>
                 <View style={{ display: "flex", justifyContent: "space-between", flexDirection: "row" }}>
-                    <Text style={{ fontFamily: "Cinzel" }}>{foods[0].name}</Text>
-                    <TouchableOpacity style={{ marginRight: "5%" }}><Text style={{ fontFamily: "Cinzel" }}>Add+</Text></TouchableOpacity>
+                    <Text style={{ fontFamily: "Cinzel", color: "black" }}>{foods[0].name}</Text>
+                    <TouchableOpacity style={{ marginRight: "5%" }}><Text style={{ fontFamily: "Cinzel", color: "black" }}>Add+</Text></TouchableOpacity>
                 </View>
-                <Text style={{ marginTop: "3%", fontFamily: "Sil", fontSize: 10, width: "70%" }}>{foods[0].desc}</Text>
+                <Text style={{ marginTop: "3%", fontFamily: "Sil", fontSize: 10, width: "70%", color: "black" }}>{foods[0].desc}</Text>
                 <Text style={{ marginTop: "3%", fontFamily: "Sil", fontSize: 19, fontWeight: "200", textDecorationLine: "underline", paddingBottom: "4%", color: "green" }}>{foods[0].price}</Text>
 
             </View>
-            <View>
+            <View >
                 <Image style={{ height: 200 }} source={{
                     uri: foods[0].image_url,
                 }} />

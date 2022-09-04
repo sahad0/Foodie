@@ -2,9 +2,11 @@ import React, { Component } from "react";
 import { Image, TouchableOpacity, View, Text } from "react-native";
 import Ionicons from "react-native-vector-icons/Ionicons"
 import FastImage from "react-native-fast-image";
-class Cards extends React.PureComponent {
+class Cards extends React.Component {
 
-
+    shouldComponentUpdate() {
+        return false;
+    }
 
     render() {
 
@@ -25,7 +27,7 @@ class Cards extends React.PureComponent {
                 </View>
                 <View style={{ backgroundColor: "white", paddingBottom: "5%" }}>
                     <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between" }}>
-                        <Text style={{ fontFamily: "Cinzel", fontSize: 18, backgroundColor: "white", marginTop: "1%" }}>{this.props.name}</Text>
+                        <Text style={{ fontFamily: "Cinzel", fontSize: 18, backgroundColor: "white", marginTop: "1%", color: "black" }}>{this.props.name}</Text>
                         <Text style={{ fontFamily: "Cinzel", marginTop: "1%", right: "20%" }}>45-50 min.</Text>
                     </View>
                     <View style={{ display: "flex", flexDirection: "row", }}>

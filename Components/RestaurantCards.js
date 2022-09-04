@@ -9,7 +9,7 @@ import Cards from './Cards';
 
 export default function RestaurantCards({ restaurantData, setShowcatagories, setOffset, offset }) {
 
-    const [loaded, setLoaded] = useState(false);
+
 
 
 

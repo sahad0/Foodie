@@ -70,7 +70,7 @@ export default function Catagories({ restaurantData, setOffset, offset }) {
                     </View>
                 </FadeView>
 
-                <View style={{ zIndex: -1, marginBottom: '46%' }}>
+                <View style={{ zIndex: -1, marginBottom: '40%' }}>
                     <RestaurantCards setShowcatagories={setShowcatagories} restaurantData={restaurantData} setOffset={setOffset} offset={offset} />
                 </View>
 

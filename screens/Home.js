@@ -32,21 +32,21 @@ export default function Home() {
 
     async function fetchYelp() {
 
-
-        const config = {
-            headers: {
-                Authorization:
-                    `Bearer ${Yelp_Api_Key}`,
-            },
-            params: {
-                term: "restaurants",
-                location: place,
-                limit: 10,
-                offset: offset,
-
-            },
-        };
         if (offset < 30) {
+            const config = {
+                headers: {
+                    Authorization:
+                        `Bearer ${Yelp_Api_Key}`,
+                },
+                params: {
+                    term: "restaurants",
+                    location: place,
+                    limit: 10,
+                    offset: offset,
+
+                },
+            };
+
             const value = await axios.get("https://api.yelp.com/v3/businesses/search", config)
                 .then((response) => {
 
