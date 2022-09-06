@@ -4,20 +4,30 @@ import { NavigationContainer } from '@react-navigation/native'
 
 import Home from "./screens/Home"
 import Restaurant from "./screens/Restaurant"
+import { configureStore } from '@reduxjs/toolkit'
+import { Provider } from 'react-redux';
+import cartReducer from "./features/cart";
 const Stack = createStackNavigator();
 
 const RootNavigation = () => {
+    const store = configureStore({
+        reducer: {
+            cart: cartReducer,
+        }
+    })
 
 
 
     return (
-        <NavigationContainer>
-            <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName='Home'>
-                <Stack.Screen name="Home" component={Home} />
-                <Stack.Screen name="Restaurant" component={Restaurant} />
+        <Provider store={store}>
+            <NavigationContainer>
+                <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName='Home'>
+                    <Stack.Screen name="Home" component={Home} />
+                    <Stack.Screen name="Restaurant" component={Restaurant} />
 
-            </Stack.Navigator>
-        </NavigationContainer>
+                </Stack.Navigator>
+            </NavigationContainer>
+        </Provider>
     )
 }
 

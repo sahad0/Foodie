@@ -2,6 +2,7 @@ import { View, Text, Image, ScrollView, TouchableOpacity, SafeAreaView } from 'r
 import React, { useState } from 'react'
 import RestaurantCards from './RestaurantCards'
 import { FadeView } from 'react-native-fadeview-wrapper';
+import arr from '../tempData/cata';
 
 
 export default function Catagories({ restaurantData, setOffset, offset, navigation }) {
@@ -10,39 +11,7 @@ export default function Catagories({ restaurantData, setOffset, offset, navigati
     const [showCatagories, setShowcatagories] = useState(0);
 
 
-    const arr = [
-        {
-            img: require("../assets/images/3.webp"),
-            text: "Starters"
-        },
 
-        {
-            img: require("../assets/images/2.jpg"),
-            text: "Grillers"
-        },
-        {
-            img: require("../assets/images/4.jpg"),
-            text: "Soups"
-        },
-        {
-            img: require("../assets/images/5.jpeg"),
-            text: "Steaks"
-        },
-
-        {
-            img: require("../assets/images/1.jpg"),
-            text: "Soft Drinks"
-        },
-        {
-            img: require("../assets/images/6.webp"),
-            text: "Desserts"
-        },
-        {
-            img: require("../assets/images/7.png"),
-            text: "Ice-Creams"
-        },
-
-    ]
 
 
     return (

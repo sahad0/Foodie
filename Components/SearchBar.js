@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity } from 'react-native'
+import { View } from 'react-native'
 import React from 'react'
 import { Searchbar } from 'react-native-paper';
 import Ionicons from "react-native-vector-icons/Ionicons";
