@@ -1,4 +1,4 @@
-import { FlatList, SafeAreaView, ScrollView, Text, View, } from 'react-native'
+import { FlatList, SafeAreaView, ScrollView, Text, TouchableOpacity, View, } from 'react-native'
 import React, { useState } from 'react'
 import ResHeader from '../Components2/ResHeader';
 import FoodItems from '../Components2/FoodItems';
@@ -6,9 +6,11 @@ import BottomBar from "../Components/BottomBar";
 import Ioniocon from "react-native-vector-icons/Ionicons"
 import { useSelector } from 'react-redux';
 import { FadeView } from 'react-native-fadeview-wrapper';
+import Modale from '../Components2/Modal';
 
 
 export default function Restaurant({ route }) {
+    const [modal, setModal] = useState(false);
 
 
     const cart = useSelector((state) => {
@@ -35,14 +37,14 @@ export default function Restaurant({ route }) {
 
 
                 <View style={{ backgroundColor: "black", borderRadius: 30, paddingVertical: "4%", paddingHorizontal: "30%" }}>
-                    <View style={{ display: "flex", flexDirection: "row" }}>
+                    <TouchableOpacity onPress={() => { setModal(true) }} style={{ display: "flex", flexDirection: "row" }}>
                         <Text style={{ color: "white", }}>View Cart    </Text>
                         <Ioniocon color={"white"} name="cart" size={20} />
                         <Text style={{ color: "white", paddingLeft: "10%" }}>{cart.total + "$"}</Text>
-                    </View>
+                    </TouchableOpacity>
                 </View>
 
-
+                <Modale modal={modal} setModal={setModal} />
 
             </FadeView>
 

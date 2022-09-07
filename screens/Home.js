@@ -6,6 +6,7 @@ import Catagories from "../Components/Catagories";
 import HeadBar from "../Components/HeadBar";
 import SearchBar from "../Components/SearchBar";
 import React from "react";
+import Modale from "../Components2/Modal";
 
 export default function Home({ navigation }) {
 
@@ -15,6 +16,7 @@ export default function Home({ navigation }) {
     const [place, setPlace] = useState("NewYork");
     const [offset, setOffset] = useState(0);
     const [type, setType] = useState("Delivery");
+    const [modal, setModal] = useState(false);
 
 
     useEffect(() => {
@@ -89,8 +91,9 @@ export default function Home({ navigation }) {
                 <Catagories restaurantData={restaurantData} setOffset={setOffset} offset={offset} navigation={navigation} />
             </View>
             <View style={{ position: "absolute", bottom: "0%", backgroundColor: "white", width: "100%", height: "10%" }}>
-                <BottomBar />
+                <BottomBar setModal={setModal} />
             </View>
+            <Modale modal={modal} setModal={setModal} />
         </SafeAreaView >
     )
 }

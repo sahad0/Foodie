@@ -1,10 +1,10 @@
-import React, { Component } from "react";
-import { Image, TouchableOpacity, View, Text } from "react-native";
+import React from "react";
+import { TouchableOpacity, View, Text } from "react-native";
 import Ionicons from "react-native-vector-icons/Ionicons"
 import FastImage from "react-native-fast-image";
 class Cards extends React.Component {
 
-    shouldComponentUpdate() {
+    shouldComponentUpdate(nextProp, nextState) {
         return false;
     }
 
