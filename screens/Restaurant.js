@@ -1,4 +1,4 @@
-import { FlatList, SafeAreaView, ScrollView, Text, TouchableOpacity, View, } from 'react-native'
+import { SafeAreaView, Text, TouchableOpacity, View, } from 'react-native'
 import React, { useState } from 'react'
 import ResHeader from '../Components2/ResHeader';
 import FoodItems from '../Components2/FoodItems';

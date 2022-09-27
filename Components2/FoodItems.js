@@ -98,7 +98,7 @@ const FoodItems = ({ route }) => {
     return (
         <FlatList nestedScrollEnabled
             style={{ paddingBottom: "13%", height: "auto" }}
-            data={foods}
+            data={[...foods]}
             renderItem={renderItem}
             keyExtractor={item => item.id}
             ListHeaderComponent={<HeaderComp />}

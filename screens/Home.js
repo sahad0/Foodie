@@ -34,42 +34,43 @@ export default function Home({ navigation }) {
 
     async function fetchYelp() {
 
-        if (offset < 30) {
-            const config = {
-                headers: {
-                    Authorization:
-                        `Bearer ${Yelp_Api_Key}`,
-                },
-                params: {
-                    term: "restaurants",
-                    location: place,
-                    limit: 10,
-                    offset: offset,
 
-                },
-            };
+        const config = {
+            headers: {
+                Authorization:
+                    `Bearer ${Yelp_Api_Key}`,
+            },
+            params: {
+                term: "restaurants",
+                location: place,
+                limit: 10,
+                offset: offset,
 
-            const value = await axios.get("https://api.yelp.com/v3/businesses/search", config)
-                .then((response) => {
+            },
+        };
 
-                    const dataa = response.data.businesses.filter((k) => {
-                        return k.transactions.includes(type.toLowerCase());
-                    })
+        const value = await axios.get("https://api.yelp.com/v3/businesses/search", config)
+            .then((response) => {
 
-
-                    if (offset == 0) {
-
-                        setRestaurantData(dataa);
-                    }
-                    else {
-                        const updated = [...restaurantData].concat(dataa);
-                        setRestaurantData(updated);
-                    }
-
-
+                const dataa = response.data.businesses.filter((k) => {
+                    return k.transactions.includes(type.toLowerCase());
                 })
-                .catch(err => setRestaurantData([]));
-        }
+
+
+                if (offset == 0) {
+
+                    setRestaurantData(dataa);
+                    // setModifiedData(dataa);
+                }
+                else {
+                    const updated = [...restaurantData].concat(dataa);
+                    setRestaurantData(updated);
+                }
+
+
+            })
+            .catch(err => setRestaurantData([]));
+
 
 
 
