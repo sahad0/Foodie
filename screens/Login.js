@@ -16,18 +16,16 @@ export default function Login() {
         // Sign-in the user with the credential
         return auth().signInWithCredential(googleCredential);
       }
-    //  async function signOut()  {
-    //     try {
-    //       await GoogleSignin.revokeAccess();
-    //       await GoogleSignin.signOut();
-    //       auth()
-    //         .signOut()
-    //         .then(() => alert('Your are signed out!'));
+     async function signOut()  {
+        try {
+          await GoogleSignin.revokeAccess();
+          await GoogleSignin.signOut();
+          return auth().signOut();
           
-    //     } catch (error) {
-    //       console.error(error);
-    //     }
-    //   };  
+        } catch (error) {
+          console.error(error);
+        }
+      };  
    
       return (
         <>
@@ -35,7 +33,7 @@ export default function Login() {
           title="Google Sign-In"
           onPress={() => onGoogleButtonPress().then(() => console.log('Signed in with Google!'))}
         />
-        {/* <Button title='SignOut' onPress={()=>signOut.then(() => console.log('Signed out with Google!')) }/> */}
+        <Button title='SignOut' onPress={()=>signOut().then(() => console.log('Signed out with Google!')) }/>
         </>
       );
     
