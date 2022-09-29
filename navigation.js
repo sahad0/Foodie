@@ -7,6 +7,7 @@ import Restaurant from "./screens/Restaurant"
 import { configureStore } from '@reduxjs/toolkit'
 import { Provider } from 'react-redux';
 import cartReducer from "./features/cart";
+import Login from './screens/Login'
 const Stack = createStackNavigator();
 
 const RootNavigation = () => {
@@ -21,7 +22,8 @@ const RootNavigation = () => {
     return (
         <Provider store={store}>
             <NavigationContainer>
-                <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName='Home'>
+                <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName='Login'>
+                <Stack.Screen name="Login" component={Login} />
                     <Stack.Screen name="Home" component={Home} />
                     <Stack.Screen name="Restaurant" component={Restaurant} />
 
