@@ -8,6 +8,9 @@ import { configureStore } from '@reduxjs/toolkit'
 import { Provider } from 'react-redux';
 import cartReducer from "./features/cart";
 import Login from './screens/Login'
+import HomeV1_0 from './screens/HomeV1_0'
+import { StatusBar } from 'react-native'
+import { firebase } from '@react-native-firebase/auth'
 const Stack = createStackNavigator();
 
 const RootNavigation = () => {
@@ -16,15 +19,24 @@ const RootNavigation = () => {
             cart: cartReducer,
         }
     })
-
+    // firebase.auth().onAuthStateChanged((user) => {
+    //     if (user) {
+    //       // User logged in already or has just logged in.
+    //       console.log(user.uid);
+    //     } else {
+    //       // User not logged in or has just logged out.
+    //       console.log("H")
+    //     }
+    //   });
 
 
     return (
         <Provider store={store}>
             <NavigationContainer>
-                <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName='Login'>
+            <StatusBar  hidden/>
+                <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName='Home'>
                 <Stack.Screen name="Login" component={Login} />
-                    <Stack.Screen name="Home" component={Home} />
+                    <Stack.Screen name="Home" component={HomeV1_0} />
                     <Stack.Screen name="Restaurant" component={Restaurant} />
 
                 </Stack.Navigator>
