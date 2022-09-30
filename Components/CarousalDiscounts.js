@@ -1,10 +1,12 @@
 import { View, Text, ImageBackground, Image, Dimensions } from 'react-native'
 import React from 'react'
-import { FlatList } from 'react-native-gesture-handler'
+import { useRef } from 'react';
+import Animated from 'react-native-reanimated';
 
 export default function CarousalDiscounts() {
 
-  
+  const scrollX = useRef(new Animated.Value(0)).current;
+
   const {width,height} = Dimensions.get("screen");
     const val = [
         {
@@ -31,10 +33,15 @@ export default function CarousalDiscounts() {
     ]
 
     const Indicator = ()=>(
-      
-        val.map((k)=>{
+        val.map((k,index)=>{
+          const inputRange = [(index - 1) * width, index * width, (index + 1) * width];
+          const scale = scrollX.interpolate({
+            inputRange,
+            outputRange: [0.8, 1, 0.8],
+            extrapolate:"clamp",
+          })
           return(
-            <View key={k.id} style={{backgroundColor:"lightgray",height:10,width:10,borderRadius:5,marginLeft:width*0.01}} />
+            <Animated.View key={k.id} style={{backgroundColor:"lightgray",height:10,width:10,borderRadius:5,marginLeft:width*0.015,transform:[{scale}]}} />
         )}
         )
         
@@ -48,14 +55,19 @@ export default function CarousalDiscounts() {
     )
     
 
-
+     
   return (
     <View>
-      <FlatList bounces={false} horizontal pagingEnabled data={[...val]} renderItem={renderItem} showsHorizontalScrollIndicator={false} initialNumToRender={4} 
+      <Animated.FlatList
+       onScroll={Animated.event(
+        [{ nativeEvent: { contentOffset: { x: scrollX } } }],
+        { useNativeDriver: true }
+      )}
+      bounces={false} horizontal pagingEnabled data={[...val]} renderItem={renderItem} showsHorizontalScrollIndicator={false} initialNumToRender={4} 
         
       />
       <View style={{display:"flex",flexDirection:"row",justifyContent:"center"}}>
-      <Indicator />
+      <Indicator  />
       </View>
 
       
