@@ -5,7 +5,7 @@ import CarousalDiscounts from './CarousalDiscounts';
 import ListItems from './ListItems';
 import FOoter from './FOoter';
 
-export default function BottomItems() {
+export default function BottomItems({navigation}) {
     const{width,height} = Dimensions.get("screen");
     const data = [
         {
@@ -56,12 +56,7 @@ export default function BottomItems() {
             heading:"Flavoured MealBox",
             price:"$25"
         },
-        {
-            id:9,
-            img_url:require('../assets/images/FOods/MealBox.png'),
-            heading:"Hot Pepper MealBox",
-            price:"$25"
-        },
+        
     ]
     const renderItem = ({item})=>(
         <View style={{backgroundColor:"white",width:width/2.2,margin:width*0.02,borderRadius:height*0.01}}>
@@ -83,13 +78,13 @@ export default function BottomItems() {
 
   return (
     <>
-    <View style={{backgroundColor:"#FAFAFA",marginBottom:height*0.2}} >
-      <FlatList data={[...data]} renderItem={renderItem} numColumns={2} style={{backgroundColor:"#FAFAFA",}} 
+    <View style={{height:height*0.75}} >
+      <FlatList  data={[...data]} renderItem={renderItem} numColumns={2} style={{backgroundColor:"#FAFAFA",}} scrollEventThrottle={16}
       ListHeaderComponent={
         ()=>
         <>
             <CarousalDiscounts />
-            <ListItems />
+            <ListItems navigation={navigation}/>
         </>
         }
         
@@ -97,7 +92,7 @@ export default function BottomItems() {
      />
         
     </View>
-    <FOoter />
+    <FOoter/>
     </>
   )
 }

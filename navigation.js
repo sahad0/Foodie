@@ -11,6 +11,7 @@ import Login from './screens/Login'
 import HomeV1_0 from './screens/HomeV1_0'
 import { StatusBar } from 'react-native'
 import { firebase } from '@react-native-firebase/auth'
+import CatView from './screens/CatView'
 const Stack = createStackNavigator();
 
 const RootNavigation = () => {
@@ -37,6 +38,8 @@ const RootNavigation = () => {
                 <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName='Home'>
                 <Stack.Screen name="Login" component={Login} />
                     <Stack.Screen name="Home" component={HomeV1_0} />
+                    <Stack.Screen name="Cat" component={CatView} />
+
                     <Stack.Screen name="Restaurant" component={Restaurant} />
 
                 </Stack.Navigator>
