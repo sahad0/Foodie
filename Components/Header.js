@@ -54,7 +54,7 @@ export default function Header() {
 
 
   return (
-    <View style={{display:"flex",flexDirection:"row",justifyContent:"space-between"}}>
+    <View style={{display:"flex",flexDirection:"row",justifyContent:"space-between",position:"relative",top:0}}>
         <TouchableOpacity style={{
             margin:width*0.07,
             borderRadius:40,
@@ -68,7 +68,7 @@ export default function Header() {
         <Ionicons color={"black"} style={{padding:width*0.04, }} name='infinite-outline' size={25}/>
         </TouchableOpacity>
         <View style={{alignItems:"center",marginTop:width*0.08   }}>
-            <Text style={{color:"gray",fontFamily:"sans-serif"}}>Location</Text>
+            <Text style={{color:"gray",fontFamily:"Sil"}}>Location</Text>
             <View style={{display:"flex",flexDirection:"row",alignItems:"center",marginTop:height*0.01}}>
                 <Ionicons color={"green"} name='location-outline' size={15}/>
             <Text style={{color:'black'}}>{location}</Text>

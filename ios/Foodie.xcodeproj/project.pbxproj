@@ -16,6 +16,8 @@
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		6FC0EC3299404353BCCD627E /* Cinzel.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F05FCEF2CB2C48739636786B /* Cinzel.ttf */; };
 		CC890F09061A43FE94FFBF52 /* Sil.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE4F6A7705C248139B2A94F3 /* Sil.ttf */; };
+		ED8B349BC7654F95BF3AB2FA /* Anton.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC1639B3F34D456E8520AA59 /* Anton.ttf */; };
+		6CA87208151E4F4EB1CA5905 /* Reg.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8F2AC63AE04747FA83B9D1DF /* Reg.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,8 @@
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		F05FCEF2CB2C48739636786B /* Cinzel.ttf */ = {isa = PBXFileReference; name = "Cinzel.ttf"; path = "../assets/fonts/Cinzel.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		DE4F6A7705C248139B2A94F3 /* Sil.ttf */ = {isa = PBXFileReference; name = "Sil.ttf"; path = "../assets/fonts/Sil.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		DC1639B3F34D456E8520AA59 /* Anton.ttf */ = {isa = PBXFileReference; name = "Anton.ttf"; path = "../assets/fonts/Anton.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		8F2AC63AE04747FA83B9D1DF /* Reg.ttf */ = {isa = PBXFileReference; name = "Reg.ttf"; path = "../assets/fonts/Reg.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +162,8 @@
 			children = (
 				F05FCEF2CB2C48739636786B /* Cinzel.ttf */,
 				DE4F6A7705C248139B2A94F3 /* Sil.ttf */,
+				DC1639B3F34D456E8520AA59 /* Anton.ttf */,
+				8F2AC63AE04747FA83B9D1DF /* Reg.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -261,6 +267,8 @@
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				6FC0EC3299404353BCCD627E /* Cinzel.ttf in Resources */,
 				CC890F09061A43FE94FFBF52 /* Sil.ttf in Resources */,
+				ED8B349BC7654F95BF3AB2FA /* Anton.ttf in Resources */,
+				6CA87208151E4F4EB1CA5905 /* Reg.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

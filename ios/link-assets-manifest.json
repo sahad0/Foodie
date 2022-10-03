@@ -2,8 +2,16 @@
   "migIndex": 1,
   "data": [
     {
+      "path": "assets/fonts/Anton.ttf",
+      "sha1": "49243712633711db3b673d0b03536e0180cd7ddb"
+    },
+    {
       "path": "assets/fonts/Cinzel.ttf",
       "sha1": "b07474164eb7073691db09c33b85ab3e558582aa"
+    },
+    {
+      "path": "assets/fonts/Reg.ttf",
+      "sha1": "8b203c70f9c8f5d437eb5a87a6c7df39fb2996b7"
     },
     {
       "path": "assets/fonts/Sil.ttf",
