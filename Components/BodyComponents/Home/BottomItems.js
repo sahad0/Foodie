@@ -4,6 +4,7 @@ import Icon from "react-native-vector-icons/Fontisto";
 import CarousalDiscounts from './CarousalDiscounts';
 import FOoter from '../../FOoter';
 import ListItems from "./ListItems";
+import { SharedElement } from 'react-navigation-shared-element';
 
 export default function BottomItems({navigation}) {
     const{width,height} = Dimensions.get("screen");
@@ -46,10 +47,13 @@ export default function BottomItems({navigation}) {
         },
         
     ]
+    
     const renderItem = ({item})=>(
         <TouchableOpacity onPress={()=>{navigation.navigate("Item",{item})}} style={{backgroundColor:"white",width:width/2.2,margin:width*0.02,borderRadius:height*0.01}}>
-            <Image source={item.img_url}  style={{height:150,width:150,position:"relative",top:height*0.01}} resizeMode={"contain"}/>
-            <Text style={{fontFamily:"Anton",fontSize:width*0.05,margin:height*0.02}}>{item.heading}</Text>
+            <SharedElement  id={`item.${item.id}.img`} >
+                <Image source={item.img_url}  style={{height:width*0.4,width:width*0.4,position:"relative",top:height*0.01}} resizeMode={"contain"}/>
+            </SharedElement>
+                <Text style={{fontFamily:"Anton",fontSize:width*0.05,margin:height*0.02}}>{item.heading}</Text>
             <Text style={{alignSelf:"center"}}>Blend on Spices</Text>
             <View style={{display:"flex",flexDirection:"row",justifyContent:"space-between",margin:width*0.04,marginTop:height*0.03}}>
                 <Text>$25</Text>

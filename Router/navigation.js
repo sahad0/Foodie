@@ -1,19 +1,17 @@
 import React from 'react'
-import { createStackNavigator } from '@react-navigation/stack'
+import { StatusBar } from 'react-native'
 import { NavigationContainer } from '@react-navigation/native'
-
-import Home from "./screens/Home"
-import Restaurant from "./screens/Restaurant"
 import { configureStore } from '@reduxjs/toolkit'
 import { Provider } from 'react-redux';
-import cartReducer from "./features/cart";
-import Login from './screens/Login'
-import HomeV1_0 from './screens/HomeV1_0'
-import { StatusBar } from 'react-native'
-import { firebase } from '@react-native-firebase/auth'
-import CatView from './screens/CatView'
-import ItmScreen from './screens/ItmScreen'
-const Stack = createStackNavigator();
+import cartReducer from "../features/cart";
+import HomeV1_0 from '../screens/HomeV1_0'
+import CatView from '../screens/CatView'
+import ItmScreen from '../screens/ItmScreen'
+import { createSharedElementStackNavigator } from 'react-navigation-shared-element';
+import { enableScreens } from 'react-native-screens';
+
+const Stack = createSharedElementStackNavigator();
+enableScreens();
 
 const RootNavigation = () => {
     const store = configureStore({
@@ -41,7 +39,6 @@ const RootNavigation = () => {
                     <Stack.Screen name="Home" component={HomeV1_0} />
                     <Stack.Screen name="Cat" component={CatView} />
 
-                    <Stack.Screen name="Restaurant" component={Restaurant} />
 
                 </Stack.Navigator>
             </NavigationContainer>

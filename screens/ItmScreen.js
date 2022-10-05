@@ -1,7 +1,8 @@
-import { View, Text, SafeAreaView, TouchableOpacity, Dimensions, Image, ScrollView } from 'react-native'
+import {  SafeAreaView,  Dimensions, View, Image, } from 'react-native'
 import React from 'react'
-import { ItemImage ,ItemAbout,ItemPrice,ItemTitle,ItemTotal} from '../Components/BodyComponents/Item';
+import {ItemAbout,ItemPrice,ItemTitle,ItemTotal} from '../Components/BodyComponents/Item';
 import ItemHeader from "../Components/HeaderComponents/Item/ItemHeader"
+import { SharedElement } from 'react-navigation-shared-element';
 
 export default function ItmScreen({route,navigation}) {
 
@@ -15,7 +16,11 @@ export default function ItmScreen({route,navigation}) {
       
       <ItemHeader navigation={navigation} width={width} height={height}/>
 
-      <ItemImage img_url={item.img_url} height={height} />
+      <View style={{alignItems:"center"}}>
+      <SharedElement id={`item.${item.id}.img`}>
+        <Image source={item.img_url} style={{height:height*0.27,width:height*0.6,}} resizeMode={"contain"}/>
+      </SharedElement>
+    </View>
 
       <ItemTitle heading={item.heading} height={height}/>
 
@@ -27,4 +32,12 @@ export default function ItmScreen({route,navigation}) {
 
     </SafeAreaView>
   )
+}
+
+ItmScreen.sharedElements = (route, otherRoute, showing) => {
+  const { item } = route.params;
+  return [
+      { id: `item.${item.id}.img` },
+
+  ];
 }
