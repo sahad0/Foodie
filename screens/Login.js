@@ -6,7 +6,7 @@ import Icons from 'react-native-vector-icons/Fontisto'
 import { useSelector } from 'react-redux';
 
 
-export default function Login() {
+export default function Login({navigation}) {
 
     const {width,height} = Dimensions.get("screen");
     const cart = useSelector((state)=> state.cart.value);
@@ -18,23 +18,15 @@ export default function Login() {
       try {
         const { idToken } = await GoogleSignin.signIn();
         const googleCredential = auth.GoogleAuthProvider.credential(idToken);
-        const res = await auth().signInWithCredential(googleCredential) ;
+         await auth().signInWithCredential(googleCredential);
+        
         
       } catch (error) {
         console.log("Sign In Cancelled");
       }
        
       }
-     async function signOut()  {
-        try {
-          await GoogleSignin.revokeAccess();
-          await GoogleSignin.signOut();
-          return auth().signOut();
-          
-        } catch (error) {
-          console.log("Not Signed In Developer Error!");
-        }
-      };  
+     
    
       return (
         <>
@@ -49,7 +41,7 @@ export default function Login() {
           </View>
           <View style={{}}>
                 <View style={{display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"center"}}>
-                <TouchableOpacity onPress={() => onGoogleButtonPress().then(() => console.log('Signed in with Google!'))} style={{backgroundColor:"white",elevation:3,borderRadius:width*0.3,margin:width*0.03}}>
+                <TouchableOpacity onPress={() => onGoogleButtonPress()} style={{backgroundColor:"white",elevation:3,borderRadius:width*0.3,margin:width*0.03}}>
                 <Icons name='google' size={32} color={"black"} style={{padding:width*0.04}}/>
 
                 </TouchableOpacity>
