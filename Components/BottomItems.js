@@ -59,7 +59,7 @@ export default function BottomItems({navigation}) {
         
     ]
     const renderItem = ({item})=>(
-        <View style={{backgroundColor:"white",width:width/2.2,margin:width*0.02,borderRadius:height*0.01}}>
+        <TouchableOpacity onPress={()=>{navigation.navigate("Item",{item})}} style={{backgroundColor:"white",width:width/2.2,margin:width*0.02,borderRadius:height*0.01}}>
             <Image source={item.img_url}  style={{height:150,width:150,position:"relative",top:height*0.01}} resizeMode={"contain"}/>
             <Text style={{fontFamily:"Anton",fontSize:width*0.05,margin:height*0.02}}>{item.heading}</Text>
             <Text style={{alignSelf:"center"}}>Blend on Spices</Text>
@@ -71,7 +71,7 @@ export default function BottomItems({navigation}) {
                 </TouchableOpacity>
                
             </View>
-        </View>
+        </TouchableOpacity>
     )
 
     

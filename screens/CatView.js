@@ -7,8 +7,8 @@ export default function CatView({route}) {
   return (
     <View style={{backgroundColor:"white",justifyContent:"space-between",flexDirection:"row",alignItems:"center",borderBottomLeftRadius:width*0.08,elevation:3}}>
         <View >
-        <Text style={{fontFamily:"Anton",fontSize:width*0.08,padding:width*0.03}}>Top Notch</Text>
-        <Text style={{fontFamily:"Anton",fontSize:width*0.05,padding:width*0.01,textDecorationLine:"underline"}}> {item.name+"          "}</Text>
+        <Text style={{fontFamily:"Reg",fontSize:width*0.08,padding:width*0.03}}>Top Notch</Text>
+        <Text style={{fontFamily:"Anton",fontSize:width*0.05,padding:width*0.03,textDecorationLine:"underline"}}> {item.name+"          "}</Text>
 
         </View>
         <View >

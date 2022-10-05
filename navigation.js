@@ -36,7 +36,7 @@ const RootNavigation = () => {
         <Provider store={store}>
             <NavigationContainer>
             <StatusBar  hidden/>
-                <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName='Item'>
+                <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName='Home'>
                 <Stack.Screen name="Item" component={ItmScreen} />
                     <Stack.Screen name="Home" component={HomeV1_0} />
                     <Stack.Screen name="Cat" component={CatView} />
