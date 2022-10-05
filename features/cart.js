@@ -1,12 +1,27 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const val = { items: [], total: 0 }
+const val = { user:null,items: [], total: 0 }
 
 
 const cartSlice = createSlice({
     name: "wow",
     initialState: { value: val },
     reducers: {
+        // Authenication
+        SignIn: (state,action) => {
+            if(action.payload.user){
+                state.value.user = action.payload.user;
+            }
+        },
+        SignOut: (state,action) => {
+            if(state.value.user!==null){
+                state.value.user = null;
+            }
+
+        },
+
+
+        // Feature
         AddToCart: (state, action) => {
             if (state.value.items.length !== 0) {
                 let flag = false;
@@ -77,6 +92,6 @@ const cartSlice = createSlice({
     }
 })
 
-export const { AddToCart, RemoveFromCart } = cartSlice.actions;
+export const {SignIn,SignOut, AddToCart, RemoveFromCart } = cartSlice.actions;
 
 export default cartSlice.reducer;

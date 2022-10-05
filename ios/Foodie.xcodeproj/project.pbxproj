@@ -18,6 +18,7 @@
 		CC890F09061A43FE94FFBF52 /* Sil.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE4F6A7705C248139B2A94F3 /* Sil.ttf */; };
 		ED8B349BC7654F95BF3AB2FA /* Anton.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC1639B3F34D456E8520AA59 /* Anton.ttf */; };
 		6CA87208151E4F4EB1CA5905 /* Reg.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8F2AC63AE04747FA83B9D1DF /* Reg.ttf */; };
+		65E8DBCC12914A4DA7E5CA00 /* monster.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A5E6B8F417B94F25A2589554 /* monster.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		DE4F6A7705C248139B2A94F3 /* Sil.ttf */ = {isa = PBXFileReference; name = "Sil.ttf"; path = "../assets/fonts/Sil.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		DC1639B3F34D456E8520AA59 /* Anton.ttf */ = {isa = PBXFileReference; name = "Anton.ttf"; path = "../assets/fonts/Anton.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		8F2AC63AE04747FA83B9D1DF /* Reg.ttf */ = {isa = PBXFileReference; name = "Reg.ttf"; path = "../assets/fonts/Reg.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A5E6B8F417B94F25A2589554 /* monster.ttf */ = {isa = PBXFileReference; name = "monster.ttf"; path = "../assets/fonts/monster.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +166,7 @@
 				DE4F6A7705C248139B2A94F3 /* Sil.ttf */,
 				DC1639B3F34D456E8520AA59 /* Anton.ttf */,
 				8F2AC63AE04747FA83B9D1DF /* Reg.ttf */,
+				A5E6B8F417B94F25A2589554 /* monster.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -269,6 +272,7 @@
 				CC890F09061A43FE94FFBF52 /* Sil.ttf in Resources */,
 				ED8B349BC7654F95BF3AB2FA /* Anton.ttf in Resources */,
 				6CA87208151E4F4EB1CA5905 /* Reg.ttf in Resources */,
+				65E8DBCC12914A4DA7E5CA00 /* monster.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
