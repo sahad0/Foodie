@@ -8,38 +8,38 @@ export default function ListItems({navigation}) {
         {
             id:3,
             name:"Ramen",
-            img_url:require("../../../assets/images/Catalog/ramen1.png"),
+            img_url:require("../../../assets/images/Catalog/ramen.png"),
             img_url1:require("../../../assets/images/Catalog/ramen2.png")
         },
         {
             id:4,
             name:"Sake",
-            img_url:require("../../../assets/images/Catalog/sake1.png"),
+            img_url:require("../../../assets/images/Catalog/sake.png"),
             img_url1:require("../../../assets/images/Catalog/sake2.png")
         },
         {
           id:5,
           name:"Sushi",
-          img_url:require("../../../assets/images/Catalog/sushi1.png"),
+          img_url:require("../../../assets/images/Catalog/sushi.png"),
           img_url1:require("../../../assets/images/Catalog/sushi2.png")
       },
         
         {
             id:6,
             name:"Udon",
-            img_url:require("../../../assets/images/Catalog/udon1.png"),
+            img_url:require("../../../assets/images/Catalog/udon.png"),
             img_url1:require("../../../assets/images/Catalog/udon2.png")
         },
         {
             id:1,
             name:"Oden",
-            img_url:require("../../../assets/images/Catalog/oden1.png"),
+            img_url:require("../../../assets/images/Catalog/oden.png"),
             img_url1:require("../../../assets/images/Catalog/oden2.png")
         },
             {
             id:2,
             name:"Onigiri",
-            img_url:require("../../../assets/images/Catalog/onigiri1.png"),
+            img_url:require("../../../assets/images/Catalog/onigiri.png"),
             img_url1:require("../../../assets/images/Catalog/onigiri2.png")
         },
         

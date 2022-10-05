@@ -13,7 +13,7 @@ export default function ItemHeader({navigation,width,height}) {
 
      </TouchableOpacity>
      <TouchableOpacity style={{backgroundColor:"white",elevation:5,borderRadius:width*0.5,display:"flex",justifyContent:"center",alignItems:"center"}}>
-         <Image source={require("../../../assets/images/Vector/heart.png")} style={{height:height*0.05,width:height*0.07,}} resizeMode={"contain"} />
+         <Image source={require("../../../assets/images/Vector/heart1.png")} style={{height:height*0.035,width:height*0.07,}} resizeMode={"contain"} />
      </TouchableOpacity>
    </View>
   )

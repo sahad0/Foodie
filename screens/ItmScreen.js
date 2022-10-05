@@ -3,12 +3,14 @@ import React from 'react'
 import {ItemAbout,ItemPrice,ItemTitle,ItemTotal} from '../Components/BodyComponents/Item';
 import ItemHeader from "../Components/HeaderComponents/Item/ItemHeader"
 import { SharedElement } from 'react-navigation-shared-element';
+import { useState } from 'react';
 
 export default function ItmScreen({route,navigation}) {
 
         const {width,height} = Dimensions.get("screen");
         const {item} = route.params;
-        
+
+        const [total,setTotal] = useState(item.price);
         
 
   return (
@@ -24,11 +26,11 @@ export default function ItmScreen({route,navigation}) {
 
       <ItemTitle heading={item.heading} height={height}/>
 
-      <ItemPrice width={width} price={item.price} height={height}/>
+      <ItemPrice width={width} price={item.price} height={height} setTotal={setTotal}/>
 
       <ItemAbout width={width} />
       
-      <ItemTotal width={width} height={height} />
+      <ItemTotal width={width} height={height} total={total} />
 
     </SafeAreaView>
   )

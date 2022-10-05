@@ -13,37 +13,37 @@ export default function BottomItems({navigation}) {
             id:1,
             img_url:require('../../../assets/images/FOods/Ichiraku.png'),
             heading:"Ichiraku Ramen",
-            price:"$25"
+            price:25,
         },
         {
             id:2,
             img_url:require('../../../assets/images/FOods/MealBox.png'),
             heading:"Flavoured MealBox",
-            price:"$25"
+            price:25,
         },
         {
             id:3,
             img_url:require('../../../assets/images/FOods/combo.png'),
             heading:"Hot Pepper MealBox",
-            price:"$25"
+            price:25,
         },
         {
             id:4,
             img_url:require('../../../assets/images/FOods/Ichiraku.png'),
             heading:"Ichiraku Ramen",
-            price:"$25"
+            price:25,
         },
         {
             id:5,
             img_url:require('../../../assets/images/FOods/MealBox.png'),
             heading:"Flavoured MealBox",
-            price:"$25"
+            price:25,
         },
         {
             id:6,
             img_url:require('../../../assets/images/FOods/combo.png'),
             heading:"Hot Pepper MealBox",
-            price:"$25"
+            price:25,
         },
         
     ]
