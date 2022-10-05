@@ -1,10 +1,9 @@
 import React from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
-import Header from '../Components/Header'
+import Header from '../Components/HeaderComponents/Home/Header'
 
-import BottomItems from '../Components/BottomItems'
+import BottomItems from '../Components/BodyComponents/Home/BottomItems'
 import { View } from 'react-native'
-import FOoter from '../Components/FOoter'
 
 export default function HomeV1_0({navigation}) {
   return (

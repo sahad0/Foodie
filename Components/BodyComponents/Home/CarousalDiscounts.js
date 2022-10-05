@@ -13,16 +13,16 @@ export default function CarousalDiscounts() {
     const val = [
       {
         id:6,
-        url:require("../assets/images/Sushi/6.png")},
+        url:require("../../../assets/images/Sushi/6.png")},
       
       
         {
             id:1,
-            url:require("../assets/images/Sushi/7.png")
+            url:require("../../../assets/images/Sushi/7.png")
         },
         {
           id:2,
-          url:require("../assets/images/Sushi/4.png")
+          url:require("../../../assets/images/Sushi/4.png")
   
       },
         
@@ -30,12 +30,12 @@ export default function CarousalDiscounts() {
         
         {
           id:5,
-          url:require("../assets/images/Sushi/5.png")
+          url:require("../../../assets/images/Sushi/5.png")
 
         },
         {
           id:4,
-          url:require("../assets/images/Sushi/1.png")
+          url:require("../../../assets/images/Sushi/1.png")
   
       },
      

@@ -2,58 +2,46 @@ import { View, Text, Dimensions, Image, ScrollView, TouchableOpacity, FlatList }
 import React from 'react'
 import Icon from "react-native-vector-icons/Fontisto";
 import CarousalDiscounts from './CarousalDiscounts';
-import ListItems from './ListItems';
-import FOoter from './FOoter';
+import FOoter from '../../FOoter';
+import ListItems from "./ListItems";
 
 export default function BottomItems({navigation}) {
     const{width,height} = Dimensions.get("screen");
     const data = [
         {
             id:1,
-            img_url:require('../assets/images/FOods/Ichiraku.png'),
+            img_url:require('../../../assets/images/FOods/Ichiraku.png'),
             heading:"Ichiraku Ramen",
             price:"$25"
         },
         {
             id:2,
-            img_url:require('../assets/images/FOods/combo.png'),
+            img_url:require('../../../assets/images/FOods/MealBox.png'),
             heading:"Flavoured MealBox",
             price:"$25"
         },
         {
             id:3,
-            img_url:require('../assets/images/FOods/MealBox.png'),
+            img_url:require('../../../assets/images/FOods/combo.png'),
             heading:"Hot Pepper MealBox",
             price:"$25"
         },
         {
             id:4,
-            img_url:require('../assets/images/FOods/Ichiraku.png'),
+            img_url:require('../../../assets/images/FOods/Ichiraku.png'),
             heading:"Ichiraku Ramen",
             price:"$25"
         },
         {
             id:5,
-            img_url:require('../assets/images/FOods/combo.png'),
+            img_url:require('../../../assets/images/FOods/MealBox.png'),
             heading:"Flavoured MealBox",
             price:"$25"
         },
         {
             id:6,
-            img_url:require('../assets/images/FOods/MealBox.png'),
+            img_url:require('../../../assets/images/FOods/combo.png'),
             heading:"Hot Pepper MealBox",
-            price:"$25"
-        },
-        {
-            id:7,
-            img_url:require('../assets/images/FOods/Ichiraku.png'),
-            heading:"Ichiraku Ramen",
-            price:"$25"
-        },
-        {
-            id:8,
-            img_url:require('../assets/images/FOods/combo.png'),
-            heading:"Flavoured MealBox",
             price:"$25"
         },
         
