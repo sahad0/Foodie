@@ -5,6 +5,10 @@ import SplashScreen from 'react-native-splash-screen';
 import RootNavigation from './Router/navigation';
 import cartReducer from "./features/cart";
 import { Provider } from 'react-redux';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import {persistReducer,persistStore} from "redux-persist";
+import { PersistGate } from 'redux-persist/lib/integration/react'
+
 
 
 export default function App() {
@@ -18,20 +22,33 @@ export default function App() {
   }, []);
 
 
+ 
+
+  const persistConfig = {
+    key: 'root',
+    storage: AsyncStorage,
+  }
+  const persistedReducer = persistReducer(persistConfig, cartReducer);
+  
   const store = configureStore({
     reducer: {
-        cart: cartReducer,
+        cart: persistedReducer,
     },
     middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: false,
     }),
-});
+  });
+
+  const persistor = persistStore(store)
+
 
 
   return (
     <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
       <RootNavigation />
+      </PersistGate>
     </Provider>
 
   )
