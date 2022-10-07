@@ -54,7 +54,7 @@ export default function Header() {
 
 
   return (
-    <View style={{display:"flex",flexDirection:"row",justifyContent:"space-between",position:"relative",top:0,backgroundColor:"white"}}>
+    <View style={{display:"flex",flexDirection:"row",justifyContent:"space-between",position:"relative",top:0,backgroundColor:"white",}}>
         <TouchableOpacity style={{
             margin:width*0.07,
             borderRadius:40,

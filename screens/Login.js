@@ -45,14 +45,14 @@ export default function Login({navigation}) {
                 <Icons name='google' size={32} color={"black"} style={{padding:width*0.04}}/>
 
                 </TouchableOpacity>
-                <TouchableOpacity onPress={()=>signOut().then(() => console.log('Signed out with Google!')) } style={{backgroundColor:"white",elevation:3,borderRadius:width*0.3,margin:width*0.03}}>
+                <TouchableOpacity  style={{backgroundColor:"white",elevation:3,borderRadius:width*0.3,margin:width*0.03}}>
                   <Icons name='apple' size={32} color={"black"} style={{padding:width*0.04}}/>
 
                 </TouchableOpacity>
                 </View>
                 <View>
                   <TouchableOpacity>
-                  <Text style={{marginBottom:width*0.5,alignSelf:"center",marginTop:width*0.04}}>Trouble loggi'n In?</Text>
+                  <Text style={{marginBottom:width*0.5,alignSelf:"center",marginTop:width*0.04,color:"gray"}}>Trouble loggi'n In?</Text>
 
                   </TouchableOpacity>
 

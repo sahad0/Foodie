@@ -21,12 +21,12 @@ export default function FOoter() {
 
 
   return (
-    <View style={{backgroundColor:"black",height:height*0.1,borderRadius:height*0.1,flexDirection:"row",justifyContent:"center"}}>
+    <View style={{position:"absolute",width:"100%",marginTop:height*0.93,backgroundColor:"black",borderRadius:height*0.05,height:height*0.08,flexDirection:"row",justifyContent:"center"}}>
       <TouchableOpacity onPress={()=>signOut()}>
-        <Icons name='home-roof' size={28} color={"white"} style={{padding:15}} />
+        <Icons name='home-roof' size={28} color={"white"} style={{marginBottom:height*0.05,marginTop:height*0.005,paddingLeft:height*0.03}} />
       </TouchableOpacity>
         
-        <Icons name='account-heart-outline' size={28} color={"white"} style={{padding:15}} />
+        <Icons name='account-heart-outline' size={28} color={"white"} style={{marginBottom:height*0.05,marginTop:height*0.005,paddingLeft:height*0.03}} />
 
 
 

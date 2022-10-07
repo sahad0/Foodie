@@ -21,10 +21,43 @@ const cartSlice = createSlice({
             }
 
         },
+        // {foodItem: {
+        //     id:id,
+        //     heading:heading,
+        //     price:price,
+        //     total:total,
+        //     count:count,
+        //   }}
+        AddtoCart: (state,action) => {
+
+
+            let val = false;
+            state.value.items.filter((k)=>{
+                if(k.id==action.payload.foodItem.id){
+                    console.log("currentprice"+k.price+"                "+"recPrice:"+action.payload.foodItem.price);
+                    
+                    val = true;
+                    k.total += action.payload.foodItem.total;
+                    k.count +=action.payload.foodItem.count;
+                    state.value.total += action.payload.foodItem.total;
+                    console.log("Aldready aded"+JSON.stringify(k));
+                }
+            });
+            
+            
+            if(!val){
+                state.value.items.push(action.payload.foodItem);
+                console.log(JSON.stringify(action.payload.foodItem));
+                
+            }
+            console.log("length     :"+state.value.items.length);
+
+            
+        }
 
     }
 })
 
-export const {SignIn,SignOut } = cartSlice.actions;
+export const {SignIn,SignOut,AddtoCart } = cartSlice.actions;
 
 export default cartSlice.reducer;

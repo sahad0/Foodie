@@ -11,33 +11,38 @@ export default function CarousalDiscounts() {
 
   const {width,height} = Dimensions.get("screen");
     const val = [
-      {
-        id:6,
-        url:require("../../../assets/images/Sushi/6.png")},
       
       
         {
             id:1,
-            url:require("../../../assets/images/Sushi/7.png")
+            url:require("../../../assets/images/Sushi/1.png")
         },
         {
           id:2,
-          url:require("../../../assets/images/Sushi/4.png")
+          url:require("../../../assets/images/Sushi/2.png")
   
-      },
-        
-        
-        
-        {
-          id:5,
-          url:require("../../../assets/images/Sushi/5.png")
-
         },
         {
-          id:4,
-          url:require("../../../assets/images/Sushi/1.png")
-  
+          id:3,
+          url:require("../../../assets/images/Sushi/3.png")
       },
+      {
+        id:4,
+        url:require("../../../assets/images/Sushi/4.png")
+
+      },
+      {
+        id:5,
+        url:require("../../../assets/images/Sushi/5.png")
+    },
+    {
+      id:6,
+      url:require("../../../assets/images/Sushi/6.png")
+
+    },
+        
+        
+        
      
 
        
@@ -62,9 +67,11 @@ export default function CarousalDiscounts() {
 
 
     const renderItem = ({ item }) => (
-      <View style={{height:height*0.25,width:width,borderRadius:25,alignItems:"center",position:"relative",top:0}}>
-        <Image source={item.url} style={{height:height*0.2,width:width*0.85,borderRadius:15,margin:height*0.01,}} resizeMode={"contain"}  
+      <View style={{height:height*0.28,width:width,alignItems:"center",position:"relative",top:0,}}>
+        <View style={{elevation:10,borderColor:"black",borderRadius:25,marginTop:height*0.018}}>
+        <Image source={item.url} style={{height:height*0.25,width:width*0.85,borderRadius:15,padding:height*0.01,}} resizeMode={"contain"}  
         />
+        </View>
       </View>
     )
     
@@ -80,7 +87,7 @@ export default function CarousalDiscounts() {
       bounces={false} horizontal pagingEnabled data={[...val]} renderItem={renderItem} showsHorizontalScrollIndicator={false} initialNumToRender={4} 
         
       />
-      <View style={{display:"flex",flexDirection:"row",justifyContent:"center"}}>
+      <View style={{display:"flex",flexDirection:"row",justifyContent:"center",margin:height*0.03}}>
       <Indicator  />
       </View>
       <View style={{alignItems:"center",}}>

@@ -4,6 +4,7 @@ import Header from '../Components/HeaderComponents/Home/Header'
 
 import BottomItems from '../Components/BodyComponents/Home/BottomItems'
 import { View } from 'react-native'
+import FOoter from '../Components/FooterComponent/Home/FOoter'
 
 export default function HomeV1_0({navigation}) {
   return (
@@ -14,6 +15,7 @@ export default function HomeV1_0({navigation}) {
     <View style={{flexGrow:1}}>
         <BottomItems navigation={navigation} />
     </View>
+    <FOoter/>
    
    </SafeAreaView>
   )
