@@ -8,49 +8,49 @@ export default function ListItems({navigation}) {
           {
             id:6,
             name:"Udon",
-            img_url:require("../../../assets/images/test/6.png"),
+            img_url:require("../../../assets/images/List/6.png"),
             img_url1:require("../../../assets/images/Catalog/udon2.png")
         },
             {
               id:7,
               name:"Udon",
-              img_url:require("../../../assets/images/test/7.png"),
+              img_url:require("../../../assets/images/List/7.png"),
               img_url1:require("../../../assets/images/Catalog/udon2.png")
           },
           {
             id:8,
             name:"Udon",
-            img_url:require("../../../assets/images/test/8.png"),
+            img_url:require("../../../assets/images/List/8.png"),
             img_url1:require("../../../assets/images/Catalog/udon2.png")
         },
         {
             id:1,
             name:"Oden",
-            img_url:require("../../../assets/images/test/1.png"),
+            img_url:require("../../../assets/images/List/1.png"),
             img_url1:require("../../../assets/images/Catalog/oden2.png")
         },
             {
             id:2,
             name:"Onigiri",
-            img_url:require("../../../assets/images/test/2.png"),
+            img_url:require("../../../assets/images/List/2.png"),
             img_url1:require("../../../assets/images/Catalog/onigiri2.png")
         },
         {
           id:3,
           name:"Ramen",
-          img_url:require("../../../assets/images/test/3.png"),
+          img_url:require("../../../assets/images/List/3.png"),
           img_url1:require("../../../assets/images/Catalog/ramen2.png")
       },
       {
           id:4,
           name:"Sake",
-          img_url:require("../../../assets/images/test/4.png"),
+          img_url:require("../../../assets/images/List/4.png"),
           img_url1:require("../../../assets/images/Catalog/sake2.png")
       },
       {
         id:5,
         name:"Sushi",
-        img_url:require("../../../assets/images/test/5.png"),
+        img_url:require("../../../assets/images/List/5.png"),
         img_url1:require("../../../assets/images/Catalog/sushi2.png")
     },
       
@@ -58,7 +58,7 @@ export default function ListItems({navigation}) {
   {
     id:9,
     name:"Udon",
-    img_url:require("../../../assets/images/test/9.png"),
+    img_url:require("../../../assets/images/List/9.png"),
     img_url1:require("../../../assets/images/Catalog/udon2.png")
 },
         
