@@ -3,7 +3,7 @@ import React from 'react'
 import { AddtoCart } from '../../../features/cart'
 import { useDispatch } from 'react-redux'
 
-export default function ({width,height,total,heading,id,price}) {
+export default function ({width,height,total,heading,id,price,img_url}) {
 
   const dispatch = useDispatch();
 
@@ -16,6 +16,7 @@ export default function ({width,height,total,heading,id,price}) {
         price:price,
         total:total,
         count:count,
+        img_url:img_url,
       }}
     ))
   }

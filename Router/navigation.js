@@ -10,6 +10,7 @@ import Login from '../screens/Login';
 import HomeV1_0 from '../screens/HomeV1_0'
 import ItmScreen from '../screens/ItmScreen'
 import CatView from '../screens/CatView'
+import CartScreen from '../screens/CartScreen';
 
 const Stack = createSharedElementStackNavigator();
 enableScreens();
@@ -34,22 +35,31 @@ const RootNavigation = () => {
             
             <NavigationContainer>
                 <StatusBar  hidden/>
-                <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName={auth ? 'Home':'Login'}>
-                   {auth ? 
-                   <>
-                        <Stack.Screen name="Home" component={HomeV1_0} />
-                        <Stack.Screen name="Cat" component={CatView} />
-                        <Stack.Screen name="Item" component={ItmScreen} />
-                   </>
-                    :
-                    <>
+                {auth ? 
+                <>
+                    <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName={'Home'}>
+                    
+                    <Stack.Screen name="Home" component={HomeV1_0} />
+
+                    <Stack.Screen name="Cart" component={CartScreen} />
+
+
+                    <Stack.Screen name="Cat" component={CatView} />
+                    <Stack.Screen name="Item" component={ItmScreen} />
+                
+                    </Stack.Navigator>     
+                </>
+                :
+                <>
+                    <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName={ 'Login'}>
                         <Stack.Screen name="Login" component={Login} />
-                        
-                    </>
-                    }
-                   
-                   
-                </Stack.Navigator>
+                    </Stack.Navigator>   
+                </>
+                }
+
+                
+
+                
             </NavigationContainer>
     )
 }

@@ -10,7 +10,7 @@ export default function HomeV1_0({navigation}) {
   return (
    <SafeAreaView style={{display:"flex",}}>
     <View style={{flexGrow:1}}>
-      <Header />
+      <Header navigation={navigation}/>
     </View>
     <View style={{flexGrow:1}}>
         <BottomItems navigation={navigation} />

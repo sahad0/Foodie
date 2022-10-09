@@ -46,7 +46,9 @@ const cartSlice = createSlice({
             
             
             if(!val){
-                state.value.items.push(action.payload.foodItem);
+                state.value.items.unshift(action.payload.foodItem);
+                state.value.total += action.payload.foodItem.total;
+
                 console.log(JSON.stringify(action.payload.foodItem));
                 
             }

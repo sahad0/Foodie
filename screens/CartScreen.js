@@ -1,10 +1,27 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import { View, Text, Dimensions, Image, SafeAreaView } from 'react-native'
+import React, { useState } from 'react'
+import CartHeader from '../Components/HeaderComponents/Cart/CartHeader'
+import { useSelector } from 'react-redux';
+import CartList from '../Components/BodyComponents/Cart/CartList';
+import CartFooter from '../Components/FooterComponent/Cart/CartFooter';
 
-export default function CartScreen() {
+export default function CartScreen({navigation}) {
+
+
+  const {height,width} = Dimensions.get("screen");
+  const [cussineType,setcussineType] = useState("Delivery");
+
+
   return (
-    <View>
-      <Text>CartScreen</Text>
-    </View>
+    <SafeAreaView style={{display:"flex",flex:1,backgroundColor:"transparent"}}>
+    <CartHeader height={height} width={width} navigation={navigation} cussineType={cussineType} setcussineType={setcussineType} />
+
+    <CartList  setcussineType={setcussineType} height={height} width={width}  />
+    
+    <CartFooter  height={height} width={width} />
+    
+    
+    </SafeAreaView>
+
   )
 }

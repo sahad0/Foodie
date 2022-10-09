@@ -4,12 +4,12 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 import GetLocation from 'react-native-get-location';
 import Geocoder from 'react-native-geocoding';
 
-export default function Header() {
+export default function Header({navigation}) {
 
 
 
     const {width,height} = Dimensions.get("screen");
-    const [location,setLocation] = useState('Coimbatore');
+    const [location,setLocation] = useState('New York');
     // const [location,setLocation] = useState({lat:null,long:null});
 
     // useEffect(()=>{
@@ -54,7 +54,7 @@ export default function Header() {
 
 
   return (
-    <View style={{display:"flex",flexDirection:"row",justifyContent:"space-between",position:"relative",top:0,backgroundColor:"white",}}>
+    <View style={{display:"flex",flexDirection:"row",justifyContent:"space-between",position:"relative",top:0,backgroundColor:"#fdfdfd",}}>
         <TouchableOpacity style={{
             margin:width*0.07,
             borderRadius:40,
@@ -83,7 +83,7 @@ export default function Header() {
             shadowRadius: 10,
             elevation: 3,
             backgroundColor: 'white'
-        }}>
+        }} onPress={()=>navigation.navigate("Cart")}>
         <Ionicons color={"black"} style={{padding:width*0.04, }} name='albums-outline' size={25}/>
         </TouchableOpacity>
     </View>

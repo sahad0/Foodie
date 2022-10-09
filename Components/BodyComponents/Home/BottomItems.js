@@ -1,6 +1,8 @@
 import { View, Text, Dimensions, Image, ScrollView, TouchableOpacity, FlatList } from 'react-native'
 import React from 'react'
 import Icon from "react-native-vector-icons/Fontisto";
+import Icons from "react-native-vector-icons/MaterialCommunityIcons";
+
 import CarousalDiscounts from './CarousalDiscounts';
 import ListItems from "./ListItems";
 import { SharedElement } from 'react-navigation-shared-element';
@@ -53,13 +55,14 @@ export default function BottomItems({navigation}) {
             <SharedElement  id={`item.${item.id}.img`} >
                 <Image source={item.img_url}  style={{height:width*0.4,width:width*0.4,position:"relative",top:height*0.01}} resizeMode={"contain"}/>
             </SharedElement>
-                <Text style={{fontFamily:"Anton",fontSize:width*0.05,margin:height*0.02,color:"black"}}>{item.heading}</Text>
+                <Text style={{fontFamily:"Anton",fontSize:width*0.05,margin:height*0.02,color:"#595959"}}>{item.heading}</Text>
             <Text style={{alignSelf:"center",color:"gray"}}>Blend on Spices</Text>
-            <View style={{display:"flex",flexDirection:"row",justifyContent:"space-between",margin:width*0.04,marginTop:height*0.03}}>
+            <View style={{display:"flex",flexDirection:"row",justifyContent:"space-between",margin:width*0.04,marginTop:height*0.03,alignItems:"center"}}>
                 <Text style={{color:"gray"}}>{"$"+item.price}</Text>
-                <TouchableOpacity >
+                <TouchableOpacity style={{borderColor:"lightgray",borderRadius:25,borderWidth:0.4}} >
+                        <Icons name='heart' size={height*0.03} color={"#FF6EB4"} style={{padding:10}} />
 
-                <Icon name="opencart" size={20}  style={{color:"gray",backgroundColor:"white"}}/>
+                {/* <Icon name="opencart" size={20}  style={{color:"gray",backgroundColor:"white"}}/> */}
                 </TouchableOpacity>
                
             </View>
