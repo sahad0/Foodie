@@ -67,7 +67,7 @@ export default function CartList({height,width,}) {
 
 
   return (
-    <View style={{flexGrow:2,height:height*0.35,marginTop:height*0.1}}>
+    <View style={{flexGrow:2,height:height*0.35,marginTop:height*0.1,}}>
         <FlatList data={items} renderItem={renderItems} />
        
       

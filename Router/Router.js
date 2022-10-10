@@ -11,6 +11,7 @@ import HomeV1_0 from '../screens/HomeV1_0'
 import ItmScreen from '../screens/ItmScreen'
 import CatView from '../screens/CatView'
 import CartScreen from '../screens/CartScreen';
+import BottomView from '../screens/BottomView';
 
 const Stack = createSharedElementStackNavigator();
 enableScreens();

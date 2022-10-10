@@ -1,23 +1,32 @@
-import { View, Text, TouchableOpacity, TextInput, Image } from 'react-native'
+import { View, Text, TouchableOpacity, TextInput, Image, StyleSheet } from 'react-native'
 import React from 'react'
 import Icons from "react-native-vector-icons/Fontisto";
 import { Divider } from 'react-native-paper';
 import { useSelector } from 'react-redux';
-import * as Animatable from 'react-native-animatable';
+// import * as Animatable from 'react-native-animatable';
 
 
 export default function CartFooter({height,width}) {
 
-    const animation = {
-        0: { opacity: 0.9},
-        0.5 : {opacity : 0.4},
-        1: { opacity: 0.9 }
+  
+const {total} = useSelector((state)=>state.cart.value);
+
+const styles = StyleSheet.create({
+    paymenView:{
+        borderWidth:1,
+        borderColor: "lightgray",
+        borderRadius:80,
+        marginLeft:height*0.01
+    },
+    payamentBtn:{
+        height:50,
+        width:50,
+        paddingVertical:height*0.03,
+        margin:20
     }
+  })
 
 
-
-
-  const {total} = useSelector((state)=>state.cart.value);
   return (
     <View style={{flexGrow:3,backgroundColor:"white",padding:height*0.03,borderTopLeftRadius:height*0.08,elevation:4,borderColor:"black",height:height*0.35}}>
         <View style={{flexDirection:"row",alignItems:"center",borderBottomColor:"black"}}>
@@ -48,16 +57,21 @@ export default function CartFooter({height,width}) {
                 <Text style={{color:"black",}}>{"$"+total}</Text>
             </View>
         </View>
-        <View style={{margin:10,padding:8,flexDirection:"row",justifyContent:"space-between",borderRadius:50,borderColor:"lightgray",borderWidth:1.5,borderRadius:80,alignItems:"center"}}>
-
-            <View style={{borderRadius:80,borderColor:"black",elevation:3,alignItems:"center"}}>
-                <Image source={require("../../../assets/images/btn1.png")}resizeMode={"contain"} style={{height:height*0.074,width:height*0.074,borderRadius:80}}/>
-
-            </View>
-            <Animatable.Text  animation={animation} duration={2500} iterationCount={"infinite"} style={{fontSize:25,fontFamily:"Reg",marginRight:height*0.02,color:"gray"}}>Slide to Order !</Animatable.Text>
-           
+        
+        <View style={{flexDirection:"row",marginTop:height*0.05,justifyContent:"space-between"}}>
+            <TouchableOpacity style={styles.paymenView}>
+                <Image source={require("../../../assets/images/gpay.png")} style={styles.payamentBtn} resizeMode={"contain"}/>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.paymenView}>
+                <Image source={require("../../../assets/images/PAYPAL.png")} style={styles.payamentBtn} resizeMode={"contain"}/>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.paymenView}>
+                <Image source={require("../../../assets/images/apple.png")} style={styles.payamentBtn} resizeMode={"contain"}/>
+            </TouchableOpacity>
         </View>
 
     </View>
   )
   }
+
+

@@ -2,7 +2,7 @@ import { GoogleSignin } from '@react-native-google-signin/google-signin';
 import { configureStore } from '@reduxjs/toolkit';
 import React, { useEffect } from 'react';
 import SplashScreen from 'react-native-splash-screen';
-import RootNavigation from './Router/navigation';
+import RootNavigation from './Router/Router';
 import cartReducer from "./features/cart";
 import { Provider } from 'react-redux';
 import AsyncStorage from '@react-native-async-storage/async-storage';
