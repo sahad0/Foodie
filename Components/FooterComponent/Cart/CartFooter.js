@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
         borderWidth:1,
         borderColor: "lightgray",
         borderRadius:80,
-        marginLeft:height*0.01
+        marginLeft:height*0.01,
     },
     payamentBtn:{
         height:50,

@@ -1,13 +1,14 @@
 import { View, Text, Image, FlatList, TouchableOpacity } from 'react-native'
 import React from 'react'
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Icons from "react-native-vector-icons/MaterialCommunityIcons"
+import { IncreaseItemsfromCart, ReduceItemsfromCart, RemovefromCart } from '../../../features/cart';
 
 
-export default function CartList({height,width,}) {
+export default function CartList({height,width}) {
 
   const {items} = useSelector((state)=>state.cart.value);
-  console.log(items)
+  const dispatch = useDispatch();
 
     const renderItems = ({item,index})=>(
         <View style={[{backgroundColor:"white",margin:height*0.01,borderRadius:height*0.02,flexDirection:"row",elevation:5,},index===0? {marginTop:height*0.08} : {marginTop:height*0.01} ]}>
@@ -22,10 +23,11 @@ export default function CartList({height,width,}) {
 
                 <View style={{flexDirection:"row",justifyContent:"space-between",alignItems:"center",marginTop:height*0.01}}>
                     <Text style={{fontFamily:"Anton",fontSize:height*0.025,margin:height*0.010,color:"#595959"}}>{item.heading}</Text>
-                    <TouchableOpacity style={{marginTop:height*0.01,}}>
-                    <Icons name='close-thick' color={"lightblue"} size={height*0.02} style={{marginRight:"5%",}} />
-
+                    
+                    <TouchableOpacity onPress={()=>dispatch(RemovefromCart({id:item.id,total:item.total}))} style={{marginTop:height*0.01,}}>
+                        <Icons name='close-thick' color={"lightblue"} size={height*0.02} style={{marginRight:"5%",}} />
                     </TouchableOpacity>
+                
                 </View>
 
                 <View style={{marginLeft:height*0.010,flexDirection:"row",alignItems:"center"}}>
@@ -50,13 +52,15 @@ export default function CartList({height,width,}) {
                     </View>
                     
                     <View style={{flexDirection:"row",margin:height*0.014,marginLeft:height*0.06}}>
-                        <TouchableOpacity style={{borderColor:"lightgray",borderWidth:1,borderStyle:"solid",alignItems:"center",justifyContent:"center",borderRadius:5}}>
-                        <Text style={{fontSize:18,borderColor:"lightgray",paddingLeft:8,paddingRight:8,}}>-</Text>
-
+                        
+                        <TouchableOpacity onPress={()=>dispatch(ReduceItemsfromCart({id:item.id,price:item.price}))} style={{borderColor:"lightgray",borderWidth:1,borderStyle:"solid",alignItems:"center",justifyContent:"center",borderRadius:5}}>
+                            <Text style={{fontSize:18,borderColor:"lightgray",paddingLeft:8,paddingRight:8,}}>-</Text>
                         </TouchableOpacity>
+                        
                         <Text style={{marginLeft:18,fontSize:18,color:"black"}}>{item.count}</Text>
-                        <Text style={{marginLeft:18,fontSize:18,color:"black"}}>+</Text>
-
+                        <TouchableOpacity onPress={()=>dispatch(IncreaseItemsfromCart({id:item.id,price:item.price}))}>
+                            <Text style={{marginLeft:18,fontSize:18,color:"black"}}>+</Text>
+                        </TouchableOpacity>
                     </View>
                 </View>
             </View>

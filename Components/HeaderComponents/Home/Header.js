@@ -54,7 +54,7 @@ export default function Header({navigation}) {
 
 
   return (
-    <View style={{display:"flex",flexDirection:"row",justifyContent:"space-between",position:"relative",top:0,backgroundColor:"#fdfdfd",}}>
+    <View style={{display:"flex",flexDirection:"row",justifyContent:"space-between",position:"relative",top:0,backgroundColor:"white",elevation:2}}>
         <TouchableOpacity style={{
             margin:width*0.07,
             borderRadius:40,

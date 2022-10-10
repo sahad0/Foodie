@@ -14,6 +14,7 @@ const cartSlice = createSlice({
                 state.value.auth = true;
             }
         },
+
         SignOut: (state,action) => {
             if(state.value.user!==null){
                 state.value.user = null;
@@ -21,6 +22,8 @@ const cartSlice = createSlice({
             }
 
         },
+        //Cart Functionalities
+
         // {foodItem: {
         //     id:id,
         //     heading:heading,
@@ -29,18 +32,13 @@ const cartSlice = createSlice({
         //     count:count,
         //   }}
         AddtoCart: (state,action) => {
-
-
             let val = false;
             state.value.items.filter((k)=>{
                 if(k.id==action.payload.foodItem.id){
-                    console.log("currentprice"+k.price+"                "+"recPrice:"+action.payload.foodItem.price);
-                    
                     val = true;
                     k.total += action.payload.foodItem.total;
                     k.count +=action.payload.foodItem.count;
                     state.value.total += action.payload.foodItem.total;
-                    console.log("Aldready aded"+JSON.stringify(k));
                 }
             });
             
@@ -48,18 +46,51 @@ const cartSlice = createSlice({
             if(!val){
                 state.value.items.unshift(action.payload.foodItem);
                 state.value.total += action.payload.foodItem.total;
-
-                console.log(JSON.stringify(action.payload.foodItem));
-                
             }
-            console.log("length     :"+state.value.items.length);
 
             
+        },
+
+        RemovefromCart : (state,action)=>{
+            state.value.items = state.value.items.filter((k)=>{
+                return k.id!==action.payload.id;
+            });
+            state.value.total -= action.payload.total;
+        },
+
+        ReduceItemsfromCart : (state,action)=>{
+            state.value.items = state.value.items.filter((k,index)=>{
+                if(k.id === action.payload.id){
+                    if(k.count===1){
+                        state.value.items.splice(index, 1); 
+                        state.value.total -= action.payload.price;
+                        return;
+                    }
+                    k.count-=1;
+                    k.total-= action.payload.price;
+                    state.value.total -= action.payload.price;
+
+                }
+                return k;
+            });
+        },
+
+        IncreaseItemsfromCart : (state,action)=>{
+            state.value.items = state.value.items.filter((k,index)=>{
+                if(k.id === action.payload.id){
+                    
+                    k.count+=1;
+                    k.total+=action.payload.price;
+                    state.value.total += action.payload.price;
+
+                }
+                return k;
+            });
         }
 
     }
 })
 
-export const {SignIn,SignOut,AddtoCart } = cartSlice.actions;
+export const {SignIn,SignOut,AddtoCart,RemovefromCart,ReduceItemsfromCart,IncreaseItemsfromCart} = cartSlice.actions;
 
 export default cartSlice.reducer;
