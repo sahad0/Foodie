@@ -3,10 +3,11 @@ import React from 'react'
 import Icons from "react-native-vector-icons/Fontisto";
 import { Divider } from 'react-native-paper';
 import { useSelector } from 'react-redux';
+import { useRef } from 'react';
 // import * as Animatable from 'react-native-animatable';
 
 
-export default function CartFooter({height,width}) {
+export default function CartFooter({height,width,setResetKeyboardView}) {
 
   
 const {total} = useSelector((state)=>state.cart.value);
@@ -34,7 +35,7 @@ const styles = StyleSheet.create({
                 <Icons name='ticket' color={"#595959"} size={30}  />
             </View>
             <View style={{flex:4}}>
-               <TextInput placeholder='Promo Code' style={{marginRight:height*0.02}} />
+               <TextInput onFocus={()=>{setResetKeyboardView((keyView)=>keyView ? false:true)}} placeholder='Promo Code' style={{marginRight:height*0.02}} />
             </View>
             
             <TouchableOpacity style={{flex:2,backgroundColor:"#2E2E2E",alignItems:"center",paddingHorizontal:height*0.02,paddingVertical:height*0.02,borderRadius:height*0.01}}>

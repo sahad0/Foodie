@@ -31,13 +31,10 @@ export default function CarousalDiscounts() {
         url:require("../../../assets/images/Sushi/4.png")
 
       },
-      {
-        id:5,
-        url:require("../../../assets/images/Sushi/5.png")
-    },
+      
     {
-      id:6,
-      url:require("../../../assets/images/Sushi/6.png")
+      id:5,
+      url:require("../../../assets/images/Sushi/boo.gif")
 
     },
         

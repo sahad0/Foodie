@@ -10,6 +10,7 @@ export default function CartScreen({navigation}) {
 
   const {height,width} = Dimensions.get("screen");
   const [cussineType,setcussineType] = useState("Delivery");
+  const [resetKeyboardView,setResetKeyboardView] = useState(true);
 
 
   return (
@@ -19,8 +20,8 @@ export default function CartScreen({navigation}) {
     <CartList  setcussineType={setcussineType} height={height} width={width}  />
     
     
-    <BottomSheet height={height} width={width}>
-      <CartFooter height={height} width={width}/>
+    <BottomSheet height={height} width={width} resetKeyboardView={resetKeyboardView}>
+      <CartFooter height={height} width={width} setResetKeyboardView={setResetKeyboardView}/>
     </BottomSheet>
     
     </SafeAreaView>

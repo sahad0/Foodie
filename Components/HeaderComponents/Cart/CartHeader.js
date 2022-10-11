@@ -12,7 +12,7 @@ export default function CartHeader({navigation,width,height,cussineType,setcussi
 
     return (
        
-       <View style={{padding:width*0.1,flexDirection:"row",justifyContent:"space-between",display:"flex",backgroundColor:"white",elevation:1,borderBottomRightRadius:height*0.08,height:height*0.165,position:"absolute",marginTop:0,zIndex:999999,width:width,flexGrow:1}}>
+       <View style={{padding:width*0.1,flexDirection:"row",justifyContent:"space-between",display:"flex",backgroundColor:"white",elevation:5,borderBottomRightRadius:height*0.08,height:height*0.165,position:"absolute",marginTop:0,zIndex:999999,width:width,flexGrow:1}}>
        <TouchableOpacity onPress={()=>{navigation.goBack()}} style={{backgroundColor:"white",elevation:5,borderRadius:width*0.5}}>
            <Icons name='arrow-back' size={30}  color={"black"} style={{padding:width*0.03}}/>
           

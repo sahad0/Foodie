@@ -7,7 +7,7 @@ import Animated, { useAnimatedStyle, useSharedValue, withSpring } from "react-na
 
 export default function BottomSheet({...Children}) {
 
-    const {children,height,width} = Children;
+    const {children,height,width,resetKeyboardView} = Children;
 
     const Scrollto = (h)=>{
         translateY.value = withSpring(h,{damping:20,},);
@@ -17,8 +17,8 @@ export default function BottomSheet({...Children}) {
     const prevVal = useSharedValue({y:0});
 
     useEffect(()=>{
-        Scrollto(-height/3.2)
-    },[]);
+        Scrollto(-height/2)
+    },[resetKeyboardView]);
 
     const gesture = Gesture.Pan()
     .onStart(()=>{prevVal.value = {y:translateY.value}})
