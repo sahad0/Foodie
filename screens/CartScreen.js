@@ -1,7 +1,6 @@
 import { View, Text, Dimensions, Image, SafeAreaView } from 'react-native'
 import React, { useState } from 'react'
 import CartHeader from '../Components/HeaderComponents/Cart/CartHeader'
-import { useSelector } from 'react-redux';
 import CartList from '../Components/BodyComponents/Cart/CartList';
 import CartFooter from '../Components/FooterComponent/Cart/CartFooter';
 import BottomSheet from '../Components/BottomSheet/BottomSheet';
@@ -20,7 +19,9 @@ export default function CartScreen({navigation}) {
     <CartList  setcussineType={setcussineType} height={height} width={width}  />
     
     
-    <BottomSheet height={height} width={width} />
+    <BottomSheet height={height} width={width}>
+      <CartFooter height={height} width={width}/>
+    </BottomSheet>
     
     </SafeAreaView>
 
