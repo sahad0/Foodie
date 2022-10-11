@@ -7,20 +7,15 @@ import Animated, { useAnimatedStyle, useSharedValue, withSpring } from "react-na
 
 export default function BottomSheet({...Children}) {
 
-    console.log(Children);
     const {children,height,width} = Children;
 
-    
-
     const Scrollto = (h)=>{
-        "worklet"
         translateY.value = withSpring(h,{damping:20,},);
-
     }
 
-    console.log(Children);
     const translateY = useSharedValue(0);
     const prevVal = useSharedValue({y:0});
+
     useEffect(()=>{
         Scrollto(-height/3.2)
     },[]);
