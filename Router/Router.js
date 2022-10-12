@@ -9,9 +9,8 @@ import { SignIn, SignOut } from '../features/cart';
 import Login from '../screens/Login';
 import HomeV1_0 from '../screens/HomeV1_0'
 import ItmScreen from '../screens/ItmScreen'
-import CatView from '../screens/CatView'
 import CartScreen from '../screens/CartScreen';
-import BottomView from '../screens/BottomView';
+import MenuView from '../screens/MenuView';
 
 const Stack = createSharedElementStackNavigator();
 enableScreens();
@@ -45,7 +44,7 @@ const RootNavigation = () => {
                     <Stack.Screen name="Cart" component={CartScreen} />
 
 
-                    <Stack.Screen name="Cat" component={CatView} />
+                    <Stack.Screen name="Cat" component={MenuView} />
                     <Stack.Screen name="Item" component={ItmScreen} />
                 
                     </Stack.Navigator>     

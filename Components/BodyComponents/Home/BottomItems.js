@@ -4,8 +4,9 @@ import Icon from "react-native-vector-icons/Fontisto";
 import Icons from "react-native-vector-icons/MaterialCommunityIcons";
 
 import CarousalDiscounts from './CarousalDiscounts';
-import ListItems from "./ListItems";
+import ListItems from "./MenuItems";
 import { SharedElement } from 'react-navigation-shared-element';
+import MenuItems from './MenuItems';
 
 export default function BottomItems({navigation}) {
     const{width,height} = Dimensions.get("screen");
@@ -79,7 +80,7 @@ export default function BottomItems({navigation}) {
         ()=>
         <>
             <CarousalDiscounts />
-            <ListItems navigation={navigation}/>
+            <MenuItems navigation={navigation}/>
         </>
         }
         

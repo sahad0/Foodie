@@ -1,7 +1,8 @@
 import { View, Text, Image, FlatList, Dimensions, TouchableOpacity } from 'react-native'
 import React from 'react'
+import MenuComponent from '../../../Components1/Home/MenuComponent';
 
-export default function ListItems({navigation}) {
+export default function MenuItems({navigation}) {
     const {width,height} = Dimensions.get("screen");
 
     const data = [
@@ -76,12 +77,7 @@ export default function ListItems({navigation}) {
 
   return (
     <View style={{margin:width*0.03,backgroundColor:"white",position:"relative",top:0}}>
-      <FlatList  data={[...data]}
-      
-        showsHorizontalScrollIndicator={false}
-      horizontal
-      renderItem={renderItem}
-      />
+     <MenuComponent data={data} renderItem={renderItem} />
     <Text style={{fontFamily:"Reg",fontSize:height*0.03,backgroundColor:"white",padding:height*0.02,color:"gray"}}>Picks for you!</Text>
 
     </View>

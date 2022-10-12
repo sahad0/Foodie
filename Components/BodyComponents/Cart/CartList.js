@@ -3,9 +3,10 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import Icons from "react-native-vector-icons/MaterialCommunityIcons"
 import { IncreaseItemsfromCart, ReduceItemsfromCart, RemovefromCart } from '../../../features/cart';
+import { SharedElement } from 'react-navigation-shared-element';
 
 
-export default function CartList({height,width}) {
+export default function CartList({height,width,navigation}) {
 
   const {items} = useSelector((state)=>state.cart.value);
   const dispatch = useDispatch();
@@ -13,11 +14,12 @@ export default function CartList({height,width}) {
   
 
     const renderItems = ({item,index})=>(
-        <View style={[{backgroundColor:"white",margin:height*0.01,borderRadius:height*0.02,flexDirection:"row",elevation:5,},index===0? {marginTop:height*0.08} : {marginTop:height*0.01},index===len-1 ? {marginBottom:height*0.28} :null]}>
+        <TouchableOpacity activeOpacity={1} onPress={()=>navigation.navigate("Item",{item:item})} style={[{backgroundColor:"white",margin:height*0.01,borderRadius:height*0.02,flexDirection:"row",elevation:5,},index===0? {marginTop:height*0.08} : {marginTop:height*0.01},index===len-1 ? {marginBottom:height*0.28} :null]}>
             <View style={{padding:22,}}>
                 <View style={{margin:5,backgroundColor:"#FCFCFC",borderRadius:height*0.02,}}>
-                    
+                <SharedElement id={`item.${item.id}.img`}>
                     <Image source={item.img_url} resizeMode={"contain"} style={{height:height*0.125,width:height*0.125,padding:5,}} />
+                </SharedElement>
                 </View>
             </View>
 
@@ -68,7 +70,7 @@ export default function CartList({height,width}) {
                 </View>
             </View>
 
-       </View>
+       </TouchableOpacity>
     )
 
 
