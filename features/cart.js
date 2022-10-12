@@ -55,7 +55,7 @@ const cartSlice = createSlice({
 
 
         RemovefromCart : (state,action)=>{
-            state.value.items.filter((k)=>{
+            state.value.items=state.value.items.filter((k)=>{
                 return k.id!==action.payload.id;
             });
             state.value.total -= action.payload.total;
