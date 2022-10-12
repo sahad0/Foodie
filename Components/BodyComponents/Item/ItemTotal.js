@@ -1,11 +1,18 @@
-import { View, Text, TouchableOpacity } from 'react-native'
+import { View, Text, TouchableOpacity, Image } from 'react-native'
 import React from 'react'
 import { AddtoCart } from '../../../features/cart'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 
-export default function ({width,height,total,heading,id,price,img_url}) {
+export default function ({width,height,total,heading,id,price,img_url,navigation}) {
 
   const dispatch = useDispatch();
+  const {items} = useSelector((state)=>state.cart.value);
+  
+  const findElement = (k)=>{
+    return k.id === id;
+  }
+  const element = [...items].find(findElement);
+  
 
   const Add = ()=>{
     const count = total/price;
@@ -36,12 +43,24 @@ export default function ({width,height,total,heading,id,price,img_url}) {
           </View>
         </View>
 
-        <View style={{paddingTop:width*0.06,padding:width*0.06,alignItems:"center"}}>
+        <View style={{paddingTop:width*0.06,padding:width*0.06,alignItems:"center",}}>
+            {element!==undefined ? 
+            <>
+             <TouchableOpacity onPress={Add} style={{backgroundColor:"white",padding:width*0.03,paddingLeft:width*0.1,paddingRight:width*0.08,borderRadius:width*0.2,flexDirection:"row",alignItems:"center"}}>
+                  <Image source={require("../../../assets/images/tick.png")} style={{height:40,width:40,alignSelf:"center"}} resizeMode={"contain"} />
+                  <Text style={{marginLeft:height*0.009}}>Added</Text>
+            </TouchableOpacity>
+            </>
+            :
+            <>
             <TouchableOpacity onPress={Add} style={{backgroundColor:"#23272A",padding:width*0.03,paddingLeft:width*0.1,paddingRight:width*0.08,borderRadius:width*0.2}}>
                   <Text style={{color:"white",fontFamily:"Reg",fontSize:width*0.05}}>Add to Cart</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={{padding:width*0.015,}}>
-                  <Text style={{fontStyle:"italic",textDecorationLine:"underline",color:"gray",}}> Place Order </Text>
+            </>}
+            
+           
+            <TouchableOpacity style={{padding:width*0.008,}} onPress={()=>{navigation.navigate("Cart")}}>
+                  <Text style={{fontStyle:"italic",textDecorationLine:"underline",color:"gray",}}>View Cart </Text>
             </TouchableOpacity>
         </View>
       </View>

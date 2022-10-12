@@ -30,7 +30,7 @@ export default function ItmScreen({route,navigation}) {
 
       <ItemAbout width={width} />
       
-      <ItemTotal width={width} height={height} total={total} heading={item.heading} id={item.id} price={item.price} img_url={item.img_url} />
+      <ItemTotal navigation={navigation} width={width} height={height} total={total} heading={item.heading} id={item.id} price={item.price} img_url={item.img_url} />
 
     </SafeAreaView>
   )
