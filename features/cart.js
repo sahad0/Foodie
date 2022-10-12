@@ -51,34 +51,46 @@ const cartSlice = createSlice({
             
         },
 
+
+
+
         RemovefromCart : (state,action)=>{
-            state.value.items = state.value.items.filter((k)=>{
+            state.value.items.filter((k)=>{
                 return k.id!==action.payload.id;
             });
             state.value.total -= action.payload.total;
         },
 
+
+
+
         ReduceItemsfromCart : (state,action)=>{
-            state.value.items = state.value.items.filter((k,index)=>{
+
+            state.value.items.filter((k,index)=>{
                 if(k.id === action.payload.id){
                     if(k.count===1){
-                        state.value.items.splice(index, 1); 
+                        state.value.items.splice(index,1);
+                        k.total-= action.payload.price;
                         state.value.total -= action.payload.price;
-                        return;
                     }
-                    k.count-=1;
-                    k.total-= action.payload.price;
-                    state.value.total -= action.payload.price;
+
+                    else{
+
+                        k.count-=1;
+                        k.total-= action.payload.price;
+                        state.value.total -= action.payload.price;
+                    }
 
                 }
+
                 return k;
             });
         },
 
+
         IncreaseItemsfromCart : (state,action)=>{
-            state.value.items = state.value.items.filter((k,index)=>{
+            state.value.items.filter((k)=>{
                 if(k.id === action.payload.id){
-                    
                     k.count+=1;
                     k.total+=action.payload.price;
                     state.value.total += action.payload.price;

@@ -28,11 +28,11 @@ export default function App() {
     key: 'root',
     storage: AsyncStorage,
   }
-  const persistedReducer = persistReducer(persistConfig, cartReducer);
+  // const persistedReducer = persistReducer(persistConfig, cartReducer);
   
   const store = configureStore({
     reducer: {
-        cart: persistedReducer,
+        cart: cartReducer,
     },
     middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
@@ -40,15 +40,15 @@ export default function App() {
     }),
   });
 
-  const persistor = persistStore(store)
+  // const persistor = persistStore(store)
 
 
 
   return (
     <Provider store={store}>
-      <PersistGate loading={null} persistor={persistor}>
+      {/* <PersistGate loading={null} persistor={persistor}> */}
       <RootNavigation />
-      </PersistGate>
+      {/* </PersistGate> */}
     </Provider>
 
   )

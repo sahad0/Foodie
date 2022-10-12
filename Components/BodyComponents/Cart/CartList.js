@@ -16,6 +16,7 @@ export default function CartList({height,width}) {
         <View style={[{backgroundColor:"white",margin:height*0.01,borderRadius:height*0.02,flexDirection:"row",elevation:5,},index===0? {marginTop:height*0.08} : {marginTop:height*0.01},index===len-1 ? {marginBottom:height*0.28} :null]}>
             <View style={{padding:22,}}>
                 <View style={{margin:5,backgroundColor:"#FCFCFC",borderRadius:height*0.02,}}>
+                    
                     <Image source={item.img_url} resizeMode={"contain"} style={{height:height*0.125,width:height*0.125,padding:5,}} />
                 </View>
             </View>
@@ -49,19 +50,19 @@ export default function CartList({height,width}) {
                     <View style={{flexDirection:"row"}}>
                     <Text style={{marginLeft:height*0.014,marginTop:height*0.014,fontSize:height*0.015,color:"purple",fontStyle:"italic",marginLeft:height*0.018}}>$</Text>
 
-                    <Text style={{marginTop:height*0.014,fontSize:height*0.022,color:"purple",fontStyle:"italic"}}>{"$"+item.price}</Text>
+                    <Text style={{marginTop:height*0.014,fontSize:height*0.022,color:"purple",}}>{"$"+item.price}</Text>
 
                     </View>
                     
-                    <View style={{flexDirection:"row",margin:height*0.014,marginLeft:height*0.06}}>
+                    <View style={{flexDirection:"row",margin:height*0.014,marginLeft:height*0.06,alignItems:"center"}}>
                         
-                        <TouchableOpacity onPress={()=>dispatch(ReduceItemsfromCart({id:item.id,price:item.price}))} style={{borderColor:"lightgray",borderWidth:1,borderStyle:"solid",alignItems:"center",justifyContent:"center",borderRadius:5}}>
-                            <Text style={{fontSize:18,borderColor:"lightgray",paddingLeft:8,paddingRight:8,}}>-</Text>
+                        <TouchableOpacity onPress={()=>dispatch(ReduceItemsfromCart({id:item.id,price:item.price}))} style={{borderColor:"lightgray",borderWidth:1,borderStyle:"solid",borderRadius:5}}>
+                            <Text style={{fontSize:22,borderColor:"lightgray",paddingLeft:8,paddingRight:8,color:"gray"}}>-</Text>
                         </TouchableOpacity>
                         
                         <Text style={{marginLeft:18,fontSize:18,color:"black"}}>{item.count}</Text>
                         <TouchableOpacity onPress={()=>dispatch(IncreaseItemsfromCart({id:item.id,price:item.price}))}>
-                            <Text style={{marginLeft:18,fontSize:18,color:"black"}}>+</Text>
+                            <Text style={{marginLeft:18,fontSize:22,color:"black"}}>+</Text>
                         </TouchableOpacity>
                     </View>
                 </View>

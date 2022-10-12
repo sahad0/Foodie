@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
                 <Icons name='ticket' color={"#595959"} size={30}  />
             </View>
             <View style={{flex:4}}>
-               <TextInput onFocus={()=>{setResetKeyboardView((keyView)=>keyView ? false:true)}} placeholder='Promo Code' style={{marginRight:height*0.02}} />
+               <TextInput onFocus={()=>{setResetKeyboardView((keyView)=>keyView ? false:true)}} placeholder='Promo Code' placeholderTextColor={"gray"} style={{marginRight:height*0.02,color:"gray"}} />
             </View>
             
             <TouchableOpacity style={{flex:2,backgroundColor:"#2E2E2E",alignItems:"center",paddingHorizontal:height*0.02,paddingVertical:height*0.02,borderRadius:height*0.01}}>
