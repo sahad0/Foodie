@@ -43,7 +43,7 @@ export default function ({width,height,total,heading,id,price,img_url,navigation
           <Text style={{fontWeight:"bold",fontStyle:"italic",color:"gray",paddingBottom:height*0.02}}>Total price</Text>
 
           </View>
-        </View>
+        </View> 
 
         <View style={{paddingTop:width*0.06,padding:width*0.06,alignItems:"center",}}>
             {element!==undefined ? 
