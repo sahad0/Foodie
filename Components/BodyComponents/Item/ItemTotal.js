@@ -2,6 +2,7 @@ import { View, Text, TouchableOpacity, Image } from 'react-native'
 import React from 'react'
 import { AddtoCart } from '../../../features/cart'
 import { useDispatch, useSelector } from 'react-redux'
+import { useEffect } from 'react';
 
 export default function ({width,height,total,heading,id,price,img_url,navigation}) {
 
@@ -12,6 +13,7 @@ export default function ({width,height,total,heading,id,price,img_url,navigation
     return k.id === id;
   }
   const element = [...items].find(findElement);
+ 
   
 
   const Add = ()=>{
@@ -38,7 +40,7 @@ export default function ({width,height,total,heading,id,price,img_url,navigation
               <Text style={{fontFamily:"Cinzel",fontSize:width*0.06,color:"black"}}>{total+".00"}</Text>
           </View>
           <View style={{padding:width*0.03,marginLeft:width*0.06}}>
-          <Text style={{fontWeight:"bold",fontStyle:"italic",color:"gray"}}>Total price</Text>
+          <Text style={{fontWeight:"bold",fontStyle:"italic",color:"gray",paddingBottom:height*0.02}}>Total price</Text>
 
           </View>
         </View>
@@ -48,7 +50,7 @@ export default function ({width,height,total,heading,id,price,img_url,navigation
             <>
              <TouchableOpacity onPress={Add} style={{backgroundColor:"white",padding:width*0.03,paddingLeft:width*0.1,paddingRight:width*0.08,borderRadius:width*0.2,flexDirection:"row",alignItems:"center"}}>
                   <Image source={require("../../../assets/images/tick.png")} style={{height:40,width:40,alignSelf:"center"}} resizeMode={"contain"} />
-                  <Text style={{marginLeft:height*0.009}}>Added</Text>
+                  <Text style={{marginLeft:height*0.009,color:"gray"}}>Added</Text>
             </TouchableOpacity>
             </>
             :
@@ -59,9 +61,7 @@ export default function ({width,height,total,heading,id,price,img_url,navigation
             </>}
             
            
-            <TouchableOpacity style={{padding:width*0.008,}} onPress={()=>{navigation.navigate("Cart")}}>
-                  <Text style={{fontStyle:"italic",textDecorationLine:"underline",color:"gray",}}>View Cart </Text>
-            </TouchableOpacity>
+        
         </View>
       </View>
   )

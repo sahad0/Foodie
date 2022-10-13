@@ -40,12 +40,12 @@ const RootNavigation = () => {
                     <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName={'Home'}>
                     
                     <Stack.Screen name="Home" component={HomeV1_0} />
+                    <Stack.Screen name="Item" component={ItmScreen} />
 
                     <Stack.Screen name="Cart" component={CartScreen} />
 
 
                     <Stack.Screen name="Cat" component={MenuView} />
-                    <Stack.Screen name="Item" component={ItmScreen} />
                 
                     </Stack.Navigator>     
                 </>

@@ -32,11 +32,8 @@ export default function CarousalDiscounts() {
 
       },
       
-    {
-      id:5,
-      url:require("../../../assets/images/Sushi/boo.gif")
 
-    },
+      
         
         
         

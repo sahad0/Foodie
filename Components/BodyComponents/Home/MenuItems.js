@@ -76,7 +76,7 @@ export default function MenuItems({navigation}) {
 
 
   return (
-    <View style={{margin:width*0.03,backgroundColor:"white",position:"relative",top:0}}>
+    <View style={{margin:width*0.03,marginLeft: 0,marginRight:0,backgroundColor:"white",position:"relative",top:0}}>
      <MenuComponent data={data} renderItem={renderItem} />
     <Text style={{fontFamily:"Reg",fontSize:height*0.03,backgroundColor:"white",padding:height*0.02,color:"gray"}}>Picks for you!</Text>
 
