@@ -12,6 +12,7 @@ import com.facebook.soloader.SoLoader;
 import com.foodie.newarchitecture.MainApplicationReactNativeHost;
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
+import com.dieam.reactnativepushnotification.ReactNativePushNotificationPackage;  // <--- Import Package
 
 public class MainApplication extends Application implements ReactApplication {
 

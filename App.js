@@ -11,7 +11,9 @@ import { PersistGate } from 'redux-persist/lib/integration/react'
 
 
 
+
 export default function App() {
+
 
   useEffect(() => {
     SplashScreen.hide();
