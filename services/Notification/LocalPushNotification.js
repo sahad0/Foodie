@@ -47,18 +47,22 @@ PushNotification.configure({
 
 
 
-  export const LocalPushNotification = ()=>{
+  export const LocalPushNotification = ({title,message})=>{
     PushNotification.localNotification({
       channelId: "channel-id", // (required)
       autoCancel:true,
       channelName: "My channel", // (required)
       channelDescription: "A channel to categorise your notifications", // (optional) default: undefined.
-      title:"Hello",
-      message:"HOw you doin?",
+      title:title,
+      message:message,
       playSound: false, // (optional) default: true
       soundName: "default", // (optional) See `soundName` parameter of `localNotification` function
       importance: Importance.HIGH, // (optional) default: Importance.HIGH. Int value of the Android notification importance
       vibrate: true, // (optional) default: true. Creates the default vibration pattern if true.\
       vibration:1000,
+      largeIcon: "ic_launcher", // (optional) default: "ic_launcher". Use "" for no large icon.
+      largeIconUrl: "https://res.cloudinary.com/dstpcwzms/image/upload/v1665983402/tick_dl9uoj.png", // (optional) default: undefined
+      smallIcon: "ic_notification",
+
     })
   }

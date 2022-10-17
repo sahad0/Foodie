@@ -3,6 +3,7 @@ import React from 'react'
 import { AddtoCart } from '../../../features/cart'
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react';
+import { LocalPushNotification } from '../../../services/Notification/LocalPushNotification';
 
 export default function ({width,height,total,heading,id,price,img_url,navigation}) {
 
@@ -27,7 +28,8 @@ export default function ({width,height,total,heading,id,price,img_url,navigation
         count:count,
         img_url:img_url,
       }}
-    ))
+    ));
+    LocalPushNotification({title:"Success",message:"Woah! We have placed your item in the cart.."})
   }
 
 

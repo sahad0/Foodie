@@ -17,7 +17,7 @@ export default function BottomSheet({...Children}) {
     const prevVal = useSharedValue({y:0});
 
     useEffect(()=>{
-        Scrollto(-height/2)
+        Scrollto(-height/3)
     },[resetKeyboardView]);
 
     const gesture = Gesture.Pan()
