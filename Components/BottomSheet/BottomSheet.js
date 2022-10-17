@@ -7,7 +7,7 @@ import Animated, { useAnimatedStyle, useSharedValue, withSpring } from "react-na
 
 export default function BottomSheet({...Children}) {
 
-    const {children,height,width,resetKeyboardView} = Children;
+    const {height,width,resetKeyboardView} = Children;
 
     const Scrollto = (h)=>{
         translateY.value = withSpring(h,{damping:20,},);

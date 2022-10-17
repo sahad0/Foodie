@@ -1,6 +1,13 @@
 apply plugin: "com.android.application"
 apply plugin: 'com.google.firebase.crashlytics'
 
+ project.ext.envConfigFiles = [
+   dev : ".env.dev",
+   qa : ".env.qa",
+   prod : ".env"
+   
+ ]
+apply from: project(':react-native-config').projectDir.getPath() + "/dotenv.gradle"
 import com.android.build.OutputFile
 
 /**
@@ -236,6 +243,27 @@ android {
             signingConfig signingConfigs.debug
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+        }
+    }
+    flavorDimensions "default"
+	productFlavors {
+         dev {
+            minSdkVersion rootProject.ext.minSdkVersion
+            applicationId 'com.foodie.dev'
+            targetSdkVersion rootProject.ext.targetSdkVersion
+            resValue "string", "build_config_package", "com.foodie"
+        }
+        prod {
+            minSdkVersion rootProject.ext.minSdkVersion
+            applicationId 'com.foodie'
+            targetSdkVersion rootProject.ext.targetSdkVersion
+            resValue "string", "build_config_package", "com.foodie"
+        }
+        qa {
+            minSdkVersion rootProject.ext.minSdkVersion
+            applicationId 'com.foodie.qa'
+            targetSdkVersion rootProject.ext.targetSdkVersion
+            resValue "string", "build_config_package", "com.foodie"
         }
     }
 
