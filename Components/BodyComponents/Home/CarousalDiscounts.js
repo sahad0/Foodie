@@ -78,7 +78,7 @@ export default function CarousalDiscounts() {
         [{ nativeEvent: { contentOffset: { x: scrollX } } }],
         { useNativeDriver: true }
       )}
-      bounces={false} horizontal pagingEnabled data={[...val]} renderItem={renderItem} showsHorizontalScrollIndicator={false} initialNumToRender={4} 
+      bounces={false} horizontal pagingEnabled data={val} renderItem={renderItem} showsHorizontalScrollIndicator={false} initialNumToRender={4} 
         
       />
       <View style={{display:"flex",flexDirection:"row",justifyContent:"center",margin:height*0.03}}>
