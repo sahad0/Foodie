@@ -12,7 +12,7 @@ export default function CartList({height,width,navigation}) {
 
     const renderItems = ({item,index})=>{
         return(
-            <CartListrenderItem  height={height} index={index} item={item} navigation={navigation}/>
+            <CartListrenderItem  height={height} index={index} item={item} navigation={navigation} width={width}/>
         )
     }
 
@@ -33,10 +33,15 @@ export default function CartList({height,width,navigation}) {
 
 
   return (
-    <View style={{flexGrow:2,height:height*0.9,marginTop:height*0.1,marginBottom:height*0.2,backgroundColor:"#FEFDFD"}}>
+    <View style={{flexGrow:2,backgroundColor:"#FEFDFD",height:height*0.9,marginBottom:height*0.5,marginTop:height*0.1,flexGrow:2,height:height*0.7,marginTop:height*0.1,marginBottom:height*0.2,backgroundColor:"#FEFDFD"}}>
         <FlatList data={items} renderItem={renderItems} ListEmptyComponent={<HandleEmpty />} />
        
       
     </View>
   )
 }
+
+
+// 
+
+// 
