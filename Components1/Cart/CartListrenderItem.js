@@ -1,78 +1,116 @@
-import { View, Text, TouchableOpacity,Image } from 'react-native'
+import { View, Text, TouchableOpacity,Image,StyleSheet } from 'react-native'
 import React from 'react'
-import Animated,{ runOnJS, useAnimatedStyle, useSharedValue, withSpring, withTiming } from 'react-native-reanimated';
-import { Gesture, GestureDetector } from 'react-native-gesture-handler';
 import { SharedElement } from 'react-navigation-shared-element';
 import { useDispatch } from 'react-redux';
 import { RemovefromCart,IncreaseItemsfromCart,ReduceItemsfromCart } from '../../features/cart';
 import Icons from "react-native-vector-icons/MaterialCommunityIcons"
-import Swipeable from 'react-native-gesture-handler/Swipeable';
-import { useCallback } from 'react';
-
-
+import {PanGestureHandler,} from 'react-native-gesture-handler';
+import Animated, {runOnJS,useAnimatedGestureHandler, useAnimatedStyle,useSharedValue,withTiming,} from 'react-native-reanimated';
+import Iconss from "react-native-vector-icons/Ionicons"
+   
 
 
 export default function CartListrenderItem({item,index,height,width,navigation}) {
+    const styles = StyleSheet.create({
+    
+        iconContainer: {
+          height: 50,
+          width: 50,
+          position: 'absolute',
+          right: '10%',
+          justifyContent: 'center',
+          alignItems: 'center',
+        },
+      });
+   
+   
+   
     const dispatch = useDispatch();
     const len= item.length;
 
-    
+    const onDismiss = (id,total)=>{
+        dispatch(RemovefromCart({id:id,total:total}))
+    }
     
 
-    const threshHold = -width*0.8;
+    const TRANSLATE_X_THRESHOLD = -width* 0.3;
 
     const translateX = useSharedValue(0);
-
-    const heightShared = useSharedValue(height/5);
-
-    const CartDismiss = useCallback(()=>{
-        dispatch(RemovefromCart({id:item.id,total:item.total}));
-        console.log("dispatched");
-    })
+    const panGesture = useAnimatedGestureHandler({
+        onActive: (event) => {
+          translateX.value = event.translationX;
+        },
+        onEnd: () => {
+          const shouldBeDismissed = translateX.value < TRANSLATE_X_THRESHOLD;
+          if (shouldBeDismissed) {
+            translateX.value = withTiming(-width, {duration:600}, (isFinished) => {
+                if (isFinished) {
+                  runOnJS(onDismiss)(item.id,item.total);
+                }
+              });
+           
+          } else {
+            translateX.value = withTiming(0);
+          }
+        },
+      });
         
     
   
   
-    const gesture = Gesture.Pan()
-    //   .onStart(()=>{()=>{prevVal.value = {x:translateX.value}}})
-      .onUpdate((e)=>{
-          translateX.value  = e.translationX;
-          // translateY.value  = Math.max(translateY.value,-height+height*0.2)
-      })
-      .onEnd(()=>{
-       if( translateX.value < threshHold ){
-        translateX.value = withSpring(0,{damping:50});
+    // const gesture = Gesture.Pan()
+    // //   .onStart(()=>{()=>{prevVal.value = {x:translateX.value}}})
+    //   .onUpdate((e)=>{
+    //       translateX.value  = e.translationX;
+    //       // translateY.value  = Math.max(translateY.value,-height+height*0.2)
+    //   })
+    //   .onEnd(()=>{
+    //    if( translateX.value < threshHold ){
+    //     translateX.value = withSpring(0,{damping:50});
 
-       } 
-       else{
-        translateX.value = withTiming(width);
-        heightShared.value = withTiming(0,{duration:500},(isFinished)=>{ runOnJS(CartDismiss)});
+    //    } 
+    //    else{
+    //     translateX.value = withTiming(width);
+    //     heightShared.value = withTiming(0,{duration:500},(isFinished)=>{ runOnJS(CartDismiss)});
         
-       }
+    //    }
   
-      })
+    //   })
   
-      const rBottomStyle = useAnimatedStyle(()=>{
-          return {
-              transform:[{translateX:translateX.value}],
-          }
-      })
-      const rBottomStyle1 = (index)=> useAnimatedStyle(()=>{
-        if(index===0){
-            return {
-                height:heightShared.value*1/0.99999999999999,
-            }
-        }
-        else{
-            return{
-                height:heightShared.value
-            }
-        }
+    const rStyle = useAnimatedStyle(() => ({
+        transform: [
+          {
+            translateX: translateX.value,
+          },
+        ],
+      }));
+    //   const rBottomStyle1 = (index)=> useAnimatedStyle(()=>{
+    //     if(index===0){
+    //         return {
+    //             height:heightShared.value*1/0.99999999999999,
+    //         }
+    //     }
+    //     else{
+    //         return{
+    //             height:heightShared.value
+    //         }
+    //     }
         
-    })
+    // })
   return (
-    <GestureDetector   gesture={gesture}>
-        <Animated.View activeOpacity={1} onPress={()=>navigation.navigate("Item",{item:item})} style={[rBottomStyle,rBottomStyle1(index),{backgroundColor:"white",margin:height*0.01,borderRadius:height*0.02,flexDirection:"row",elevation:5,},index===0? {marginTop:height*0.08} : {marginTop:height*0.01},index===len-1 ? {marginBottom:height*0.28} :null]}>
+    // <Animated.View style={[styles.taskContainer]}>
+    // <Animated.View style={[styles.iconContainer]}>
+    //     <Iconss 
+    //       name={'search'}
+    //       size={30}
+    //       color={'red'}
+    //     />
+    //     <Text>HEllo</Text>
+    //   </Animated.View>
+    <PanGestureHandler
+    onGestureEvent={panGesture}
+  >
+        <Animated.View activeOpacity={1} onPress={()=>navigation.navigate("Item",{item:item})} style={[rStyle,{backgroundColor:"white",margin:height*0.01,borderRadius:height*0.02,flexDirection:"row",elevation:5,},index===0? {marginTop:height*0.08} : {marginTop:height*0.01},index===len-1 ? {marginBottom:height*0.28} :null]}>
             <View style={{padding:22,}}>
                 <View style={{margin:5,backgroundColor:"#FCFCFC",borderRadius:height*0.02,}}>
                 <SharedElement id={`item.${item.id}.img`}>
@@ -118,7 +156,7 @@ export default function CartListrenderItem({item,index,height,width,navigation})
                 </View>
             </View>
         </Animated.View>
-
-     </GestureDetector>
+</PanGestureHandler>
+// </Animated.View>
   )
 }
