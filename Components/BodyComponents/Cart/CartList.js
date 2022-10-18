@@ -16,16 +16,22 @@ export default function CartList({height,width,navigation}) {
   const RenderRight = (progress,dragX) => {
     return(
       <View>
-          <Text>Wow</Text>
+          <Text style={{color:"white"}}>Delete</Text>
       </View>
     )
   }
 
 
     const renderItems = ({item,index})=>{
+
+       const deleteList = ()=>{
+        dispatch(RemovefromCart({id:item.id,total:item.total}));
+       }
+       
+
         return(
-          <Swipeable renderRightActions={RenderRight}>
-          <View activeOpacity={1} onPress={()=>navigation.navigate("Item",{item:item})} style={[{backgroundColor:"white",margin:height*0.01,borderRadius:height*0.02,flexDirection:"row",elevation:5,},index===0? {marginTop:height*0.08} : {marginTop:height*0.01},index===len-1 ? {marginBottom:height*0.28} :null]}>
+          <Swipeable useNativeAnimations renderRightActions={RenderRight} onSwipeableOpen={() => deleteList()}>
+          <TouchableOpacity activeOpacity={1} onPress={()=>navigation.navigate("Item",{item:item})} style={[{backgroundColor:"white",margin:height*0.01,borderRadius:height*0.02,flexDirection:"row",elevation:5,},index===0? {marginTop:height*0.08} : {marginTop:height*0.01},index===len-1 ? {marginBottom:height*0.28} :null]}>
             <View style={{padding:22,}}>
                 <View style={{margin:5,backgroundColor:"#FCFCFC",borderRadius:height*0.02,}}>
                 <SharedElement id={`item.${item.id}.img`}>
@@ -71,7 +77,7 @@ export default function CartList({height,width,navigation}) {
                     </View>
                 </View>
             </View>
-        </View>
+        </TouchableOpacity>
         </Swipeable>
         )
     }
@@ -93,8 +99,8 @@ export default function CartList({height,width,navigation}) {
 
 
   return (
-    <View style={{flexGrow:2,backgroundColor:"#FEFDFD",height:height*0.9,marginBottom:height*0.5,marginTop:height*0.1,flexGrow:2,height:height*0.7,marginTop:height*0.1,marginBottom:height*0.2,backgroundColor:"#FEFDFD"}}>
-        <FlatList data={items} renderItem={renderItems} ListEmptyComponent={<HandleEmpty />} />
+    <View style={{flexGrow:2,backgroundColor:"#FEFDFD",height:height*0.3,marginBottom:height*0.5,marginTop:height*0.1,flexGrow:2,height:height*0.7,marginTop:height*0.1,backgroundColor:"#FEFDFD"}}>
+        <FlatList  data={items} renderItem={renderItems} ListEmptyComponent={<HandleEmpty />} />
        
       
     </View>
