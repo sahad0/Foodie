@@ -1,7 +1,7 @@
 import {  Dimensions, StyleSheet } from 'react-native'
 import React, { useEffect } from 'react'
 import { Gesture, GestureDetector } from 'react-native-gesture-handler';
-import Animated, { useAnimatedStyle, useSharedValue, withSpring } from "react-native-reanimated"; 
+import Animated, { runOnJS, useAnimatedStyle, useSharedValue, withSpring } from "react-native-reanimated"; 
 
 
 
@@ -9,15 +9,15 @@ export default function BottomSheet({...Children}) {
 
     const {height,width,resetKeyboardView} = Children;
 
-    const Scrollto = (h)=>{
-        translateY.value = withSpring(h,{damping:20,},);
+    const Scrollto = (h,d)=>{
+        translateY.value = withSpring(h,{damping:d},);
     }
 
     const translateY = useSharedValue(0);
     const prevVal = useSharedValue({y:0});
 
-    useEffect(()=>{
-        Scrollto(-height/3)
+    useEffect(()=>{ 
+        runOnJS(Scrollto)(-height/3,20);
     },[resetKeyboardView]);
 
     const gesture = Gesture.Pan()
@@ -27,13 +27,16 @@ export default function BottomSheet({...Children}) {
         translateY.value  = Math.max(translateY.value,-height+height*0.2)})
     .onEnd(()=>{
         if(translateY.value > -height/4){
-        translateY.value = withSpring(-height/4,{damping:50});
+        // translateY.value = withSpring(-height/4,{damping:50});
+        runOnJS(Scrollto)(-height/4,50);
+
 
         }
         if(translateY.value < -height/4){
-            translateY.value = withSpring(-height/2-height*0.2,{damping:50});
+            // translateY.value = withSpring(-height/2-height*0.2,{damping:50});
+            runOnJS(Scrollto)(-height/2-height*0.2,50);
     
-            }
+        }
     })
 
     const rBottomStyle = useAnimatedStyle(()=>{
