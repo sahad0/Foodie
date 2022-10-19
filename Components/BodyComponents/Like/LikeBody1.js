@@ -4,15 +4,12 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 
 export default function LikeBody1({height,width,navigation}) {
 
-    const goBAck = ()=> {
-        navigation.goBack();        
-    }
-
+    
 
   return (
     <>
     <View style={{zIndex:99999}}>
-     <TouchableOpacity onPress={goBAck} style={{
+     <TouchableOpacity onPress={()=> navigation.navigate("Home")} style={{
             width: width*0.25,
             margin:width*0.07,
             borderRadius:40,

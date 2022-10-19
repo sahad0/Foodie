@@ -104,9 +104,9 @@ export default function CartListrenderItem({item,index,height,width,navigation})
                 <View style={{flexDirection:"row",justifyContent:"space-between",alignItems:"center",marginTop:height*0.01}}>
                     <Text style={{fontFamily:"Anton",fontSize:height*0.025,margin:height*0.010,color:"#595959"}}>{item.heading}</Text>
                     
-                    <TouchableOpacity onPress={()=>dispatch(RemovefromCart({id:item.id,total:item.total}))} style={{marginTop:height*0.01,}}>
+                    {/* <TouchableOpacity onPress={()=>dispatch(RemovefromCart({id:item.id,total:item.total}))} style={{marginTop:height*0.01,}}>
                         <Icons name='close-thick' color={"gray"} size={height*0.02} style={{marginRight:"5%",}} />
-                    </TouchableOpacity>
+                    </TouchableOpacity> */}
                 
                 </View>
                 <View style={{marginLeft:height*0.010,flexDirection:"row",alignItems:"center"}}>
