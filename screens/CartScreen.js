@@ -16,7 +16,6 @@ export default function CartScreen({navigation}) {
   return (
     <SafeAreaView style={{display:"flex",flex:1,backgroundColor:"transparent"}}>
     <CartHeader height={height} width={width} navigation={navigation} cussineType={cussineType} setcussineType={setcussineType} />
-
     <CartList  setcussineType={setcussineType} height={height} width={width} navigation={navigation} />
     
     

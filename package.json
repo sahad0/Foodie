@@ -7,7 +7,10 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "dev": "react-native run-android --variant=devDebug --appIdSuffix=dev",
+    "qa": "react-native run-android --variant=qaDebug --appIdSuffix=qa",
+    "prod": "react-native run-android --variant=prodDebug"
   },
   "dependencies": {
     "@gorhom/bottom-sheet": "^4.4.5",

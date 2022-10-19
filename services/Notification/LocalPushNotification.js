@@ -3,23 +3,23 @@ import PushNotificationIOS from "@react-native-community/push-notification-ios";
 
 PushNotification.configure({
     onRegister: function (token) {
-      console.log("TOKEN:", token);
+      // console.log("TOKEN:", token);
     },
 
     onNotification: function (notification) {
-      console.log("NOTIFICATION:", notification);
+      // console.log("NOTIFICATION:", notification);
       notification.finish(PushNotificationIOS.FetchResult.NoData);
     },
 
-    onAction: function (notification) {
-      console.log("ACTION:", notification.action);
-      console.log("NOTIFICATION:", notification);
+    // onAction: function (notification) {
+    //   console.log("ACTION:", notification.action);
+    //   console.log("NOTIFICATION:", notification);
 
-    },
+    // },
 
-    onRegistrationError: function(err) {
-      console.error(err.message, err);
-    },
+    // onRegistrationError: function(err) {
+    //   console.error(err.message, err);
+    // },
 
     permissions: {
       alert: true,

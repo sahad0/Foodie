@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux';
 import { RemovefromCart,IncreaseItemsfromCart,ReduceItemsfromCart } from '../../features/cart';
 import Icons from "react-native-vector-icons/MaterialCommunityIcons"
 import {PanGestureHandler,} from 'react-native-gesture-handler';
-import Animated, {runOnJS,useAnimatedGestureHandler, useAnimatedStyle,useSharedValue,withTiming,} from 'react-native-reanimated';
+import Animated, {runOnJS,useAnimatedGestureHandler, useAnimatedStyle,useSharedValue,withSpring,withTiming,} from 'react-native-reanimated';
 import Iconss from "react-native-vector-icons/Ionicons"
    
 
@@ -33,22 +33,31 @@ export default function CartListrenderItem({item,index,height,width,navigation})
     }
     
 
-    const TRANSLATE_X_THRESHOLD = -width* 0.3;
+    const threshHold = -width* 0.3;
 
     const translateX = useSharedValue(0);
+    const itemHeight = useSharedValue(height/5.5);
+    const marginVertical = useSharedValue(10);
+    const opacity = useSharedValue(1);
+
+
     const panGesture = useAnimatedGestureHandler({
         onActive: (event) => {
           translateX.value = event.translationX;
         },
         onEnd: () => {
-          const shouldBeDismissed = translateX.value < TRANSLATE_X_THRESHOLD;
+          const shouldBeDismissed = translateX.value < threshHold;
+
           if (shouldBeDismissed) {
-            translateX.value = withTiming(-width, {duration:600}, (isFinished) => {
-                if (isFinished) {
-                  runOnJS(onDismiss)(item.id,item.total);
-                }
-              });
-           
+            translateX.value = withTiming(-width);
+            itemHeight.value = withSpring(0,{damping:50});
+            marginVertical.value = withSpring(0,{damping:50});
+            opacity.value = withTiming(0, undefined, (isFinished) => {
+              if (isFinished ) {
+                runOnJS(onDismiss)(item.id,item.total);
+
+              }
+            });
           } else {
             translateX.value = withTiming(0);
           }
@@ -58,25 +67,6 @@ export default function CartListrenderItem({item,index,height,width,navigation})
     
   
   
-    // const gesture = Gesture.Pan()
-    // //   .onStart(()=>{()=>{prevVal.value = {x:translateX.value}}})
-    //   .onUpdate((e)=>{
-    //       translateX.value  = e.translationX;
-    //       // translateY.value  = Math.max(translateY.value,-height+height*0.2)
-    //   })
-    //   .onEnd(()=>{
-    //    if( translateX.value < threshHold ){
-    //     translateX.value = withSpring(0,{damping:50});
-
-    //    } 
-    //    else{
-    //     translateX.value = withTiming(width);
-    //     heightShared.value = withTiming(0,{duration:500},(isFinished)=>{ runOnJS(CartDismiss)});
-        
-    //    }
-  
-    //   })
-  
     const rStyle = useAnimatedStyle(() => ({
         transform: [
           {
@@ -84,33 +74,25 @@ export default function CartListrenderItem({item,index,height,width,navigation})
           },
         ],
       }));
-    //   const rBottomStyle1 = (index)=> useAnimatedStyle(()=>{
-    //     if(index===0){
-    //         return {
-    //             height:heightShared.value*1/0.99999999999999,
-    //         }
-    //     }
-    //     else{
-    //         return{
-    //             height:heightShared.value
-    //         }
-    //     }
-        
-    // })
+   
+
+
+    
+  
+    const rTaskContainerStyle = useAnimatedStyle(() => {
+      
+      return {
+        height: itemHeight.value,
+        marginVertical: marginVertical.value,
+        opacity: opacity.value,
+      };
+    });
   return (
-    // <Animated.View style={[styles.taskContainer]}>
-    // <Animated.View style={[styles.iconContainer]}>
-    //     <Iconss 
-    //       name={'search'}
-    //       size={30}
-    //       color={'red'}
-    //     />
-    //     <Text>HEllo</Text>
-    //   </Animated.View>
+    <Animated.View style={[rTaskContainerStyle,]}>
     <PanGestureHandler
     onGestureEvent={panGesture}
   >
-        <Animated.View activeOpacity={1} onPress={()=>navigation.navigate("Item",{item:item})} style={[rStyle,{backgroundColor:"white",margin:height*0.01,borderRadius:height*0.02,flexDirection:"row",elevation:5,},index===0? {marginTop:height*0.08} : {marginTop:height*0.01},index===len-1 ? {marginBottom:height*0.28} :null]}>
+        <Animated.View activeOpacity={1} onPress={()=>navigation.navigate("Item",{item:item})} style={[rStyle,{backgroundColor:"white",margin:height*0.01,marginTop:0,marginBottom:0,borderRadius:height*0.02,flexDirection:"row",elevation:5,}]}>
             <View style={{padding:22,}}>
                 <View style={{margin:5,backgroundColor:"#FCFCFC",borderRadius:height*0.02,}}>
                 <SharedElement id={`item.${item.id}.img`}>
@@ -157,6 +139,6 @@ export default function CartListrenderItem({item,index,height,width,navigation})
             </View>
         </Animated.View>
 </PanGestureHandler>
-// </Animated.View>
+</Animated.View>
   )
 }
