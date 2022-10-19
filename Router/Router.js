@@ -11,6 +11,7 @@ import HomeV1_0 from '../screens/HomeV1_0'
 import ItmScreen from '../screens/ItmScreen'
 import CartScreen from '../screens/CartScreen';
 import MenuView from '../screens/MenuView';
+import LikeScreen from '../screens/LikeScreen';
 
 const Stack = createSharedElementStackNavigator();
 enableScreens();
@@ -43,6 +44,7 @@ const RootNavigation = () => {
                     <Stack.Screen name="Item" component={ItmScreen} />
 
                     <Stack.Screen name="Cart" component={CartScreen} />
+                    <Stack.Screen name="Like" component={LikeScreen} />
 
 
                     <Stack.Screen name="Cat" component={MenuView} />

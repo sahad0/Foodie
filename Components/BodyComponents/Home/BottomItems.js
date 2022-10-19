@@ -60,7 +60,7 @@ export default function BottomItems({navigation}) {
             <Text style={{alignSelf:"center",color:"gray"}}>Blend on Spices</Text>
             <View style={{display:"flex",flexDirection:"row",justifyContent:"space-between",margin:width*0.04,marginTop:height*0.03,alignItems:"center"}}>
                 <Text style={{color:"gray"}}>{"$"+item.price}</Text>
-                <TouchableOpacity style={{borderColor:"lightgray",borderRadius:25,borderWidth:0.4}} >
+                <TouchableOpacity onPress={()=>{navigation.navigate("Like")}} style={{borderColor:"lightgray",borderRadius:25,borderWidth:0.4}} >
                         <Icons name='heart' size={height*0.03} color={"#FF6EB4"} style={{padding:10}} />
 
                 {/* <Icon name="opencart" size={20}  style={{color:"gray",backgroundColor:"white"}}/> */}
