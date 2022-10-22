@@ -16,8 +16,10 @@ export default function BottomSheet({...Children}) {
     const translateY = useSharedValue(0);
     const prevVal = useSharedValue({y:0});
 
+
+    
     useEffect(()=>{ 
-        runOnJS(Scrollto)(-height/3,20);
+        runOnJS(Scrollto)(-height/2,20);
     },[resetKeyboardView]);
 
     const gesture = Gesture.Pan()

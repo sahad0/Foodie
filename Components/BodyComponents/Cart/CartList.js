@@ -5,7 +5,8 @@ import { SharedElement } from 'react-navigation-shared-element';
 import { useDispatch } from 'react-redux';
 import { RemovefromCart,IncreaseItemsfromCart,ReduceItemsfromCart } from '../../../features/cart'
 import Icons from "react-native-vector-icons/MaterialCommunityIcons"
-import Swipeable from 'react-native-gesture-handler/Swipeable';
+import KeyboardAvoidingView from 'react-native/Libraries/Components/Keyboard/KeyboardAvoidingView';
+
 
 export default function CartList({height,width,navigation}) {
 
@@ -99,15 +100,13 @@ export default function CartList({height,width,navigation}) {
 
 
   return (
-    <View style={{flexGrow:2,backgroundColor:"#FEFDFD",height:height*0.3,marginBottom:height*0.5,marginTop:height*0.1,flexGrow:2,height:height*0.7,marginTop:height*0.1,backgroundColor:"#FEFDFD"}}>
+
+    <KeyboardAvoidingView style={{flex:2,backgroundColor:"#FEFDFD",height:height*0.5,flexGrow:2,height:height*0.7,backgroundColor:"#FEFDFD"}}>
         <FlatList  data={items} renderItem={renderItems} ListEmptyComponent={<HandleEmpty />} />
-       
+    </KeyboardAvoidingView>
+
       
-    </View>
   )
 }
 
 
-// 
-
-// 

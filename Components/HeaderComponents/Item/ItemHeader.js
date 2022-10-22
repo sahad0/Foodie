@@ -7,7 +7,7 @@ export default function ItemHeader({navigation,width,height}) {
   return (
      
      <View style={{padding:width*0.1,flexDirection:"row",justifyContent:"space-between"}}>
-     <TouchableOpacity onPress={()=>{navigation.goBack()}} style={{backgroundColor:"white",elevation:5,borderRadius:width*0.5}}>
+     <TouchableOpacity onPress={()=>{navigation.navigate("Home")}} style={{backgroundColor:"white",elevation:5,borderRadius:width*0.5}}>
          <Icons name='arrow-back' size={30}  color={"black"} style={{padding:width*0.03}}/>
         
 
