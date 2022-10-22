@@ -2,6 +2,7 @@ import { View, Text, Image, FlatList } from 'react-native'
 import React from 'react'
 import {  useSelector } from 'react-redux';
 import CartListrenderItem from '../../../Components1/Cart/CartListrenderItem';
+import KeyboardAvoidingView from 'react-native/Libraries/Components/Keyboard/KeyboardAvoidingView';
 
 
 
@@ -33,11 +34,10 @@ export default function CartList({height,width,navigation}) {
 
 
   return (
-    <View style={{flex:2,backgroundColor:"#FEFDFD",height:height*0.5,marginBottom:height*0.7,flexGrow:2,height:height*0.7,marginBottom:height*0.2,backgroundColor:"#FEFDFD"}}>
-        <FlatList data={items} renderItem={renderItems} ListEmptyComponent={<HandleEmpty />} />
-       
+    <KeyboardAvoidingView style={{flex:2,backgroundColor:"#FEFDFD",height:height*0.5,flexGrow:2,height:height*0.7,backgroundColor:"#FEFDFD"}}>
+        <FlatList  data={items} renderItem={renderItems} ListEmptyComponent={<HandleEmpty />} />
+        </KeyboardAvoidingView>
       
-    </View>
   )
 }
 

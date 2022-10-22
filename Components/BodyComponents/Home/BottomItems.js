@@ -47,6 +47,24 @@ export default function BottomItems({navigation}) {
             heading:"Chicken Noodle",
             price:25,
         },
+        {
+            id:7,
+            img_url:require('../../../assets/images/FOods/pepperoni.png'),
+            heading:"Pepper Oni",
+            price:25,
+        },
+        {
+            id:8,
+            img_url:require('../../../assets/images/FOods/combo.png'),
+            heading:"COmbo Box",
+            price:25,
+        },
+        {
+            id:9,
+            img_url:require('../../../assets/images/FOods/noode3.png'),
+            heading:"Chicken Noodle",
+            price:25,
+        },
         
         
     ]
