@@ -19,8 +19,8 @@ export default function CartScreen({navigation}) {
     <CartList  setcussineType={setcussineType} height={height} width={width} navigation={navigation} />
     
     
-    <BottomSheet height={height} width={width} resetKeyboardView={resetKeyboardView}>
-      <CartFooter height={height} width={width} setResetKeyboardView={setResetKeyboardView}/>
+    <BottomSheet height={height} width={width} resetKeyboardView={resetKeyboardView} initialScrl={-height/2} lmtScroll={-height+height*0.2} screen={"Cart"}>
+      <CartFooter height={height} width={width} setResetKeyboardView={setResetKeyboardView} />
     </BottomSheet>
     
     </SafeAreaView>

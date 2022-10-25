@@ -7,6 +7,8 @@ import { Button, Dimensions, View } from 'react-native'
 import FOoter from '../Components/FooterComponent/Home/FOoter'
 import crashlytics from '@react-native-firebase/crashlytics';
 import BtmTest from '../Components/BottomSheet/BtmTest'
+import HomeFooter from '../Components/FooterComponent/Home/HomeFooter'
+import BottomSheet from '../Components/BottomSheet/BottomSheet'
 
 
 export default function HomeV1_0({navigation}) {
@@ -25,7 +27,9 @@ export default function HomeV1_0({navigation}) {
         <BottomItems navigation={navigation} />
     </View>
     {/* <FOoter/> */}
-    <BtmTest height={height} width={width} resetKeyboardView={true}/>
+    <BottomSheet height={height} width={width} resetKeyboardView={true} initialScrl={-height/3.5} lmtScroll={-height+height*0.72} screen={"Home"} >
+      <HomeFooter height={height} width={width} setResetKeyboardView={true} />
+    </BottomSheet>
    
    </SafeAreaView>
   )

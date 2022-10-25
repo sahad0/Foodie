@@ -92,7 +92,6 @@ export default function BottomItems({navigation}) {
 
   return (
     <>
-    {/* <View  > */}
       <FlatList   data={data} initialNumToRender={6} renderItem={renderItem} numColumns={2} style={{backgroundColor:"#FAFAFA",height:height*0.8}} scrollEventThrottle={16}
       ListHeaderComponent={
         ()=>
@@ -105,7 +104,6 @@ export default function BottomItems({navigation}) {
     
      />
         
-    {/* </View> */}
     
     </>
   )
