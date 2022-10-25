@@ -25,7 +25,7 @@ export default function LikeBody1({height,width,navigation}) {
         <Ionicons color={"black"} style={{padding:width*0.04,alignSelf:"center",}} name='arrow-back' size={25}/>
     </TouchableOpacity>
     </View>
-    <Text style={{fontFamily:"Anton",position:"absolute",fontSize:200,color:"black",alignSelf:"center",marginLeft:height*0.1,}}>LiKE </Text>
+    <Text style={{fontFamily:"Anton",position:"absolute",fontSize:width*0.4,color:"black",alignSelf:"center",marginLeft:height*0.05,}}>LiKE, </Text>
     <View style={{alignItems:"center",height:height,marginTop:height*0.1}}>
         <Image  source={require("../../../assets/images/heart.png")} resizeMode={"cover"} style={{height:height*0.37,width:height*0.37,}} />
         <Image  source={require("../../../assets/images/heart.png")} resizeMode={"cover"} style={{height:height*0.15,width:height*0.15,}} />
