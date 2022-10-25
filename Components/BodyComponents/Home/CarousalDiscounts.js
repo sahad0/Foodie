@@ -2,8 +2,9 @@ import { View, Text, ImageBackground, Image, Dimensions } from 'react-native'
 import React from 'react'
 import { useRef } from 'react';
 import Animated from 'react-native-reanimated';
-import { Searchbar } from 'react-native-paper';
 import Ionicons from "react-native-vector-icons/Ionicons";
+import { Searchbar } from 'react-native-paper';
+
 
 export default function CarousalDiscounts() {
 
@@ -61,9 +62,9 @@ export default function CarousalDiscounts() {
 
 
     const renderItem = ({ item }) => (
-      <View style={{height:height*0.28,width:width,alignItems:"center",position:"relative",top:0,}}>
-        <View style={{elevation:10,borderColor:"black",borderRadius:25,marginTop:height*0.018}}>
-        <Image source={item.url} style={{height:height*0.25,width:width*0.85,borderRadius:15,padding:height*0.01,}} resizeMode={"contain"}  
+      <View style={{height:height*0.28,width:width,alignItems:"center",position:"relative",}}>
+        <View style={{elevation:6,borderColor:"black",borderRadius:25,marginTop:height*0.018}}>
+        <Image source={item.url} style={{height:height*0.25,width:width*0.93,borderRadius:15,}} resizeMode={"contain"}  
         />
         </View>
       </View>
@@ -72,35 +73,37 @@ export default function CarousalDiscounts() {
 
      
   return (
-    <View>
+    <View style={{backgroundColor:"white"}}>
       <Animated.FlatList
        onScroll={Animated.event(
         [{ nativeEvent: { contentOffset: { x: scrollX } } }],
         { useNativeDriver: true }
       )}
+      scrollEventThrottle={16}
       bounces={false} horizontal pagingEnabled data={val} renderItem={renderItem} showsHorizontalScrollIndicator={false} initialNumToRender={4} 
         
       />
-      <View style={{display:"flex",flexDirection:"row",justifyContent:"center",margin:height*0.03}}>
+      <View style={{display:"flex",flexDirection:"row",justifyContent:"center",margin:height*0.01}}>
       <Indicator  />
       </View>
-      <View style={{alignItems:"center",}}>
+
+      <View style={{alignItems:"center",backgroundColor:"white",paddingBottom:height*0.01,paddingTop: height*0.02,}}>
       <Searchbar
       icon={()=>(  <Ionicons name="search-outline" style={{color:"gray"}} size={28} />)}
       
       style={{
+        elevation:1.5,
         color:"black",
         fontWeight:"bold",
         fontFamily:"Cinzel !important",
         height:height*0.06,
-        width:width*0.9,
+        width:width*0.93,
         borderRadius:25,
         shadowColor: 'black',
         shadowOpacity: 0.26,
         shadowOffset: { width: 0, height: 2},
         shadowRadius: 10,
         backgroundColor: 'white',
-        marginTop:height*0.02,
       }}
       placeholder="Search your food..."
       
