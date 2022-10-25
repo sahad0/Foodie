@@ -64,7 +64,7 @@ export default function Header({navigation}) {
             shadowRadius: 10,
             elevation: 3,
             backgroundColor: 'white'
-        }}>
+        }} onPress={()=>navigation.navigate('Test')}>
         <Ionicons color={"black"} style={{padding:width*0.04, }} name='infinite-outline' size={25}/>
         </TouchableOpacity>
         <View style={{alignItems:"center",marginTop:width*0.08   }}>
