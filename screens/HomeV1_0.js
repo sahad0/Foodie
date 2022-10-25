@@ -3,14 +3,15 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 import Header from '../Components/HeaderComponents/Home/Header'
 
 import BottomItems from '../Components/BodyComponents/Home/BottomItems'
-import { Button, View } from 'react-native'
+import { Button, Dimensions, View } from 'react-native'
 import FOoter from '../Components/FooterComponent/Home/FOoter'
 import crashlytics from '@react-native-firebase/crashlytics';
+import BtmTest from '../Components/BottomSheet/BtmTest'
 
 
 export default function HomeV1_0({navigation}) {
 
-
+  const {height, width} = Dimensions.get('screen');
 
 
   return (
@@ -23,7 +24,8 @@ export default function HomeV1_0({navigation}) {
     <View style={{flexGrow:1}}>
         <BottomItems navigation={navigation} />
     </View>
-    <FOoter/>
+    {/* <FOoter/> */}
+    <BtmTest height={height} width={width} resetKeyboardView={true}/>
    
    </SafeAreaView>
   )
