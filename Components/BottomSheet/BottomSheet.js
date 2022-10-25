@@ -9,10 +9,6 @@ export default function BottomSheet({...Children}) {
 
     const {height,width,resetKeyboardView} = Children;
 
-    const Scrollto = (h,d)=>{
-        translateY.value = withSpring(h,{damping:d},);
-    }
-
     const translateY = useSharedValue(0);
     const prevVal = useSharedValue({y:0});
 
@@ -20,7 +16,14 @@ export default function BottomSheet({...Children}) {
     useEffect(()=>{ 
         runOnJS(Scrollto)(-height/2,20);
     },[resetKeyboardView]);
-1.6
+
+
+
+    const Scrollto = (h,d)=>{
+        translateY.value = withSpring(h,{damping:d},);
+    }
+
+
     const gesture = Gesture.Pan()
     .onStart(()=>{prevVal.value = {y:translateY.value}})
     .onUpdate((e)=>{
