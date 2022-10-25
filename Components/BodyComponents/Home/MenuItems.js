@@ -1,6 +1,8 @@
 import { View, Text, Image, FlatList, Dimensions, TouchableOpacity } from 'react-native'
 import React from 'react'
 import MenuComponent from '../../../Components1/Home/MenuComponent';
+import { Divider, Searchbar } from 'react-native-paper';
+
 
 export default function MenuItems({navigation}) {
     const {width,height} = Dimensions.get("screen");
@@ -8,49 +10,49 @@ export default function MenuItems({navigation}) {
     const data = [
           {
             id:6,
-            name:"Udon",
+            name:"HotDog",
             img_url:require("../../../assets/images/List/6.png"),
             img_url1:require("../../../assets/images/Catalog/udon2.png")
         },
             {
               id:7,
-              name:"Udon",
+              name:"Tacos",
               img_url:require("../../../assets/images/List/7.png"),
               img_url1:require("../../../assets/images/Catalog/udon2.png")
           },
           {
             id:8,
-            name:"Udon",
+            name:"Donut",
             img_url:require("../../../assets/images/List/8.png"),
             img_url1:require("../../../assets/images/Catalog/udon2.png")
         },
         {
             id:1,
-            name:"Oden",
+            name:"Burger",
             img_url:require("../../../assets/images/List/1.png"),
             img_url1:require("../../../assets/images/Catalog/oden2.png")
         },
             {
             id:2,
-            name:"Onigiri",
+            name:"Smoothie",
             img_url:require("../../../assets/images/List/2.png"),
             img_url1:require("../../../assets/images/Catalog/onigiri2.png")
         },
         {
           id:3,
-          name:"Ramen",
+          name:"Ice_Cream",
           img_url:require("../../../assets/images/List/3.png"),
           img_url1:require("../../../assets/images/Catalog/ramen2.png")
       },
       {
           id:4,
-          name:"Sake",
+          name:"Fries",
           img_url:require("../../../assets/images/List/4.png"),
           img_url1:require("../../../assets/images/Catalog/sake2.png")
       },
       {
         id:5,
-        name:"Sushi",
+        name:"Pizza",
         img_url:require("../../../assets/images/List/5.png"),
         img_url1:require("../../../assets/images/Catalog/sushi2.png")
     },
@@ -58,7 +60,7 @@ export default function MenuItems({navigation}) {
       
   {
     id:9,
-    name:"Udon",
+    name:"Chicken",
     img_url:require("../../../assets/images/List/9.png"),
     img_url1:require("../../../assets/images/Catalog/udon2.png")
 },
@@ -66,20 +68,25 @@ export default function MenuItems({navigation}) {
     ]
 
     const renderItem =({item})=>(
-        
-        <TouchableOpacity onPress={()=>navigation.navigate("Cat",{item:item})} style={{borderColor:"lightgray",borderWidth:1.5,borderRadius:width*0.2,margin:width*0.02,}}> 
-                <Image source={item.img_url} style={{width:width*0.16,height:height*0.08,borderRadius:width*0.2,margin:width*0.02,
+      <TouchableOpacity onPress={()=>navigation.navigate("Cat",{item:item})}style={{flexDirection:"row",alignItems: 'center',paddingBottom:height*0.05}}>
+      
+        <View style={{flexDirection:"column",alignItems:"center"}}>
+                <Image source={item.img_url} style={{width:width*0.18,height:height*0.09,borderRadius:width*0.05,margin:width*0.04,borderTopRightRadius:width*0.18
                 }} />
-            </TouchableOpacity>
-        
+        <Text>{item.name}</Text>
+        </View>
+        <Divider  style={{width:width*0.003,height:"100%",transform:[{rotateY:"75deg"}]}}/>
+        </TouchableOpacity>
     )
 
 
   return (
-    <View style={{margin:width*0.03,marginLeft: 0,marginRight:0,backgroundColor:"white",position:"relative",top:0}}>
+    <View style={{margin:width*0.04,marginLeft: 0,marginRight:0,marginTop:0,backgroundColor:"white",position:"relative",marginBottom:0,paddingTop:height*0.03}}>
      <MenuComponent data={data} renderItem={renderItem} />
-    <Text style={{fontFamily:"Reg",fontSize:height*0.03,backgroundColor:"white",padding:height*0.02,color:"gray"}}>Picks for you!</Text>
+    <View style={{alignItems:"flex-end",backgroundColor:"#FFBAD2",width:"100%",}}>
+    <Text style={{fontFamily:"Anton",fontSize:35,color:"white",marginRight:height*0.03}}>Love Bites! </Text>
 
+    </View>
     </View>
     
   )

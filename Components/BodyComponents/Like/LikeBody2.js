@@ -48,6 +48,10 @@ export default function LikeBody2({navigation,height, width,items}) {
       opacity: 1,
       translateY: 0,
     }}
+    exit={{
+      opacity: 0,
+      translateY: -100,
+    }}
     transition={{
       duration: DURATION*index,
       type:'spring',
@@ -98,9 +102,7 @@ export default function LikeBody2({navigation,height, width,items}) {
       
 
     </View>
-    <AnimatePresence>
      <FlatList scrollEventThrottle={16} showsVerticalScrollIndicator={false} style={{height:height*6.6}} ListHeaderComponent={()=>(<ListHeader />)}   data={items} renderItem={renderItems} initialNumToRender={4} numColumns={2}  />
- </AnimatePresence>
      </>
   )
 }
