@@ -52,7 +52,7 @@ export default function LikeBody2({navigation,height, width,items}) {
       duration: DURATION*index,
       type:'spring',
       loop:false,
-      delay:100*index+100
+      delay:100*index+200
     }}
    
         

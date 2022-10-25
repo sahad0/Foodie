@@ -38,7 +38,7 @@ export default function BottomItems({navigation}) {
         {
             id:5,
             img_url:require('../../../assets/images/FOods/combo.png'),
-            heading:"COmbo Box",
+            heading:"Combo Box",
             price:25,
         },
         {
@@ -56,7 +56,7 @@ export default function BottomItems({navigation}) {
         {
             id:8,
             img_url:require('../../../assets/images/FOods/combo.png'),
-            heading:"COmbo Box",
+            heading:"Combo Box",
             price:25,
         },
         {
