@@ -5,9 +5,24 @@ import Icon from "react-native-vector-icons/Ionicons"
 import FIcon from "react-native-vector-icons/FontAwesome5"
 import Ant from "react-native-vector-icons/AntDesign"
 import { MotiView } from 'moti';
+import { GoogleSignin } from '@react-native-google-signin/google-signin';
+import auth from '@react-native-firebase/auth';
 
 
 export default function HomeFooter({height, navigation,resetKeyboardView}) {
+
+
+
+    async function signOut()  {
+        try {
+          await GoogleSignin.revokeAccess();
+          await GoogleSignin.signOut();
+          return auth().signOut();
+          
+        } catch (error) {
+          console.log("Not Signed In Developer Error!");
+        }
+      };  
 
 
 if(resetKeyboardView) {
@@ -41,9 +56,9 @@ if(resetKeyboardView) {
                 </View>
                 </MotiView>
                 <MotiView from={{opacity:0}} animate={{opacity:1}} transition={{delay:600}}>
-                <View style={{marginLeft:height*0.1,borderWidth:1,borderRadius:50,height:height*0.08,width:0.08*height,elevation:2,backgroundColor:"black",}}>
+                <TouchableOpacity onPress={()=>signOut()} style={{marginLeft:height*0.1,borderWidth:1,borderRadius:50,height:height*0.08,width:0.08*height,elevation:2,backgroundColor:"black",}}>
                     <Ant name='logout' color={"purple"} size={30} style={{padding:height*0.02,width:height*0.3,height:height*0.1}} />
-                </View>
+                </TouchableOpacity>
                 </MotiView>
                </View>
                </>
