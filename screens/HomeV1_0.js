@@ -3,7 +3,7 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 import Header from '../Components/HeaderComponents/Home/Header'
 
 import BottomItems from '../Components/BodyComponents/Home/BottomItems'
-import { Dimensions, View } from 'react-native'
+import { Button, Dimensions, View } from 'react-native'
 import crashlytics from '@react-native-firebase/crashlytics';
 import HomeFooter from '../Components/FooterComponent/Home/HomeFooter'
 import BottomSheet from '../Components/BottomSheet/BottomSheet'
@@ -14,12 +14,9 @@ import { useReducer } from 'react'
 export default function HomeV1_0({navigation}) {
 
   const {height, width} = Dimensions.get('screen');
-  const [resetKeyboardView,setResetKeyboardView] = useReducer((s) => !s,true);;
+  const [resetKeyboardView,setResetKeyboardView] = useReducer((s) => !s,false);
 
-  useEffect(()=>{
-    console.log(resetKeyboardView);
-  },[resetKeyboardView]);
-
+ 
 
 
   return (

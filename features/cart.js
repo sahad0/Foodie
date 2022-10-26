@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const val = { user:null,auth:false,items: [], total: 0 }
+const val = { user:null,auth:false,items: [],liked:[], total: 0 }
 
 
 const cartSlice = createSlice({
@@ -98,11 +98,33 @@ const cartSlice = createSlice({
                 }
                 return k;
             });
+        },
+
+        Like_Unlike : (state,action)=>{
+
+            const check =  (x)=> { 
+                return x.id === action.payload.items.id;
+            }
+
+
+            
+           if(state.value.liked.some(check)){
+
+                state.value.liked=state.value.liked.filter((k)=>{
+                    return k.id!==action.payload.items.id;
+                });
+
+           }
+           else{
+          
+               state.value.liked.push(action.payload.items);
+           }
+           
         }
 
     }
 })
 
-export const {SignIn,SignOut,AddtoCart,RemovefromCart,ReduceItemsfromCart,IncreaseItemsfromCart} = cartSlice.actions;
+export const {SignIn,SignOut,AddtoCart,RemovefromCart,ReduceItemsfromCart,IncreaseItemsfromCart,Like_Unlike} = cartSlice.actions;
 
 export default cartSlice.reducer;

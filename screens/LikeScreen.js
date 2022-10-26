@@ -9,12 +9,13 @@ import { useSelector } from 'react-redux';
 export default function LikeScreen({navigation}) {
     const {height, width} = Dimensions.get("screen");
 
-  const {items} = useSelector((state)=>state.cart.value);
+    const {liked} = useSelector((state)=>state.cart.value);
+
  
 
   return (
     <SafeAreaView style={{flex:1,backgroundColor:"white"}}>
-      {items.length ===0 ? 
+      {liked.length ===0 ? 
       <>
         <LikeBody1 height={height} width={width} navigation={navigation}/>
 
@@ -22,7 +23,7 @@ export default function LikeScreen({navigation}) {
       :
       
       <>
-        <LikeBody2 height={height} width={width} navigation={navigation} items={items}/>
+        <LikeBody2 height={height} width={width} navigation={navigation} />
       
       </>}
         

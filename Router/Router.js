@@ -40,7 +40,7 @@ const RootNavigation = () => {
                 {auth ? 
                 <>
                     <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName={'Home'}>
-                    <Stack.Screen name="Test" component={FadeIn} />
+                    {/* <Stack.Screen name="Test" component={FadeIn} /> */}
                     
                     <Stack.Screen name="Home" component={HomeV1_0} />
                     <Stack.Screen name="Item" component={ItmScreen} />

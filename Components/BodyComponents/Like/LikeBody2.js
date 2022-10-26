@@ -3,14 +3,18 @@ import React from 'react'
 import Icons from "react-native-vector-icons/MaterialCommunityIcons";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import { MotiView,AnimatePresence } from 'moti';
+import { useDispatch, useSelector } from 'react-redux';
+import { Like_Unlike } from '../../../features/cart';
 
 
-export default function LikeBody2({navigation,height, width,items}) {
+export default function LikeBody2({navigation,height, width}) {
 
 
   const DURATION = 800
   
-  
+  const dispatch = useDispatch();
+  const {liked} = useSelector((state)=>state.cart.value);
+
 
 
   const ListHeader = ()=>(
@@ -63,7 +67,7 @@ export default function LikeBody2({navigation,height, width,items}) {
         style={{width:width*0.45,backgroundColor:"#F7E9F2",alignItems:"center",borderRadius:height*0.07,margin:height*0.01,height:height*0.25,alignItems:"center",justifyContent:"center"}} >
                 <Image source={item.img_url}  style={{height:width*0.3,width:width*0.3,postion:"relative",}} resizeMode={"contain"}/>
                 <Text style={{paddingBottom:height*0.01,fontFamily:"Reg"}} >{item.heading}</Text>
-                <TouchableOpacity  style={{borderColor:"white",borderRadius:25,borderWidth:0.4,backgroundColor:"white"}} >
+                <TouchableOpacity onPress={()=>{dispatch(Like_Unlike({items:item}))}}  style={{borderColor:"white",borderRadius:25,borderWidth:0.4,backgroundColor:"white"}} >
                         <Icons name='heart' size={height*0.03} color={"#FF6EB4"} style={{padding:10}} />
 
                 {/* <Icon name="opencart" size={20}  style={{color:"gray",duration={DURATION+200} backgroundColor:"white"}}/> */}
@@ -102,7 +106,7 @@ export default function LikeBody2({navigation,height, width,items}) {
       
 
     </View>
-     <FlatList scrollEventThrottle={16} showsVerticalScrollIndicator={false} style={{height:height*6.6}} ListHeaderComponent={()=>(<ListHeader />)}   data={items} renderItem={renderItems} initialNumToRender={4} numColumns={2}  />
+     <FlatList scrollEventThrottle={16} showsVerticalScrollIndicator={false} style={{height:height*6.6}} ListHeaderComponent={()=>(<ListHeader />)}   data={liked} renderItem={renderItems} initialNumToRender={4} numColumns={2}  />
      </>
   )
 }

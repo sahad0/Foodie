@@ -15,8 +15,7 @@ export default function BottomSheet({...Children}) {
 
     const translateY = useSharedValue(0);
     const prevVal = useSharedValue({y:0});
-
-    if(screen==='Home'){   
+  
         useEffect(()=>{ 
             
                 if(resetKeyboardView) {
@@ -29,23 +28,14 @@ export default function BottomSheet({...Children}) {
             
             
         },[resetKeyboardView]);
-    }
-    else if(screen=='Cart'){
-        useEffect(()=>{ 
-            runOnJS(Scrollto)(initialScrl,50);
-        },[resetKeyboardView]);
-    }
+
+
 
 
 
     const Scrollto = (h,d)=>{
-        if(screen==='Home'){
             translateY.value = withSpring(h,{damping:d},);
-
-        }
-        else{
-            translateY.value = withSpring(h,{damping:d},);
-        }
+        
         
     }
 
