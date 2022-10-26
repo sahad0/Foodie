@@ -20,7 +20,7 @@ export default function CartScreen({navigation}) {
     
     
     <BottomSheet height={height} width={width} resetKeyboardView={resetKeyboardView} initialScrl={-height/2} lmtScroll={-height+height*0.2} screen={"Cart"}>
-      <CartFooter height={height} width={width} setResetKeyboardView={setResetKeyboardView} />
+      <CartFooter height={height} width={width} setResetKeyboardView={setResetKeyboardView}  />
     </BottomSheet>
     
     </SafeAreaView>

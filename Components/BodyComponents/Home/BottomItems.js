@@ -1,10 +1,8 @@
-import { View, Text, Dimensions, Image, ScrollView, TouchableOpacity, FlatList } from 'react-native'
+import { View, Text, Dimensions, Image, TouchableOpacity, FlatList } from 'react-native'
 import React from 'react'
-import Icon from "react-native-vector-icons/Fontisto";
 import Icons from "react-native-vector-icons/MaterialCommunityIcons";
 
 import CarousalDiscounts from './CarousalDiscounts';
-import ListItems from "./MenuItems";
 import { SharedElement } from 'react-navigation-shared-element';
 import MenuItems from './MenuItems';
 
@@ -92,7 +90,7 @@ export default function BottomItems({navigation}) {
 
   return (
     <>
-      <FlatList   data={data} initialNumToRender={6} renderItem={renderItem} numColumns={2} style={{backgroundColor:"#FAFAFA",height:height*0.8}} scrollEventThrottle={16}
+      <FlatList   data={data} initialNumToRender={6} renderItem={renderItem} numColumns={2} style={{backgroundColor:"#FAFAFA",height:height*0.86}} scrollEventThrottle={16}
       ListHeaderComponent={
         ()=>
         <>

@@ -7,7 +7,7 @@ import Animated, { runOnJS, useAnimatedStyle, useSharedValue, withSpring } from 
 
 export default function BottomSheet({...Children}) {
 
-    const {height,width,resetKeyboardView,initialScrl,lmtScroll,screen} = Children;
+    const {height,width,resetKeyboardView,setResetKeyboardView,initialScrl,lmtScroll,screen} = Children;
 
     //initialScrl           2  -  3.5
     //limitScroll           0.2 - 0.72
@@ -16,15 +16,37 @@ export default function BottomSheet({...Children}) {
     const translateY = useSharedValue(0);
     const prevVal = useSharedValue({y:0});
 
-    
-    useEffect(()=>{ 
-        runOnJS(Scrollto)(initialScrl,50);
-    },[resetKeyboardView]);
+    if(screen==='Home'){   
+        useEffect(()=>{ 
+            
+                if(resetKeyboardView) {
+                    runOnJS(Scrollto)(initialScrl,50);
+                }
+                else{
+                    runOnJS(Scrollto)(height/10,50);
+
+                }
+            
+            
+        },[resetKeyboardView]);
+    }
+    else if(screen=='Cart'){
+        useEffect(()=>{ 
+            runOnJS(Scrollto)(initialScrl,50);
+        },[resetKeyboardView]);
+    }
 
 
 
     const Scrollto = (h,d)=>{
-        translateY.value = withSpring(h,{damping:d},);
+        if(screen==='Home'){
+            translateY.value = withSpring(h,{damping:d},);
+
+        }
+        else{
+            translateY.value = withSpring(h,{damping:d},);
+        }
+        
     }
 
 
@@ -53,7 +75,7 @@ export default function BottomSheet({...Children}) {
                 }
             else if(translateY.value >(height/6)*-1){ //changed    
         
-                    runOnJS(Scrollto)(height,50);
+                    runOnJS(Scrollto)(height/10,50);
             
             }
         }

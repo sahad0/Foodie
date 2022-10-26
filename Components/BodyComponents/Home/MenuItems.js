@@ -83,7 +83,7 @@ export default function MenuItems({navigation}) {
   return (
     <View style={{margin:width*0.04,marginLeft: 0,marginRight:0,marginTop:0,backgroundColor:"white",position:"relative",marginBottom:0,paddingTop:height*0.03}}>
      <MenuComponent data={data} renderItem={renderItem} />
-    <View style={{alignItems:"flex-end",backgroundColor:"#FFBAD2",width:"100%",}}>
+    <View style={{alignItems:"flex-end",backgroundColor:"black",width:"100%",}}>
     <Text style={{fontFamily:"Anton",fontSize:35,color:"white",marginRight:height*0.03}}>Love Bites! </Text>
 
     </View>

@@ -7,7 +7,7 @@ import { useRef } from 'react';
 // import * as Animatable from 'react-native-animatable';
 
 
-export default function CartFooter({height,width,setResetKeyboardView}) {
+export default function CartFooter({height,setResetKeyboardView}) {
 
   
 const {total} = useSelector((state)=>state.cart.value);
