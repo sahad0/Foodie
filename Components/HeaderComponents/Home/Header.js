@@ -4,7 +4,7 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 import GetLocation from 'react-native-get-location';
 import Geocoder from 'react-native-geocoding';
 
-export default function Header({navigation,setResetKeyboardView}) {
+export default function Header({navigation,setResetKeyboardView,resetKeyboardView}) {
 
 
 
@@ -49,9 +49,8 @@ export default function Header({navigation,setResetKeyboardView}) {
     //         });
     // }
 
-    const visibleController = ()=>{
-        setResetKeyboardView();
-    }
+
+   
     
       
 
@@ -68,7 +67,7 @@ export default function Header({navigation,setResetKeyboardView}) {
             shadowRadius: 10,
             elevation: 3,
             backgroundColor: 'white'
-        }} onPress={visibleController}>
+        }} onPress={()=>{setResetKeyboardView((k)=>!k)}}>
         <Ionicons color={"black"} style={{padding:width*0.04, }} name='infinite-outline' size={25}/>
         </TouchableOpacity>
         <View style={{alignItems:"center",marginTop:width*0.08   }}>

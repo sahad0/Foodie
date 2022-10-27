@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native'
 import React, { useEffect } from 'react'
 import { Gesture, GestureDetector } from 'react-native-gesture-handler';
-import Animated, { runOnJS, useAnimatedStyle, useSharedValue, withSpring } from "react-native-reanimated"; 
+import Animated, { runOnJS, runOnUI, useAnimatedStyle, useSharedValue, withSpring } from "react-native-reanimated"; 
 
 
 
@@ -20,6 +20,7 @@ export default function BottomSheet({...Children}) {
             
                 if(resetKeyboardView) {
                     runOnJS(Scrollto)(initialScrl,50);
+
                 }
                 else{
                     runOnJS(Scrollto)(height/10,50);
@@ -34,9 +35,30 @@ export default function BottomSheet({...Children}) {
 
 
     const Scrollto = (h,d)=>{
+        if(screen==='Home'&& h===height/10){
+            
             translateY.value = withSpring(h,{damping:d},);
+            setResetKeyboardView(false);
+            
+        }
+                    // runOnUI(
+                    //     ()=>{
+                    //         Animated.spring(translateY,{
+                    //             toValue:h,
+                    //             friction:1,
+                    //             tension:0.4,
+                    //         }).start();
+                    //     },)
+                    else{
+                        translateY.value = withSpring(h,{damping:d},);
+
+                    }
+                  
         
         
+    }
+    const hideBurgerMenu = (x)=>{
+        setResetKeyboardView(x);
     }
 
 
@@ -66,6 +88,7 @@ export default function BottomSheet({...Children}) {
             else if(translateY.value >(height/6)*-1){ //changed    
         
                     runOnJS(Scrollto)(height/10,50);
+                    // hideBurgerMenu();
             
             }
         }

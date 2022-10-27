@@ -9,12 +9,16 @@ import HomeFooter from '../Components/FooterComponent/Home/HomeFooter'
 import BottomSheet from '../Components/BottomSheet/BottomSheet'
 import { useEffect } from 'react'
 import { useReducer } from 'react'
+import { useState } from 'react'
 
 
 export default function HomeV1_0({navigation}) {
 
   const {height, width} = Dimensions.get('screen');
-  const [resetKeyboardView,setResetKeyboardView] = useReducer((s) => !s,false);
+  const [resetKeyboardView,setResetKeyboardView] = useState(false);
+
+
+
 
  
 
@@ -24,13 +28,13 @@ export default function HomeV1_0({navigation}) {
     {/* <Button title='Hello' onPress={()=>{crashlytics().crash()}} /> */}
 
     <View style={{flexGrow:1}}>
-      <Header navigation={navigation} setResetKeyboardView={setResetKeyboardView}  />
+      <Header navigation={navigation} setResetKeyboardView={setResetKeyboardView} resetKeyboardView={resetKeyboardView} />
     </View>
     <View style={{flexGrow:1}}>
         <BottomItems navigation={navigation} />
     </View>
     {/* <FOoter/> */}
-    <BottomSheet height={height} width={width}  resetKeyboardView={resetKeyboardView} initialScrl={-height/3.5} lmtScroll={-height+height*0.72} screen={"Home"} >
+    <BottomSheet height={height} width={width} setResetKeyboardView={setResetKeyboardView} resetKeyboardView={resetKeyboardView} initialScrl={-height/3.5} lmtScroll={-height+height*0.72} screen={"Home"} >
       <HomeFooter height={height} width={width} navigation={navigation} resetKeyboardView={resetKeyboardView} />
     </BottomSheet>
    
