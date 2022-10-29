@@ -10,6 +10,8 @@ export default function CarousalDiscounts() {
 
   const scrollX = useRef(new Animated.Value(0)).current;
 
+  
+
   const {width,height} = Dimensions.get("screen");
     const val = [
       
