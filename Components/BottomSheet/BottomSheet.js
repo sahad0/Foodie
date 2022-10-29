@@ -9,6 +9,8 @@ export default function BottomSheet({...Children}) {
 
     const {height,width,resetKeyboardView,setResetKeyboardView,initialScrl,lmtScroll,screen} = Children;
 
+    // const color = ["lightblue","lightyellow",];
+
     //initialScrl           2  -  3.5
     //limitScroll           0.2 - 0.72
     //screen                cart                  Home
@@ -17,7 +19,7 @@ export default function BottomSheet({...Children}) {
     const prevVal = useSharedValue({y:0});
   
         useEffect(()=>{ 
-            
+            if(screen==='Home'){
                 if(resetKeyboardView) {
                     runOnJS(Scrollto)(initialScrl,50);
 
@@ -26,6 +28,17 @@ export default function BottomSheet({...Children}) {
                     runOnJS(Scrollto)(height/10,50);
 
                 }
+            }
+            else{
+                if(resetKeyboardView) {
+                    runOnJS(Scrollto)(initialScrl,50);
+
+                }
+                else{
+                    runOnJS(Scrollto)(-height/2,50);
+
+                }
+            }
             
             
         },[resetKeyboardView]);
@@ -41,18 +54,10 @@ export default function BottomSheet({...Children}) {
             setResetKeyboardView(false);
             
         }
-                    // runOnUI(
-                    //     ()=>{
-                    //         Animated.spring(translateY,{
-                    //             toValue:h,
-                    //             friction:1,
-                    //             tension:0.4,
-                    //         }).start();
-                    //     },)
-                    else{
-                        translateY.value = withSpring(h,{damping:d},);
-
-                    }
+        
+        else{
+            translateY.value = withSpring(h,{damping:d},);
+        }
                   
         
         
@@ -115,11 +120,12 @@ export default function BottomSheet({...Children}) {
             position:"absolute",
             width:width,
             zIndex:99999,
-            backgroundColor:screen==="Home" ? "black":"white",
+            backgroundColor:screen==="Home" ? "rgba(255,255,255,0.9)":"white",
             height:height,
-            borderRadius:screen==="Home" ? width*0.5:25,
+            borderRadius:25,
             elevation:10,
-            borderTopLeftRadius:screen==="Home" ? width*0.5:height*0.11,
+            borderTopLeftRadius:height*0.11,
+            
             top:height,
         },
         

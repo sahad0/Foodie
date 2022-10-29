@@ -59,6 +59,8 @@ export default function Header({navigation,setResetKeyboardView,resetKeyboardVie
   return (
     <View style={{display:"flex",flexDirection:"row",justifyContent:"space-between",position:"relative",top:0,backgroundColor:"white",elevation:2,height:height*0.14}}>
         <TouchableOpacity style={{
+            width:height*0.08,
+            height:height*0.08,
             margin:width*0.07,
             borderRadius:40,
             shadowColor: 'black',
@@ -66,9 +68,11 @@ export default function Header({navigation,setResetKeyboardView,resetKeyboardVie
             shadowOffset: { width: 0, height: 2},
             shadowRadius: 10,
             elevation: 3,
-            backgroundColor: 'white'
+            backgroundColor: 'white',
+            alignItems:"center",
+            justifyContent:"center"
         }} onPress={()=>{setResetKeyboardView((k)=>!k)}}>
-        <Ionicons color={"black"} style={{padding:width*0.04, }} name='infinite-outline' size={25}/>
+        <Ionicons color={"black"} name='infinite-outline' size={25}/>
         </TouchableOpacity>
         <View style={{alignItems:"center",marginTop:width*0.08   }}>
             <Text style={{color:"gray",fontFamily:"Sil"}}>Location</Text>
@@ -78,6 +82,8 @@ export default function Header({navigation,setResetKeyboardView,resetKeyboardVie
             </View>
         </View>
         <TouchableOpacity style={{
+            width:height*0.08,
+            height:height*0.08,
             margin:width*0.07,
             borderRadius:40,
             shadowColor: 'black',
@@ -85,7 +91,9 @@ export default function Header({navigation,setResetKeyboardView,resetKeyboardVie
             shadowOffset: { width: 0, height: 2},
             shadowRadius: 10,
             elevation: 3,
-            backgroundColor: 'white'
+            backgroundColor: 'white',
+            alignItems:"center",
+            justifyContent:"center"
         }} onPress={()=>navigation.navigate("Cart")}>
         <Ionicons color={"black"} style={{padding:width*0.04, }} name='albums-outline' size={25}/>
         </TouchableOpacity>

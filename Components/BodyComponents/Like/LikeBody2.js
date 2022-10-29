@@ -66,7 +66,7 @@ export default function LikeBody2({navigation,height, width}) {
         
         style={{width:width*0.45,backgroundColor:"#F7E9F2",alignItems:"center",borderRadius:height*0.07,margin:height*0.01,height:height*0.25,alignItems:"center",justifyContent:"center"}} >
                 <Image source={item.img_url}  style={{height:width*0.3,width:width*0.3,postion:"relative",}} resizeMode={"contain"}/>
-                <Text style={{paddingBottom:height*0.01,fontFamily:"Reg"}} >{item.heading}</Text>
+                <Text style={{paddingBottom:height*0.01,fontFamily:"Reg",color:"black"}} >{item.heading}</Text>
                 <TouchableOpacity onPress={()=>{dispatch(Like_Unlike({items:item}))}}  style={{borderColor:"white",borderRadius:25,borderWidth:0.4,backgroundColor:"white"}} >
                         <Icons name='heart' size={height*0.03} color={"#FF6EB4"} style={{padding:10}} />
 
