@@ -1,16 +1,25 @@
 import { View, Text, Dimensions, TouchableOpacity } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 import { FlatList } from 'react-native-gesture-handler';
-import { burgerData } from '../../../../data/Burgerfile';
+import { Burger } from '../../../../data/Burgerfile';
 import Option from '../OptionContainer/Option';
+import { useRef } from 'react';
+import { useEffect } from 'react';
 
 
 export default function CommonBody() {
   const {width,height} = Dimensions.get("screen");
+  const [state,setState] = useState(0);
+  const ref = useRef(null);
 
-  const data =  burgerData.question.map((k,index)=>{
-                  return {question:burgerData.question[index],data:burgerData.option[index],color:burgerData.color}
+  useEffect(()=>{
+    ref.current?.scrollToIndex({index:state,animated:true})
+  },[state]);
+
+  const data =  Burger.question.map((_,index)=>{
+                  return {question:Burger.question[index],data:Burger.option[index],color:Burger.color}
                 });
+  const length = Burger.question.length;
 
 
 
@@ -19,7 +28,7 @@ export default function CommonBody() {
   const renderItem = ({item})=>{
     return(
       
-      <Option height={height} width={width} data={item.data} question={item.question} color={item.color} />
+      <Option state={state} setState={setState} length={length} height={height} width={width} data={item.data} question={item.question} color={item.color} />
       
     )
   }
@@ -33,7 +42,7 @@ export default function CommonBody() {
           <Text style={{alignSelf:"flex-end",fontWeight:"bold"}}>OrderID : 5689</Text>
           <Text style={{alignSelf:"flex-end",fontWeight:"bold"}}> Price: $50</Text>
         </View>
-        <FlatList horizontal initialScrollIndex={0} pagingEnabled  data={data} renderItem={renderItem} />
+        <FlatList ref={ref} horizontal initialScrollIndex={0} pagingEnabled scrollEnabled={false}  data={data} renderItem={renderItem} />
 
 
       

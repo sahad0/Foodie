@@ -59,8 +59,7 @@ export default function MenuView({route}) {
     
     <MenuBody data={val} height={height} width={width} sIndex={sIndex}/>
     <BottomSheet height={height} width={width} resetKeyboardView={true}>
-    <CommonBody />
-
+      <CommonBody />
     </BottomSheet>
     
     </SafeAreaView>

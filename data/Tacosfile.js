@@ -1,41 +1,44 @@
-export const Burger = {
-    title: "Burger",
+export const Tacos = {
+    title: "Tacos",
     question:[
-         "Choose your patty !",
+         "Choose your steak !",
          "How about some Cheese ?",
          "Choose your Mayo !",
          "AddOns !",
          
     ],
     
-    color: "pink",
+    color: "lightyellow",
     
     option : [
         [
-            {
-              name:"Beef",
-              type:"Patty",
-              price:18,
-            },{
-              name:"Chicken",
-              type:"Patty",
-              price:12,
-            },
+            
             {
               name:"Pork",
-              type:"Patty",
+              type:"Steak",
               price:15,
             },
             {
-              name:"Pork",
-              type:"Patty",
-              price:15,
-            }
+                name:"Shrimp",
+                type:"Steak",
+                price:15,
+              },
+              {
+                name:"Barbacoa",
+                type:"Steak",
+                price:15,
+              },
+              {
+                name:"Carnitas",
+                type:"Steak",
+                price:15,
+              },
+
       
         ],
         [
             {
-              name:"Cheddar",
+              name:"Oaxaca",
               type:"Cheese",
               price:9,
             },{
@@ -48,11 +51,11 @@ export const Burger = {
         ],
           [
               {
-                name:"Egg",
+                name:"Mustard",
                 type:"Mayonnaise",
                 price:3,
               },{
-                name:"Eggless",
+                name:"Pepper",
                 type:"Mayonnaise",
                 price:5,
               },

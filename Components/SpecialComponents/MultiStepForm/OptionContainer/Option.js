@@ -3,7 +3,7 @@ import React from 'react'
 import { Checkbox } from 'react-native-paper';
 import Icons from "react-native-vector-icons/Ionicons"
 
-export default function Option({height,width,data,question,color}) {
+export default function Option({height,width,data,question,color,state,setState,length}) {
 
    
 
@@ -40,7 +40,7 @@ export default function Option({height,width,data,question,color}) {
                                     </View>
                                 </View>
                                 <View style={{justifyContent:"center"}}>
-                                    <Text style={{fontSize:height*0.02}}> - {k.price}$</Text>
+                                    <Text style={{fontSize:height*0.02}}> -      {k.price}$</Text>
                                 </View>
                             </View>
                         ))
@@ -49,12 +49,28 @@ export default function Option({height,width,data,question,color}) {
 
                 </View>
                 <View style={{flexDirection:"row",marginTop:height*0.02}}>
-                <TouchableOpacity style={{marginLeft: height*0.15,height:height*0.08,width:height*0.08,backgroundColor:"white",elevation:2,justifyContent:"center",alignItems:"center",borderRadius:height*0.2}}>
-                        <Icons name='ios-chevron-back' color={color} size={40} style={{}} />
+                <TouchableOpacity 
+                onPress={(()=>{
+                    if(state===0){
+                        return ;
+                    }
+                    setState(state-1);
+                })}
+                style={{marginLeft: height*0.15,height:height*0.08,width:height*0.08,backgroundColor:"white",elevation:5,justifyContent:"center",alignItems:"center",borderRadius:height*0.2}}>
+                        <Icons name='ios-chevron-back' color={color} size={40}  />
                     </TouchableOpacity>
 
-                    <TouchableOpacity style={{marginLeft: height*0.05,height:height*0.08,width:height*0.08,backgroundColor:"white",elevation:2,justifyContent:"center",alignItems:"center",borderRadius:height*0.2}}>
-                        <Icons name='ios-chevron-forward-sharp' color={color} size={40} style={{}} />
+                    <TouchableOpacity 
+                    onPress={(()=>{
+                        if(state===length-1){
+                            return ;
+                        }
+
+                        setState(state+1);
+
+                    })}
+                    style={{marginLeft: height*0.05,height:height*0.08,width:height*0.08,backgroundColor:"white",elevation:5,justifyContent:"center",alignItems:"center",borderRadius:height*0.2}}>
+                        <Icons name='ios-chevron-forward-sharp' color={color} size={40}  />
                     </TouchableOpacity>
                 </View>
                
