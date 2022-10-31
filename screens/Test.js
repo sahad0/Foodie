@@ -13,13 +13,11 @@ export default function Test() {
                   return {question:burgerData.question[index],data:burgerData.option[index]}
                 });
 
-    console.log(data);
 
 
 
 
   const renderItem = ({item})=>{
-    // console.log(item.data);
     return(
       
       <Burger height={height} width={width} data={item.data} question={item.question} />

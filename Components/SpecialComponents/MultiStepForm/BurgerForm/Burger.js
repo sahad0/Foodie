@@ -4,7 +4,6 @@ import { Checkbox } from 'react-native-paper';
 import Icons from "react-native-vector-icons/Ionicons"
 
 export default function Burger({height,width,data,question}) {
-    console.log(data)
 
    
 
