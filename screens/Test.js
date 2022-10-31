@@ -1,62 +1,48 @@
+import { View, Text, Dimensions, TouchableOpacity } from 'react-native'
+import React from 'react'
+
+import Burger from '../Components/SpecialComponents/MultiStepForm/BurgerForm/Burger';
+import { FlatList } from 'react-native-gesture-handler';
+import { burgerData } from '../data/Burgerfile';
+
+
+export default function Test() {
+  const {width,height} = Dimensions.get("screen");
+
+  const data =  burgerData.question.map((k,index)=>{
+                  return {question:burgerData.question[index],data:burgerData.option[index]}
+                });
+
+    console.log(data);
 
 
 
 
+  const renderItem = ({item})=>{
+    // console.log(item.data);
+    return(
+      
+      <Burger height={height} width={width} data={item.data} question={item.question} />
+      
+    )
+  }
 
-
-
-
-
-
-
-import React, { useReducer } from 'react'
-import { StyleSheet, Pressable } from 'react-native'
-import { MotiView } from 'moti'
-
-function Shape() {
-  return (
-    <MotiView
-      from={{
-        opacity: 0,
-        scale: 0.5,
-      }}
-      animate={{
-        opacity: 1,
-        scale: 1,
-      }}
-      transition={{
-        type: 'timing',
-        delay:500,
-      }}
-      style={styles.shape}
-    />
-  )
-}
-
-export default function FadeIn() {
-  const [visible, toggle] = useReducer((s) => !s, true)
 
   return (
-    <Pressable onPress={toggle} style={styles.container}>
-      {visible && <Shape />}
-    </Pressable>
+    <>
+      <View>
+        <View style={{margin:height*0.03,marginBottom:0}}>
+          <Text style={{alignSelf:"flex-end"}}>Make ur Custom Burger!</Text>
+          <Text style={{alignSelf:"flex-end",fontWeight:"bold"}}>OrderID : 5689</Text>
+          <Text style={{alignSelf:"flex-end",fontWeight:"bold"}}> Price: $50</Text>
+        </View>
+        <FlatList horizontal initialScrollIndex={0} pagingEnabled  data={data} renderItem={renderItem} />
+
+
+      
+    </View>
+   
+    </>
+   
   )
 }
-
-const styles = StyleSheet.create({
-  shape: {
-    justifyContent: 'center',
-    height: 250,
-    width: 250,
-    borderRadius: 25,
-    marginRight: 10,
-    backgroundColor: 'white',
-  },
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    flexDirection: 'row',
-    backgroundColor: '#9c1aff',
-  },
-})

@@ -1,20 +1,69 @@
-import { View, Text, Image, Dimensions } from 'react-native'
+import { View, Text, Image, Dimensions, SafeAreaView } from 'react-native'
 import React from 'react'
+import MenuBody from '../Components/BodyComponents/Menu/MenuBody';
+import BottomSheet from "../Components/BottomSheet/BottomSheet" 
+import Test from './Test';
+import { useRef } from 'react';
+
+
 
 export default function MenuView({route}) {
-    const {item} = route.params;
-    const {width} = Dimensions.get("screen");
+    const {item,sIndex} = route.params;
+    const {width,height} = Dimensions.get("screen"); 
+    
+  const val = [
+    {
+      title: "Burger",
+      icon: require('../assets/Menu/1.png'),
+    },
+    {
+      title: "Tacos",
+      icon: require('../assets/Menu/6.png'),
+    },
+    {
+      title: "HotDog",
+      icon: require('../assets/Menu/5.png'),
+    },
+    {
+      title: "Smoothie",
+      icon: require('../assets/Menu/2.png'),
+    },
+    {
+      title: "FRies",
+      icon: require('../assets/Menu/3.png'),
+    },
+    {
+      title: "Pizza",
+      icon: require('../assets/Menu/4.png'),
+    },
+   
+  
+    {
+      title: "Donut",
+      icon: require('../assets/Menu/7.png'),
+    },
+
+    {
+      title: "Chicken",
+      icon: require('../assets/Menu/8.png'),
+    },
+   
+  ]
+
+
   return (
-    <View style={{backgroundColor:"white",justifyContent:"space-between",flexDirection:"row",alignItems:"center",borderBottomLeftRadius:width*0.08,elevation:3}}>
-        <View >
-        <Text style={{fontFamily:"Reg",fontSize:width*0.08,padding:width*0.03}}>Top Notch</Text>
-        <Text style={{fontFamily:"Anton",fontSize:width*0.05,padding:width*0.03,textDecorationLine:"underline"}}> {item.name+"          "}</Text>
+    
+    <>
+    <SafeAreaView style={{backgroundColor:"white",alignItems:"center",flex:1,}}>
+    
+    <MenuBody data={val} height={height} width={width} sIndex={sIndex}/>
+    <BottomSheet height={height} width={width} resetKeyboardView={true}>
+    <Test />
 
-        </View>
-        <View >
-            <Image source={item.img_url1} style={{height:width*0.8,width:width*0.8}} resizeMode={"contain"} />
+    </BottomSheet>
+    
+    </SafeAreaView>
 
-        </View>
-    </View>
+    </>
   )
 }

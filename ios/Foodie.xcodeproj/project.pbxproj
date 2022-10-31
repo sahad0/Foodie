@@ -20,6 +20,8 @@
 		6CA87208151E4F4EB1CA5905 /* Reg.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8F2AC63AE04747FA83B9D1DF /* Reg.ttf */; };
 		65E8DBCC12914A4DA7E5CA00 /* monster.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A5E6B8F417B94F25A2589554 /* monster.ttf */; };
 		E9E89D0BB4F1400480CE6B90 /* Lucky.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 96F618B901D044A6B30697AB /* Lucky.ttf */; };
+		A87343DCF7B04FD5B35BE756 /* League.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BCDCC0D8C0D44F1CAC429F25 /* League.ttf */; };
+		DCC4D844FD044FFDA691530C /* Sanch.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3D3141467DC94D41AA7AEE6F /* Sanch.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,8 @@
 		8F2AC63AE04747FA83B9D1DF /* Reg.ttf */ = {isa = PBXFileReference; name = "Reg.ttf"; path = "../assets/fonts/Reg.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		A5E6B8F417B94F25A2589554 /* monster.ttf */ = {isa = PBXFileReference; name = "monster.ttf"; path = "../assets/fonts/monster.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		96F618B901D044A6B30697AB /* Lucky.ttf */ = {isa = PBXFileReference; name = "Lucky.ttf"; path = "../assets/fonts/Lucky.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		BCDCC0D8C0D44F1CAC429F25 /* League.ttf */ = {isa = PBXFileReference; name = "League.ttf"; path = "../assets/fonts/League.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		3D3141467DC94D41AA7AEE6F /* Sanch.ttf */ = {isa = PBXFileReference; name = "Sanch.ttf"; path = "../assets/fonts/Sanch.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +174,8 @@
 				8F2AC63AE04747FA83B9D1DF /* Reg.ttf */,
 				A5E6B8F417B94F25A2589554 /* monster.ttf */,
 				96F618B901D044A6B30697AB /* Lucky.ttf */,
+				BCDCC0D8C0D44F1CAC429F25 /* League.ttf */,
+				3D3141467DC94D41AA7AEE6F /* Sanch.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -277,6 +283,8 @@
 				6CA87208151E4F4EB1CA5905 /* Reg.ttf in Resources */,
 				65E8DBCC12914A4DA7E5CA00 /* monster.ttf in Resources */,
 				E9E89D0BB4F1400480CE6B90 /* Lucky.ttf in Resources */,
+				A87343DCF7B04FD5B35BE756 /* League.ttf in Resources */,
+				DCC4D844FD044FFDA691530C /* Sanch.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
