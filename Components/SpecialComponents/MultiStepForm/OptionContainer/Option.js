@@ -3,7 +3,7 @@ import React from 'react'
 import { Checkbox } from 'react-native-paper';
 import Icons from "react-native-vector-icons/Ionicons"
 
-export default function Burger({height,width,data,question}) {
+export default function Option({height,width,data,question,color}) {
 
    
 
@@ -27,7 +27,7 @@ export default function Burger({height,width,data,question}) {
                                 <View style={{flexDirection:"row",}}>
                                     <View>
                                     <Checkbox
-                                        color={data.color}
+                                        color={color}
                                         status={checked===k.name ? 'checked' : 'unchecked'}
                                         onPress={() => {
                                         setChecked(k.name);
@@ -50,11 +50,11 @@ export default function Burger({height,width,data,question}) {
                 </View>
                 <View style={{flexDirection:"row",marginTop:height*0.02}}>
                 <TouchableOpacity style={{marginLeft: height*0.15,height:height*0.08,width:height*0.08,backgroundColor:"white",elevation:2,justifyContent:"center",alignItems:"center",borderRadius:height*0.2}}>
-                        <Icons name='ios-chevron-back' color={"pink"} size={40} style={{}} />
+                        <Icons name='ios-chevron-back' color={color} size={40} style={{}} />
                     </TouchableOpacity>
 
                     <TouchableOpacity style={{marginLeft: height*0.05,height:height*0.08,width:height*0.08,backgroundColor:"white",elevation:2,justifyContent:"center",alignItems:"center",borderRadius:height*0.2}}>
-                        <Icons name='ios-chevron-forward-sharp' color={"pink"} size={40} style={{}} />
+                        <Icons name='ios-chevron-forward-sharp' color={color} size={40} style={{}} />
                     </TouchableOpacity>
                 </View>
                

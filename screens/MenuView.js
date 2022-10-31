@@ -2,8 +2,9 @@ import { View, Text, Image, Dimensions, SafeAreaView } from 'react-native'
 import React from 'react'
 import MenuBody from '../Components/BodyComponents/Menu/MenuBody';
 import BottomSheet from "../Components/BottomSheet/BottomSheet" 
-import Test from './Test';
+import Test from '../Components/SpecialComponents/MultiStepForm/Common/CommonBody';
 import { useRef } from 'react';
+import CommonBody from '../Components/SpecialComponents/MultiStepForm/Common/CommonBody';
 
 
 
@@ -58,7 +59,7 @@ export default function MenuView({route}) {
     
     <MenuBody data={val} height={height} width={width} sIndex={sIndex}/>
     <BottomSheet height={height} width={width} resetKeyboardView={true}>
-    <Test />
+    <CommonBody />
 
     </BottomSheet>
     

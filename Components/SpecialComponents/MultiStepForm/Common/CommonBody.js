@@ -1,16 +1,15 @@
 import { View, Text, Dimensions, TouchableOpacity } from 'react-native'
 import React from 'react'
-
-import Burger from '../Components/SpecialComponents/MultiStepForm/BurgerForm/Burger';
 import { FlatList } from 'react-native-gesture-handler';
-import { burgerData } from '../data/Burgerfile';
+import { burgerData } from '../../../../data/Burgerfile';
+import Option from '../OptionContainer/Option';
 
 
-export default function Test() {
+export default function CommonBody() {
   const {width,height} = Dimensions.get("screen");
 
   const data =  burgerData.question.map((k,index)=>{
-                  return {question:burgerData.question[index],data:burgerData.option[index]}
+                  return {question:burgerData.question[index],data:burgerData.option[index],color:burgerData.color}
                 });
 
 
@@ -20,7 +19,7 @@ export default function Test() {
   const renderItem = ({item})=>{
     return(
       
-      <Burger height={height} width={width} data={item.data} question={item.question} />
+      <Option height={height} width={width} data={item.data} question={item.question} color={item.color} />
       
     )
   }
