@@ -2,6 +2,7 @@ import { View, Text ,TouchableOpacity, ScrollView } from 'react-native'
 import React from 'react'
 import { Checkbox } from 'react-native-paper';
 import Icons from "react-native-vector-icons/Ionicons"
+import { MotiView } from 'moti';
 
 export default function Option({height,width,data,question,color,state,setState,length,itemCart,setItemCart,setTotal}) {
 
@@ -71,24 +72,25 @@ export default function Option({height,width,data,question,color,state,setState,
                     {
                         state===0 ? 
                         <>
-                        
-                        <TouchableOpacity 
-                            onPress={(()=>{
-                                if(state===length-1){
-                                    return ;
-                                }
+                        <MotiView from={{translateY:100}} animate={{translateY:0}} transition={{duration:500}}>
+                            <TouchableOpacity 
+                                onPress={(()=>{
+                                    if(state===length-1){
+                                        return ;
+                                    }
 
-                                setState(state+1);
+                                    setState(state+1);
 
-                            })}
-                            style={{marginLeft: width*0.58,height:height*0.08,width:height*0.08,backgroundColor:"white",elevation:5,justifyContent:"center",alignItems:"center",borderRadius:height*0.2}}>
-                            <Icons name='ios-chevron-forward-sharp' color={color} size={40}  />
-                        </TouchableOpacity>
-
+                                })}
+                                style={{marginLeft: width*0.58,height:height*0.08,width:height*0.08,backgroundColor:"white",elevation:5,justifyContent:"center",alignItems:"center",borderRadius:height*0.2}}>
+                                <Icons name='ios-chevron-forward-sharp' color={color} size={40}  />
+                            </TouchableOpacity>
+                        </MotiView>
                         </>
                         :
                         state===length-1 ?
                         <>
+                        <MotiView from={{translateY:100}} animate={{translateY:0}} transition={{delay:300}}>
                            <TouchableOpacity 
                                 onPress={(()=>{
                                     
@@ -96,16 +98,20 @@ export default function Option({height,width,data,question,color,state,setState,
                                 })}
                                 style={{marginLeft: height*0.15,height:height*0.08,width:height*0.08,backgroundColor:"white",elevation:5,justifyContent:"center",alignItems:"center",borderRadius:height*0.2}}>
                                         <Icons name='ios-chevron-back' color={color} size={40}  />
-                                    </TouchableOpacity>
-
-                                    <TouchableOpacity 
+                            </TouchableOpacity>
+                        </MotiView>
+                            <MotiView from={{translateY:100}} animate={{translateY:0}} transition={{delay:500}}>
+                            <TouchableOpacity 
                                    
                                     style={{marginLeft: height*0.05,height:height*0.08,width:height*0.08,backgroundColor:"white",elevation:5,justifyContent:"center",alignItems:"center",borderRadius:height*0.2}}>
                                         <Icons name='ios-fast-food-sharp' color={"black"} size={40}  />
                             </TouchableOpacity>
+                            </MotiView>
                         </>
                         :
                         <>
+                        <MotiView style={{flexDirection:"row"}} from={{translateY:100}} animate={{translateY:0}} transition={{delay:500}}>
+
                             <TouchableOpacity 
                                 onPress={(()=>{
                                     if(state===0){
@@ -115,9 +121,8 @@ export default function Option({height,width,data,question,color,state,setState,
                                 })}
                                 style={{marginLeft: height*0.15,height:height*0.08,width:height*0.08,backgroundColor:"white",elevation:5,justifyContent:"center",alignItems:"center",borderRadius:height*0.2}}>
                                         <Icons name='ios-chevron-back' color={color} size={40}  />
-                                    </TouchableOpacity>
-
-                                    <TouchableOpacity 
+                            </TouchableOpacity>
+                            <TouchableOpacity 
                                     onPress={(()=>{
                                         if(state===length-1){
                                             return ;
@@ -129,6 +134,8 @@ export default function Option({height,width,data,question,color,state,setState,
                                     style={{marginLeft: height*0.05,height:height*0.08,width:height*0.08,backgroundColor:"white",elevation:5,justifyContent:"center",alignItems:"center",borderRadius:height*0.2}}>
                                         <Icons name='ios-chevron-forward-sharp' color={color} size={40}  />
                             </TouchableOpacity>
+                        </MotiView>
+
                         </>
                         
                     }
