@@ -3,11 +3,32 @@ import React from 'react'
 import { Checkbox } from 'react-native-paper';
 import Icons from "react-native-vector-icons/Ionicons"
 
-export default function Option({height,width,data,question,color,state,setState,length}) {
+export default function Option({height,width,data,question,color,state,setState,length,itemCart,setItemCart,setTotal}) {
 
+//   const [itemCart,setItemCart] = useState({title:"",orderId:"",customizedItems:[],total:[]});
    
 
     const [checked, setChecked] = React.useState("");
+
+    const handleCheck = (id,price,item)=>{
+
+            const temp = itemCart;
+            if(temp.customizedItems[id]){
+                itemCart.total -= temp.customizedItems[id].price;
+                temp.customizedItems[id] = item;
+                itemCart.total += price;
+
+                
+            }
+            else{
+                temp.customizedItems[id] = item;
+                itemCart.total += price;
+            }
+
+            setItemCart(itemCart);
+            setTotal(temp.total);
+    }
+
 
 
 
@@ -29,9 +50,7 @@ export default function Option({height,width,data,question,color,state,setState,
                                     <Checkbox
                                         color={color}
                                         status={checked===k.name ? 'checked' : 'unchecked'}
-                                        onPress={() => {
-                                        setChecked(k.name);
-                                        }}
+                                        onPress={() => {setChecked(k.name),handleCheck(k.tag,k.price,k)}}
                                     />
                                     </View>
                                     <View>
@@ -49,29 +68,70 @@ export default function Option({height,width,data,question,color,state,setState,
 
                 </View>
                 <View style={{flexDirection:"row",marginTop:height*0.02}}>
-                <TouchableOpacity 
-                onPress={(()=>{
-                    if(state===0){
-                        return ;
+                    {
+                        state===0 ? 
+                        <>
+                        
+                        <TouchableOpacity 
+                            onPress={(()=>{
+                                if(state===length-1){
+                                    return ;
+                                }
+
+                                setState(state+1);
+
+                            })}
+                            style={{marginLeft: width*0.58,height:height*0.08,width:height*0.08,backgroundColor:"white",elevation:5,justifyContent:"center",alignItems:"center",borderRadius:height*0.2}}>
+                            <Icons name='ios-chevron-forward-sharp' color={color} size={40}  />
+                        </TouchableOpacity>
+
+                        </>
+                        :
+                        state===length-1 ?
+                        <>
+                           <TouchableOpacity 
+                                onPress={(()=>{
+                                    
+                                    setState(state-1);
+                                })}
+                                style={{marginLeft: height*0.15,height:height*0.08,width:height*0.08,backgroundColor:"white",elevation:5,justifyContent:"center",alignItems:"center",borderRadius:height*0.2}}>
+                                        <Icons name='ios-chevron-back' color={color} size={40}  />
+                                    </TouchableOpacity>
+
+                                    <TouchableOpacity 
+                                   
+                                    style={{marginLeft: height*0.05,height:height*0.08,width:height*0.08,backgroundColor:"white",elevation:5,justifyContent:"center",alignItems:"center",borderRadius:height*0.2}}>
+                                        <Icons name='ios-fast-food-sharp' color={"black"} size={40}  />
+                            </TouchableOpacity>
+                        </>
+                        :
+                        <>
+                            <TouchableOpacity 
+                                onPress={(()=>{
+                                    if(state===0){
+                                        return ;
+                                    }
+                                    setState(state-1);
+                                })}
+                                style={{marginLeft: height*0.15,height:height*0.08,width:height*0.08,backgroundColor:"white",elevation:5,justifyContent:"center",alignItems:"center",borderRadius:height*0.2}}>
+                                        <Icons name='ios-chevron-back' color={color} size={40}  />
+                                    </TouchableOpacity>
+
+                                    <TouchableOpacity 
+                                    onPress={(()=>{
+                                        if(state===length-1){
+                                            return ;
+                                        }
+
+                                        setState(state+1);
+
+                                    })}
+                                    style={{marginLeft: height*0.05,height:height*0.08,width:height*0.08,backgroundColor:"white",elevation:5,justifyContent:"center",alignItems:"center",borderRadius:height*0.2}}>
+                                        <Icons name='ios-chevron-forward-sharp' color={color} size={40}  />
+                            </TouchableOpacity>
+                        </>
+                        
                     }
-                    setState(state-1);
-                })}
-                style={{marginLeft: height*0.15,height:height*0.08,width:height*0.08,backgroundColor:"white",elevation:5,justifyContent:"center",alignItems:"center",borderRadius:height*0.2}}>
-                        <Icons name='ios-chevron-back' color={color} size={40}  />
-                    </TouchableOpacity>
-
-                    <TouchableOpacity 
-                    onPress={(()=>{
-                        if(state===length-1){
-                            return ;
-                        }
-
-                        setState(state+1);
-
-                    })}
-                    style={{marginLeft: height*0.05,height:height*0.08,width:height*0.08,backgroundColor:"white",elevation:5,justifyContent:"center",alignItems:"center",borderRadius:height*0.2}}>
-                        <Icons name='ios-chevron-forward-sharp' color={color} size={40}  />
-                    </TouchableOpacity>
                 </View>
                
                     
@@ -92,3 +152,6 @@ export default function Option({height,width,data,question,color,state,setState,
     </>
   )
 }
+
+
+                

@@ -56,7 +56,6 @@ export default function MenuView({route}) {
     
     <>
     <SafeAreaView style={{backgroundColor:"white",alignItems:"center",flex:1,}}>
-    
     <MenuBody data={val} height={height} width={width} sIndex={sIndex}/>
     <BottomSheet height={height} width={width} resetKeyboardView={true}>
       <CommonBody />
