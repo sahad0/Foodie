@@ -14,38 +14,38 @@ export default function MenuItems({navigation}) {
         img_url:require("../../../assets/images/List/1.png"),
         },
         {
-          id:7,
+          id:2,
           name:"Tacos",
           img_url:require("../../../assets/images/List/7.png"),
         },
         {
-          id:6,
+          id:3,
           name:"HotDog",
           img_url:require("../../../assets/images/List/6.png"),
         },
         {
-          id:2,
+          id:4,
           name:"Smoothie",
           img_url:require("../../../assets/images/List/2.png"),
         },
         {
-          id:4,
+          id:5,
           name:"Fries",
           img_url:require("../../../assets/images/List/4.png"),
         },
         {
-          id:5,
+          id:6,
           name:"Pizza",
           img_url:require("../../../assets/images/List/5.png"),
         },
             
         {
-          id:8,
+          id:7,
           name:"Donut",
           img_url:require("../../../assets/images/List/8.png"),
         },
         {
-          id:9,
+          id:8,
           name:"Chicken",
           img_url:require("../../../assets/images/List/9.png"),
         },

@@ -24,7 +24,7 @@ const renderItem = ({item,index})=>{
     </View>
 
 )}
-const backG = ['pink','lightyellow','lightblue','lightyellow','orange','pink','lightpink','lightblue'];
+const backG = ['pink','lightyellow','lightblue','lightyellow','purple','pink','lightpink','lightblue'];
 
     const backgroundColor = ScrollX.interpolate({
         inputRange: backG.map((_,index)=>index*width),

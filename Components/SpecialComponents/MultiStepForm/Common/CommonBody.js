@@ -2,14 +2,14 @@ import 'react-native-get-random-values'
 import { View, Text, Dimensions, TouchableOpacity } from 'react-native'
 import React, { useState } from 'react'
 import { FlatList } from 'react-native-gesture-handler';
-import { Burger } from '../../../../data/Burgerfile';
+import { Food } from '../../../../data/Burgerfile';
 import Option from '../OptionContainer/Option';
 import { useRef } from 'react';
 import { useEffect } from 'react';
 import { customAlphabet } from 'nanoid';
 
 
-export default function CommonBody() {
+export default function CommonBody({id}) {
   const {width,height} = Dimensions.get("screen");
   const [state,setState] = useState(0);
   const ref = useRef(null);
@@ -28,16 +28,18 @@ export default function CommonBody() {
   },[]);
 
 
+
+
   useEffect(()=>{
     ref.current?.scrollToIndex({index:state,animated:true})
   },[state]);
 
 
 
-  const data =  Burger.question.map((_,index)=>{
-                  return {question:Burger.question[index],data:Burger.option[index],color:Burger.color}
+  const data =  Food[id].obj.question.map((_,index)=>{
+                  return {question:Food[id].obj.question[index],data:Food[id].obj.option[index],color:Food[1].obj.color}
                 });
-  const length = Burger.question.length;
+  const length = Food[id].obj.question.length;
 
 
 
@@ -46,7 +48,7 @@ export default function CommonBody() {
   const renderItem = ({item})=>{
     return(
       
-      <Option state={state} setState={setState} total={total} setTotal={setTotal} length={length} height={height} width={width} data={item.data} question={item.question} color={item.color} itemCart={itemCart} setItemCart={setItemCart} />
+      <Option state={state} setState={setState} total={total} setTotal={setTotal} length={length} height={height} width={width} data={item.data} question={item.question} color={Food[id].obj.color} itemCart={itemCart} setItemCart={setItemCart} />
       
     )
   }
@@ -56,7 +58,7 @@ export default function CommonBody() {
     <>
       <View>
         <View style={{margin:height*0.03,marginBottom:0}}>
-          <Text style={{alignSelf:"flex-end"}}>Make ur Custom Burger!</Text>
+          <Text style={{alignSelf:"flex-end"}}>Make ur Custom Burger</Text>
           <Text style={{alignSelf:"flex-end",fontWeight:"bold"}}>OrderID : {orderId}</Text>
           <Text style={{alignSelf:"flex-end",fontWeight:"bold"}}> Price: ${itemCart.total}</Text>
         </View>

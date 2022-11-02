@@ -1,7 +1,12 @@
+
+
+
+
+ 
 export const Tacos = {
     title: "Tacos",
     question:[
-         "Choose your steak !",
+         "Choose your Steak !",
          "How about some Cheese ?",
          "Choose your Mayo !",
          "AddOns !",
@@ -12,37 +17,37 @@ export const Tacos = {
     
     option : [
         [
-            
             {
+              tag:0,
               name:"Pork",
+              type:"Steak",
+              price:18,
+            },
+            {
+              tag:0,
+              name:"Shrimp",
+              type:"Steak",
+              price:12,
+            },
+            {
+              tag:0,
+              name:"Chicken",
               type:"Steak",
               price:15,
             },
-            {
-                name:"Shrimp",
-                type:"Steak",
-                price:15,
-              },
-              {
-                name:"Barbacoa",
-                type:"Steak",
-                price:15,
-              },
-              {
-                name:"Carnitas",
-                type:"Steak",
-                price:15,
-              },
-
+           
       
         ],
         [
             {
-              name:"Oaxaca",
+              tag:1,
+              name:"Manchego",
               type:"Cheese",
               price:9,
-            },{
-              name:"Swiss",
+            },
+            {
+              tag:1,
+              name:"Fontina",
               type:"Cheese",
               price:7,
             },
@@ -51,11 +56,14 @@ export const Tacos = {
         ],
           [
               {
-                name:"Mustard",
+                tag:2,
+                name:"Pepper",
                 type:"Mayonnaise",
                 price:3,
-              },{
-                name:"Pepper",
+              },
+              {
+                tag:2,
+                name:"Veg",
                 type:"Mayonnaise",
                 price:5,
               },
@@ -64,16 +72,19 @@ export const Tacos = {
           ],
           [
             {
+              tag:3,
               name:"Veggies",
               type:"add More",
               price:3,
             },
             {
-              name:"Meat",
+              tag:3,
+              name:"Steak",
               type:"add More",
               price:8,
             },
             {
+              tag:3,
               name:"Cheese",
               type:"add More",
               price:8,
@@ -86,6 +97,3 @@ export const Tacos = {
 
 
   }
-
-  
-  
