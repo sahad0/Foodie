@@ -59,7 +59,7 @@ if(resetKeyboardView) {
             </MotiView>
         </View>
     
-               <View style={{flexDirection:"row",justifyContent:"center"}}>
+               <View style={{flexDirection:"row",}}>
                
                 <MotiView from={{scale:0}} animate={{scale:0.8}} exit={{scale:0}} transition={{delay:500}} style={{margin:height*0.07,marginTop:0}}>
                 <TouchableOpacity onPress={()=>signOut()} style={{borderRadius:50,height:height*0.08,width:0.08*height,elevation:2,backgroundColor:"black",}}>
@@ -68,6 +68,7 @@ if(resetKeyboardView) {
                 </MotiView>
                </View>
                </>
+
       )
     
 }
