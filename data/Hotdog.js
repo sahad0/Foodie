@@ -20,19 +20,19 @@ export const HotDog = {
             {
               tag:0,
               name:"Beef",
-              type:"Patty",
+              type:"Sausage",
               price:18,
             },
             {
               tag:0,
               name:"Chicken",
-              type:"Patty",
+              type:"Sausage",
               price:12,
             },
             {
               tag:0,
               name:"Pork",
-              type:"Patty",
+              type:"Sausage",
               price:15,
             },
            
