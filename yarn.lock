@@ -6638,10 +6638,10 @@ react-native-push-notification@^8.1.1:
   resolved "https://registry.npmjs.org/react-native-push-notification/-/react-native-push-notification-8.1.1.tgz"
   integrity sha512-XpBtG/w+a6WXTxu6l1dNYyTiHnbgnvjoc3KxPTxYkaIABRmvuJZkFxqruyGvfCw7ELAlZEAJO+dthdTabCe1XA==
 
-react-native-reanimated@^2.11.0:
-  version "2.11.0"
-  resolved "https://registry.yarnpkg.com/react-native-reanimated/-/react-native-reanimated-2.11.0.tgz#415ef668440d1b7d8b2b36a20342b1035432dd80"
-  integrity sha512-/QnujrXSNyXasv7v8K3eu5Z4XGRYMPRa0+x0RjNr6Z5/KEuPHwrg1Xm7UZ2YSm6jCF2b1BW6ceqP/1d626gvhQ==
+react-native-reanimated@^223.11.0:
+  version "3.0.0-rc.4"
+  resolved "https://registry.yarnpkg.com/react-native-reanimated/-/react-native-reanimated-3.0.0-rc.4.tgz#afaea1c9ea91865c4fc71f7b6e8c86fdccc62377"
+  integrity sha512-kBVx6JJceNe++QfBVV/poDEYn1XLqI6AcJzsu9OprNsKwAeqP6KysrY92crfC1txBr1lRPK0ClKjRhifPwFhlg==
   dependencies:
     "@babel/plugin-transform-object-assign" "^7.16.7"
     "@babel/preset-typescript" "^7.16.7"

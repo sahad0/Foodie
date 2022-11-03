@@ -1,7 +1,7 @@
-import { View, Text, ImageBackground, Image, Dimensions } from 'react-native'
+import { View, Text, ImageBackground, Image, Dimensions ,Animated} from 'react-native'
 import React from 'react'
 import { useRef } from 'react';
-import Animated from 'react-native-reanimated';
+// import Animated from 'react-native-reanimated';
 import Ionicons from "react-native-vector-icons/Ionicons";
 import { Searchbar } from 'react-native-paper';
 
