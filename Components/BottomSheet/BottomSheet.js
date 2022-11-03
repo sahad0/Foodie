@@ -29,6 +29,7 @@ export default function BottomSheet({...Children}) {
 
                 }
             }
+            
             else{
                 if(resetKeyboardView) {
                     runOnJS(Scrollto)(initialScrl,50);
@@ -97,6 +98,17 @@ export default function BottomSheet({...Children}) {
             
             }
         }
+        else{
+            if(translateY.value > -height/4){
+                runOnJS(Scrollto)(-height/4,50);
+    
+    
+                }
+                if(translateY.value < -height/4){
+                    runOnJS(Scrollto)(-height/2-height*0.2,50);
+            
+                }
+        }
 
 
       
@@ -120,7 +132,7 @@ export default function BottomSheet({...Children}) {
             position:"absolute",
             width:width,
             zIndex:99999,
-            backgroundColor:screen==="Home" ? "lightblue":"",
+            backgroundColor:screen==="Home" ? "lightblue":"white",
             height:height,
             borderRadius:height*0.2,
             elevation:50,

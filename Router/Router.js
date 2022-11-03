@@ -12,7 +12,6 @@ import ItmScreen from '../screens/ItmScreen'
 import CartScreen from '../screens/CartScreen';
 import MenuView from '../screens/MenuView';
 import LikeScreen from '../screens/LikeScreen';
-import FadeIn from '../screens/Test';
 
 const Stack = createSharedElementStackNavigator();
 enableScreens();
@@ -40,8 +39,7 @@ const RootNavigation = () => {
                 {auth ? 
                 <>
                     <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName={'Home'}>
-                    {/* <Stack.Screen name="Test" component={FadeIn} /> */}
-                    
+
                     <Stack.Screen name="Home" component={HomeV1_0} />
                     <Stack.Screen name="Item" component={ItmScreen} />
 
