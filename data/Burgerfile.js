@@ -14,7 +14,7 @@ import { Chicken } from "./Chicken"
 
   export const Food = [
     {
-      obj : Burger
+      obj : Burger,
     },
     {
       obj : Tacos,

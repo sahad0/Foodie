@@ -64,7 +64,7 @@ export default function MenuItems({navigation}) {
         <View style={{flexDirection:"column",alignItems:"center"}}>
                 <Image source={item.img_url} style={{width:width*0.18,height:height*0.09,borderRadius:width*0.05,margin:width*0.04,borderTopRightRadius:width*0.18
                 }} />
-        <Text>{item.name}</Text>
+        <Text style={{color:"gray"}} >{item.name}</Text>
         </View>
         <Divider  style={{width:width*0.003,height:"100%",transform:[{rotateY:"75deg"}]}}/>
         </TouchableOpacity>

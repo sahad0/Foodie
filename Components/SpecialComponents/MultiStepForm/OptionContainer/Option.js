@@ -1,6 +1,6 @@
 import { View, Text ,TouchableOpacity, ScrollView } from 'react-native'
 import React from 'react'
-import { Checkbox } from 'react-native-paper';
+import { RadioButton } from 'react-native-paper';
 import Icons from "react-native-vector-icons/Ionicons"
 import { MotiView } from 'moti';
 
@@ -41,14 +41,14 @@ export default function Option({height,width,data,question,color,state,setState,
 
                 <View >
                     
-                    <Text style={{marginBottom:height*0.02}}>{question}</Text>
+                    <Text style={{marginBottom:height*0.02,color:"gray"}}>{question}</Text>
                     <ScrollView style={{height:height*0.32}}>
                     {
                         data.map((k,index)=>(
                             <View key={index} style={{flexDirection:"row",justifyContent:"space-between",width:height*0.25,marginTop: height*0.04}}>
                                 <View style={{flexDirection:"row",}}>
                                     <View>
-                                    <Checkbox
+                                    <RadioButton
                                         color={color}
                                         status={checked===k.name ? 'checked' : 'unchecked'}
                                         onPress={() => {setChecked(k.name),handleCheck(k.tag,k.price,k)}}
@@ -60,7 +60,7 @@ export default function Option({height,width,data,question,color,state,setState,
                                     </View>
                                 </View>
                                 <View style={{justifyContent:"center"}}>
-                                    <Text style={{fontSize:height*0.02}}> -      {k.price}$</Text>
+                                    <Text style={{fontSize:height*0.02,color:"gray"}}> -      {k.price}$</Text>
                                 </View>
                             </View>
                         ))

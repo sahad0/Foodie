@@ -14,6 +14,14 @@ import { Burger } from '../data/Burgerfile';
 export default function MenuView({route}) {
     const {item,sIndex} = route.params;
     const {width,height} = Dimensions.get("screen");
+    const [state,setState] = useState(0);
+
+
+    const [id,setId] = useState(item.id);
+
+    useEffect(()=>{
+        setId(item?.id);
+    },[]);
     
    
     
@@ -66,15 +74,20 @@ export default function MenuView({route}) {
 
   return (
     
+    id>=0 ? 
+    (
     <>
-    <SafeAreaView style={{backgroundColor:"white",alignItems:"center",flex:1,}}>
-    <MenuBody data={val} height={height} width={width} sIndex={sIndex}/>
-    <BottomSheet height={height} width={width} resetKeyboardView={true} >
-      <CommonBody id={item.id-1} />
-    </BottomSheet>
-    
-    </SafeAreaView>
+      <SafeAreaView style={{backgroundColor:"white",alignItems:"center",flex:1,}}>
+      <MenuBody data={val} height={height} width={width} sIndex={sIndex} setId={setId} setState={setState}/>
+      <BottomSheet height={height} width={width} resetKeyboardView={true} >
+        <CommonBody id={id} state={state} setState={setState} />
+      </BottomSheet>
+      
+      </SafeAreaView>
 
     </>
+    )
+    :
+    (<></>)
   )
 }

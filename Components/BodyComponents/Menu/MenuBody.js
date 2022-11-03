@@ -4,7 +4,7 @@ import { MotiImage, MotiView } from 'moti'
 import { useRef } from 'react'
 import { useEffect } from 'react';
 
-export default function MenuBody({data,height,width,sIndex}) {
+export default function MenuBody({data,height,width,sIndex,setId,setState}) {
 
 
     const ScrollX = useRef(new Animated.Value(0)).current;
@@ -38,7 +38,22 @@ const backG = ['pink','lightyellow','lightblue','lightyellow','purple','pink','l
    <Animated.View style={[StyleSheet.absoluteFillObject,{backgroundColor}]}>
 
 
-   <Animated.FlatList    initialScrollIndex={sIndex}   scrollEventThrottle={32}  onScroll={Animated.event([{nativeEvent: {contentOffset: {x: ScrollX}}}],{useNativeDriver:false})}   data={data}   renderItem={renderItem} horizontal pagingEnabled showsHorizontalScrollIndicator={false}  />
+   <Animated.FlatList    initialScrollIndex={sIndex}   scrollEventThrottle={32}  
+   onScroll={Animated.event([{nativeEvent: {contentOffset: {x: ScrollX}}}],
+   {useNativeDriver:false,
+    listener : (event)=>{
+        const x = Math.floor(
+          Math.floor(event.nativeEvent.contentOffset.x) /
+          Math.floor(event.nativeEvent.layoutMeasurement.width)
+      );
+      setId(x);
+      
+      setTimeout(()=>{
+        setState(0);
+      },500)
+    }
+  })}  
+    data={data}   renderItem={renderItem} horizontal pagingEnabled showsHorizontalScrollIndicator={false}  />
 
    </Animated.View>
    </>

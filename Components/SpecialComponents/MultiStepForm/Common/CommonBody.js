@@ -9,9 +9,8 @@ import { useEffect } from 'react';
 import { customAlphabet } from 'nanoid';
 
 
-export default function CommonBody({id}) {
+export default function CommonBody({id,state,setState}) {
   const {width,height} = Dimensions.get("screen");
-  const [state,setState] = useState(0);
   const ref = useRef(null);
 
   const [itemCart,setItemCart] = useState({title:"",orderId:0,customizedItems:[],total:0});
@@ -30,6 +29,7 @@ export default function CommonBody({id}) {
 
 
 
+
   useEffect(()=>{
     ref.current?.scrollToIndex({index:state,animated:true})
   },[state]);
@@ -37,7 +37,7 @@ export default function CommonBody({id}) {
 
 
   const data =  Food[id].obj.question.map((_,index)=>{
-                  return {question:Food[id].obj.question[index],data:Food[id].obj.option[index],color:Food[1].obj.color}
+                  return {question:Food[id].obj.question[index],data:Food[id].obj.option[index],color:Food[id].obj.color}
                 });
   const length = Food[id].obj.question.length;
 
@@ -58,9 +58,9 @@ export default function CommonBody({id}) {
     <>
       <View>
         <View style={{margin:height*0.03,marginBottom:0}}>
-          <Text style={{alignSelf:"flex-end"}}>Make ur Custom Burger</Text>
-          <Text style={{alignSelf:"flex-end",fontWeight:"bold"}}>OrderID : {orderId}</Text>
-          <Text style={{alignSelf:"flex-end",fontWeight:"bold"}}> Price: ${itemCart.total}</Text>
+          <Text style={{alignSelf:"flex-end",color:"gray"}}>Make ur Custom Burger</Text>
+          <Text style={{alignSelf:"flex-end",color:"gray",fontWeight:"bold"}}>OrderID : {orderId}</Text>
+          <Text style={{alignSelf:"flex-end",color:"gray",fontWeight:"bold"}}> Price: ${itemCart.total}</Text>
         </View>
         <FlatList ref={ref} horizontal initialScrollIndex={0} pagingEnabled scrollEnabled={false}  data={data} renderItem={renderItem} />
 
