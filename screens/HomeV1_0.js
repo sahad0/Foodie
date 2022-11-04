@@ -24,7 +24,7 @@ export default function HomeV1_0({navigation}) {
 
 
   return (
-   <SafeAreaView style={{display:"flex",flex:1}}>
+   <SafeAreaView style={{display:"flex",flex:1,}}>
     {/* <Button title='Hello' onPress={()=>{crashlytics().crash()}} /> */}
 
     <View style={{flexGrow:1}}>

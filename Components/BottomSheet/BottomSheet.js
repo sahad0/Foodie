@@ -132,9 +132,9 @@ export default function BottomSheet({...Children}) {
             position:"absolute",
             width:width,
             zIndex:99999,
-            backgroundColor:screen==="Home" ? "lightblue":"white",
+            backgroundColor:screen==="Home" ? "white":"white",
             height:height,
-            borderRadius:height*0.2,
+            borderRadius:screen==="Home" ? height*0.1 : height*0.05,
             elevation:50,
             
             top:height,

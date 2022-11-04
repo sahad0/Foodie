@@ -93,7 +93,7 @@ export default function BottomItems({navigation}) {
                 <Text style={{alignSelf:"center",color:"gray"}}>Blend on Spices</Text>
                 <View style={{display:"flex",flexDirection:"row",justifyContent:"space-between",margin:width*0.04,marginTop:height*0.03,alignItems:"center"}}>
                     <Text style={{color:"gray"}}>{"$"+item.price}</Text>
-                    <TouchableOpacity onPress={()=>{dispatch(Like_Unlike({items:item}))}} style={{borderColor:"lightgray",borderRadius:25,borderWidth:0.4}} >
+                    <TouchableOpacity onPress={()=>{dispatch(Like_Unlike({items:item}))}} style={{borderColor:"white",borderRadius:25,backgroundColor:"white"}} >
                             {
                                 flag ? 
                                 <>
