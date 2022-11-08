@@ -22,6 +22,11 @@
 		E9E89D0BB4F1400480CE6B90 /* Lucky.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 96F618B901D044A6B30697AB /* Lucky.ttf */; };
 		A87343DCF7B04FD5B35BE756 /* League.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BCDCC0D8C0D44F1CAC429F25 /* League.ttf */; };
 		DCC4D844FD044FFDA691530C /* Sanch.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3D3141467DC94D41AA7AEE6F /* Sanch.ttf */; };
+		3882078B37AC4461928F6A92 /* Gwen.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5A7115198ECB4B17A5AB821E /* Gwen.ttf */; };
+		AB830A737C69490699C2DD49 /* Cav.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D9937EF330724C908801C869 /* Cav.ttf */; };
+		B64E02E813654411B922A06C /* Shalimar.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4597D7EA1F4F418A98B5CBB9 /* Shalimar.ttf */; };
+		D3401CF1FD7D4C14A563CF0B /* Ogg.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F645D709829143B7B9C3292E /* Ogg.ttf */; };
+		C7C53E03C9B44268B85EC025 /* Straw.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D095D32331BE4EF88A16ED70 /* Straw.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +65,11 @@
 		96F618B901D044A6B30697AB /* Lucky.ttf */ = {isa = PBXFileReference; name = "Lucky.ttf"; path = "../assets/fonts/Lucky.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		BCDCC0D8C0D44F1CAC429F25 /* League.ttf */ = {isa = PBXFileReference; name = "League.ttf"; path = "../assets/fonts/League.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		3D3141467DC94D41AA7AEE6F /* Sanch.ttf */ = {isa = PBXFileReference; name = "Sanch.ttf"; path = "../assets/fonts/Sanch.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		5A7115198ECB4B17A5AB821E /* Gwen.ttf */ = {isa = PBXFileReference; name = "Gwen.ttf"; path = "../assets/fonts/Gwen.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		D9937EF330724C908801C869 /* Cav.ttf */ = {isa = PBXFileReference; name = "Cav.ttf"; path = "../assets/fonts/Cav.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		4597D7EA1F4F418A98B5CBB9 /* Shalimar.ttf */ = {isa = PBXFileReference; name = "Shalimar.ttf"; path = "../assets/fonts/Shalimar.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F645D709829143B7B9C3292E /* Ogg.ttf */ = {isa = PBXFileReference; name = "Ogg.ttf"; path = "../assets/fonts/Ogg.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		D095D32331BE4EF88A16ED70 /* Straw.ttf */ = {isa = PBXFileReference; name = "Straw.ttf"; path = "../assets/fonts/Straw.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +186,11 @@
 				96F618B901D044A6B30697AB /* Lucky.ttf */,
 				BCDCC0D8C0D44F1CAC429F25 /* League.ttf */,
 				3D3141467DC94D41AA7AEE6F /* Sanch.ttf */,
+				5A7115198ECB4B17A5AB821E /* Gwen.ttf */,
+				D9937EF330724C908801C869 /* Cav.ttf */,
+				4597D7EA1F4F418A98B5CBB9 /* Shalimar.ttf */,
+				F645D709829143B7B9C3292E /* Ogg.ttf */,
+				D095D32331BE4EF88A16ED70 /* Straw.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -285,6 +300,11 @@
 				E9E89D0BB4F1400480CE6B90 /* Lucky.ttf in Resources */,
 				A87343DCF7B04FD5B35BE756 /* League.ttf in Resources */,
 				DCC4D844FD044FFDA691530C /* Sanch.ttf in Resources */,
+				3882078B37AC4461928F6A92 /* Gwen.ttf in Resources */,
+				AB830A737C69490699C2DD49 /* Cav.ttf in Resources */,
+				B64E02E813654411B922A06C /* Shalimar.ttf in Resources */,
+				D3401CF1FD7D4C14A563CF0B /* Ogg.ttf in Resources */,
+				C7C53E03C9B44268B85EC025 /* Straw.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

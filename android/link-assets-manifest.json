@@ -6,8 +6,16 @@
       "sha1": "49243712633711db3b673d0b03536e0180cd7ddb"
     },
     {
+      "path": "assets/fonts/Cav.ttf",
+      "sha1": "6c6e0943c8a1af2aa1fe7d751c62e84e18cc4c72"
+    },
+    {
       "path": "assets/fonts/Cinzel.ttf",
       "sha1": "b07474164eb7073691db09c33b85ab3e558582aa"
+    },
+    {
+      "path": "assets/fonts/Gwen.ttf",
+      "sha1": "be555ca72278ff92fa5446e6d7d2d120205b4a39"
     },
     {
       "path": "assets/fonts/League.ttf",
@@ -18,6 +26,10 @@
       "sha1": "7701304fb627ae9caa78cd982dce30d99a591296"
     },
     {
+      "path": "assets/fonts/Ogg.ttf",
+      "sha1": "7de1b8e31f66d3fc69a5777c7c7a18089fa63401"
+    },
+    {
       "path": "assets/fonts/Reg.ttf",
       "sha1": "8b203c70f9c8f5d437eb5a87a6c7df39fb2996b7"
     },
@@ -26,8 +38,16 @@
       "sha1": "262f28c19bfd2acca242aac8126048bbab351e40"
     },
     {
+      "path": "assets/fonts/Shalimar.ttf",
+      "sha1": "33a5a53a787f4e1d3b6206d9710e9ae7de789b76"
+    },
+    {
       "path": "assets/fonts/Sil.ttf",
       "sha1": "e4ca1e41c4aed08bdf52f6380d0d87f70928f8e3"
+    },
+    {
+      "path": "assets/fonts/Straw.ttf",
+      "sha1": "ac3a58fecd6957856375b2e06e2be5df4cd6da58"
     },
     {
       "path": "assets/fonts/monster.ttf",

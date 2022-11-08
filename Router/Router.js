@@ -12,6 +12,7 @@ import ItmScreen from '../screens/ItmScreen'
 import CartScreen from '../screens/CartScreen';
 import MenuView from '../screens/MenuView';
 import LikeScreen from '../screens/LikeScreen';
+import Homie from '../screens/Homie';
 
 const Stack = createSharedElementStackNavigator();
 enableScreens();
@@ -40,7 +41,7 @@ const RootNavigation = () => {
                 <>
                     <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName={'Home'}>
 
-                    <Stack.Screen name="Home" component={HomeV1_0} />
+                    <Stack.Screen name="Home" component={Homie} />
                     <Stack.Screen name="Item" component={ItmScreen} />
 
                     <Stack.Screen name="Cart" component={CartScreen} />
