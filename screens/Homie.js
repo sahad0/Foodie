@@ -20,7 +20,7 @@ export default function Homie() {
     {
       h1:"Cherry!",
       h2:"Cream of Delight",
-      img :  require("../assets/images/hi.png"),
+      img :  require("../assets/images/im/2.png"),
       color1:"#C7E3A4",
       color2:"#B6DA88",
     },
@@ -35,7 +35,7 @@ export default function Homie() {
     {
       h1:"Cherry!",
       h2:"Cream of Delight",
-      img :  require("../assets/images/hi.png"),
+      img :  require("../assets/images/im/2.png"),
       color1:"#F8CBEE",
       color2:"#F8BFEC",
     },
